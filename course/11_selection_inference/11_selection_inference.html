@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selection inference</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 11 · Part V, Selection and history · Layer F5</p>
+    <h1>Selection inference</h1>
+    <p class="standfirst">A dN/dS result licenses one deliberately narrow sentence. Everything that
+      makes it feel like more — the gene name, the phenotype, the story — comes from somewhere else.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What does dN/dS actually entitle you to say?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 02, 03, 05, 08 — <b>hard</b>. This chapter misleads without them</dd></div>
+      <div><dt>Corpus</dt><dd><code>F5/codon_models</code> — <b>2 of 15 on disk</b></dd></div>
+      <div><dt>Understood when</dt><dd>You can list the false-positive generators and the non-adaptive confounders</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>The sentence you are entitled to</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout">
+        <h4>What a significant result licenses</h4>
+        <p>Under the fitted codon model, the data reject a specified null in favour of <b>an excess of
+          nonsynonymous relative to synonymous substitution, in the tested scope</b>. That is the
+          whole claim.</p>
+      </div>
+      <p>A gene-wide ω&nbsp;&gt;&nbsp;1 supports historical diversifying selection <em>averaged</em>
+        across that gene or branch. It does not establish adaptation of the whole gene, a phenotype,
+        a causal amino-acid change, or the time or agent of selection. A branch-site LRT supports
+        ω&nbsp;&gt;&nbsp;1 at <em>some unobserved codon class</em> on <em>predeclared</em> foreground
+        branches — not every foreground codon or branch. <b>BEB site calls are conditional
+        localisation estimates, not independent confirmations.</b></p>
+      <div class="callout warn">
+        <h4>The publishable claim, in practice</h4>
+        <p>"<b>Candidate episodic diversifying selection, robust to stated alignment, tree,
+          recombination, composition and multiplicity checks</b>", plus orthogonal biological
+          evidence. Not "proved positive selection".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">Scope</span>
+        <h2>Each test asks a different, narrow question</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:18%">Test</th><th>The hypothesis it actually tests</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">NG86</td><td>A counting approximation. Its authors cautioned it underestimates large numbers of nonsynonymous changes. <b>Not a significance test</b></td></tr>
+            <tr><td class="mono">GY94</td><td>The likelihood codon-Markov framework, accommodating transition/transversion and codon-frequency bias. A raw pairwise ω is still not a test</td></tr>
+            <tr><td class="mono">M1a/M2a</td><td>Does a model with a <em>pervasive</em> ω&nbsp;&gt;&nbsp;1 site class fit better than nearly-neutral classes?</td></tr>
+            <tr><td class="mono">M7/M8</td><td>The same question after modelling background site heterogeneity with a beta distribution</td></tr>
+            <tr><td class="mono">branch models</td><td>Do preassigned branches have a different <b>mean</b> ω? <b>Not automatically a test of positive selection</b></td></tr>
+            <tr><td class="mono">branch-site A</td><td>ω₂&nbsp;&gt;&nbsp;1 on <em>preassigned foreground</em> branches only</td></tr>
+            <tr><td class="mono">BUSTED</td><td>Gene-wide episodic diversification — at least one site on at least one test branch. <b>Not site-specific</b></td></tr>
+            <tr><td class="mono">aBSREL</td><td>Individual branches, adapting branch-model complexity</td></tr>
+            <tr><td class="mono">MEME</td><td>Individual codons, episodic or persistent</td></tr>
+            <tr><td class="mono">RELAX</td><td>Does test-branch ω <em>contract toward</em> neutrality (K&nbsp;&lt;&nbsp;1) or move <em>away</em> (K&nbsp;&gt;&nbsp;1) relative to reference branches?</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>What the models assume</h4>
+        <p>Synonymous substitutions as a neutral baseline; a correct codon alignment; a correct gene
+          tree; <b>no recombination within the fitted partition</b>; single-nucleotide instantaneous
+          changes; an adequate stationary, reversible mutation model. Violate any of these and you can
+          get an excellent likelihood-ratio statistic with no adaptive amino-acid evolution at all.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">False positives</span>
+        <h2>Four generators, with measured magnitudes</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>Recombination</h3><span class="tag bad">largest</span></div>
+          <p>It invalidates the single-tree likelihood factorisation outright.</p>
+          <dl class="rules">
+            <dt>5% → 90%</dt><dd>site-model type-I error under neutral simulated recombination, at high rates</dd>
+            <dt>&gt; 50%</dt><dd>false-positive probability above ρ = 0.024 in one HDV-like setting, rising toward 100%</dd>
+          </dl>
+          <div class="measured">Detect breakpoints (GARD), partition, fit a tree per partition. This
+            <b>reduces</b> the problem; it does not prove recombinant history removed.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Misalignment</h3><span class="tag bad">dominant in scans</span></div>
+          <p>Indels are innocuous <em>if homologous codons are correctly aligned</em>. Alignment errors
+            produced "unacceptably high" branch-site false positives; PRANK outperformed MUSCLE,
+            MAFFT and ClustalW.</p>
+          <div class="measured">In one empirical branch-site scan, filtering retained only
+            <b>2,009 of 3,810 (52.7%)</b> initially called sites — an instability measure, not a
+            calibrated true-positive rate.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Paralogy</h3><span class="tag bad">not preprocessing</span></div>
+          <p>Mixed paralogs make columns and branch labels represent a duplication/gene-conversion
+            history rather than the intended orthology history.</p>
+          <div class="measured">Non-allelic conversion simulations increased PAML false positives —
+            worst with high paralog divergence, long converted tracts, and <b>no outgroup</b>. No
+            universal rate exists; it is strongly scenario-dependent.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Multiplicity</h3><span class="tag bad">arithmetic</span></div>
+          <p>At nominal <em>P</em>&nbsp;&lt;&nbsp;0.05, a 10,000-gene screen has <b>500 expected null
+            calls before any data or model failure</b>.</p>
+          <div class="measured">State the complete tested family and control FDR across genes,
+            branches, <em>and any post-hoc foreground choices</em>. Selectome corrects across its full
+            branch-site dataset.</div>
+        </div>
+      </div>
+      <div class="callout bad">
+        <h4>A fifth that is not on the classic list — multinucleotide mutations</h4>
+        <p>MNMs can generate branch-site positives <b>as often as the empirical test does</b> under
+          realistic simulated rates, and codons with multiple differences accounted for <b>virtually
+          all support</b> in two genome-scale datasets. The idealised simulations of the 2005 modified
+          test sit at or below nominal 5% — MNMs are outside those simulations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Confounders</span>
+        <h2>Things that raise ω without positive selection</h2></div>
+    </div>
+    <div class="stage-body">
+      <dl class="rules">
+        <dt>relaxed constraint</dt><dd>Nearly neutral nonsynonymous substitutions fix. A higher mean ω conflates this with intensified selection — which is exactly why <b>RELAX exists</b>. Test it, do not assume it away</dd>
+        <dt>small <em>N</em><sub>e</sub></dt><dd>Chapter 03's <em>N</em><sub>e</sub><em>s</em> again: weaker selection efficacy permits fixation of slightly deleterious changes</dd>
+        <dt>gBGC</dt><dd>Favours W→S substitutions, affects neutral flanks and recombination-rich regions. In one primate analysis it could account for <b>&gt;20% of elevated-ω cases, including ω&nbsp;&gt;&nbsp;2</b></dd>
+        <dt>non-stationary composition</dt><dd>Standard d<sub>N</sub>, d<sub>S</sub> and ω all assume equilibrium composition; non-stationarity biases <b>all three</b>. Non-homogeneous codon models correct it</dd>
+      </dl>
+      <div class="callout warn">
+        <h4>Where the literature genuinely conflicts</h4>
+        <p>On <em>ordinary</em> GC variation: one benchmark found branch-site inference <b>robust but
+          underpowered</b> under GC variation and synonymous saturation, while non-stationary
+          simulations report <b>false selection signals</b> when frequency and selection shifts
+          interact. Both are credible; they test different regimes. Report which one your data
+          resemble rather than citing whichever supports your result.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">The gate</span>
+        <h2>Branch-site pre-flight — before the test, not after</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml gate"><b>run every one of these BEFORE believing an LRT</b>
+
+  1  coding-sequence integrity              no internal stops, no frameshifts
+  2  protein-guided codon alignment         + masking SENSITIVITY, not one run
+  3  gene tree independently supported      and FOREGROUND DECLARED BEFORE TESTING
+  4  recombination screening                GARD; partition; tree per partition
+  5  dS / saturation diagnostics            is the synonymous baseline usable?
+  6  composition diagnostics                stationarity; consider nonhomogeneous models
+  7  repeated-model convergence             multiple starting points — PAML can converge badly
+  8  MNM sensitivity                        codons with multiple differences
+  9  FDR across the FULL tested family      genes × branches × post-hoc choices
+ 10  INSPECT THE ACTUAL SUBSTITUTIONS       look at the sites and the alignment columns</pre>
+      <div class="callout bad">
+        <h4>Step 3 is the one that quietly invalidates whole papers</h4>
+        <p>A foreground branch chosen <em>after</em> seeing which branches look interesting converts a
+          hypothesis test into a description. The multiplicity correction in step 9 must then include
+          that choice — which is rarely done, and usually cannot be reconstructed afterwards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Complements</span>
+        <h2>Different questions, not better versions</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:22%">Method</th><th style="width:38%">Asks</th><th>Sensitive to</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">MK test</td><td>Contrasts nonsynonymous/synonymous <b>polymorphism and divergence</b> — Chapter 03's bridge, made operational</td><td>Demographic change, linkage, reference-site validity, outgroup history</td></tr>
+            <tr><td class="mono">asymptotic MK</td><td>Extrapolates away low-frequency weakly deleterious polymorphism</td><td>Same, plus the extrapolation itself</td></tr>
+            <tr><td class="mono">DFE-α</td><td>Fits the deleterious DFE <em>and demography</em> before estimating adaptive substitutions</td><td>Same set; more explicit about it</td></tr>
+            <tr><td class="mono">PoMo-style</td><td>Polymorphism-aware phylogenetic models: divergence, within-species variation, drift, mutation and selection biases jointly</td><td>The direction of travel</td></tr>
+            <tr><td class="mono">diploS/HIC · SIA</td><td>ML sweep scans and ARG+neural classification</td><td><b>Calibration is conditional on simulated demography, recombination, sampling and error models</b> — not causal proof</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers — and the corpus problem</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>This chapter cannot currently be studied from the vault</h4>
+        <p><b>2 of 15 PDFs are on disk.</b> PAML, HyPhy, GY94, branch-site, McDonald–Kreitman and the
+          HyPhy method papers are all missing — they are OUP titles behind a paywall, and neither the
+          open-access ladder nor a Europe PMC pass could reach them. The chapter above is written from
+          verified research findings with sources cited; the primary literature needs institutional
+          access.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td><em>Detecting positive selection in the genome</em>, BMC Biology</td><td>2017</td><td><b>Start here</b> — it is one of the two you can actually read</td></tr>
+            <tr><td class="have">✓</td><td>Murrell et al., <em>MEME</em>, PLoS Genetics</td><td>2012</td><td>Episodic selection at individual codons</td></tr>
+            <tr><td class="lack">·</td><td>Yang, <em>PAML 4</em>, MBE</td><td>2007</td><td>The implementation <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Zhang, Nielsen &amp; Yang, modified branch-site test, MBE</td><td>2005</td><td>The test everyone runs <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Anisimova, Nielsen &amp; Yang, recombination and site models</td><td>2003</td><td><b>The 5%→90% result</b> <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Fletcher &amp; Yang, alignment error and branch-site</td><td>2010</td><td>The misalignment result <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Venkat, Hahn &amp; Thornton, MNMs, Nat Ecol Evol</td><td>2018</td><td><b>The fifth generator</b> <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Wertheim et al., <em>RELAX</em>, MBE</td><td>2015</td><td>Relaxation vs intensification <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Ratnakumar et al., gBGC and dN/dS</td><td>2010</td><td>The &gt;20% result <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 11 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>State exactly what a significant branch-site result licenses — and what BEB site calls
+            are.</li>
+          <li>Name the five false-positive generators with a magnitude for each.</li>
+          <li>Name four confounders that raise ω without positive selection.</li>
+          <li>Say why a foreground branch chosen after looking invalidates the test.</li>
+          <li>Explain why MK and dN/dS are not better and worse versions of each other.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> that TLR4 shows ω&nbsp;=&nbsp;3.2 on the bat ancestral branch
+          (branch-site, <em>P</em>&nbsp;=&nbsp;0.004), with 7 BEB sites at posterior &gt;&nbsp;0.95,
+          three of which fall in the ligand-binding domain — concluding adaptive evolution of
+          innate immunity related to viral tolerance. What do you require?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>declared in advance?</dt><dd>Was the bat branch the foreground before testing, or chosen because it looked interesting? If TLR4 was one of many genes and bats one of many branches, what is the full tested family and its FDR?</dd>
+          <dt>recombination</dt><dd>TLRs recombine. Unscreened, site-model type-I error can reach 90% — this alone could produce the result.</dd>
+          <dt>paralogy</dt><dd>TLRs are a gene family with a duplication history. Is this an orthologous set, verified by synteny, with an outgroup?</dd>
+          <dt>alignment</dt><dd>Codon-aware, protein-guided, with masking sensitivity? Half of called sites did not survive filtering in a published scan.</dd>
+          <dt>MNMs</dt><dd>Do the 7 BEB sites involve codons with multiple nucleotide differences? If so they may account for essentially all the support.</dd>
+          <dt>relaxation</dt><dd>Run RELAX. Bats may show <em>relaxed</em> constraint on TLR4, which raises mean ω without positive selection.</dd>
+          <dt>gBGC</dt><dd>Are the substitutions W→S? If so, &gt;20% of elevated-ω primate cases had this explanation.</dd>
+        </dl>
+        <p>And the framing check: "three sites in the ligand-binding domain" reads as mechanistic
+          support, but it is <em>post hoc annotation of a statistical result</em> — the domain was not
+          predicted in advance, and ligand-binding domains are large. It belongs on the candidate rung,
+          not the mechanistic one.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../10_structure_pangenome/10_structure_pangenome.html">← Chapter 10 · SV, T2T, pangenomes</a>
+    <a href="../12_popgen_introgression/12_popgen_introgression.html">Chapter 12 · Population history →</a>
+  </nav>
+  <footer>
+    <div>Part V of VI · Layer F5</div>
+    <div>Research <code>research/raw/c11_selection.md</code> — 60 sourced URLs. Corpus 2/15: written from findings, primary sources need library access.</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+## Answer
+
+Protein comparisons miss much phenotypic divergence because most proteins are constrained by biochemical function: changing their amino-acid sequence often has broad pleiotropic costs. Evolution can instead alter *where, when, and how much* an existing gene is used through cis-regulatory sequence, chromatin state, gene dosage, and structural variation. That is the modern King–Wilson problem—not a proof that coding change is usually unimportant, but an explanation for why high protein similarity is compatible with substantial organismal difference. Human–chimpanzee hybrid-cell experiments now directly show thousands of cis expression/accessibility differences under a shared trans environment, many cell-type-specific; this is strong evidence for widespread regulatory divergence, but not for a quantified “most phenotypes” claim. [King & Wilson 1975](https://pubmed.ncbi.nlm.nih.gov/pubmed/1090005/) [Agoglia et al. 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC10245923/)
+
+A cross-species regulatory comparison is interpretable only when it establishes four links: (1) homologous DNA rather than merely nearby peaks; (2) homologous cell states and matched developmental time, rather than species- or composition-driven contrasts; (3) a regulatory molecular phenotype robust to mapping, annotation, batch, and assay differences; and (4) endogenous causal evidence connecting the exact derived allele/element to target-gene expression and a relevant cellular or organismal phenotype. Conservation, ATAC/H3K27ac, TF motifs, reporter activity, and proximity to a gene are candidate-generating evidence—not causality. [Song et al. 2023](https://www.nature.com/articles/s41467-023-41855-w) [CRISPR-CLEAR](https://pmc.ncbi.nlm.nih.gov/articles/PMC11419122/)
+
+Enhancer “turnover” must also be decomposed: sequence loss/gain, alignment failure, chromatin-mark turnover, and compensatory turnover can yield different answers. Villar et al.’s liver study showed rapid H3K27ac-defined enhancer evolution across 20 mammals, whereas later high-depth alignments reveal extensive constraint within noncoding regulatory bases and MPRAs show that accelerated sequences can retain net activity through compensatory substitutions. Thus, regulatory divergence is real and pervasive, but a peak’s absence or a conserved-element score alone does not demonstrate a phenotypically causal enhancer gain or loss. [Villar et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4313353/) [Christmas et al. 2023](https://doi.org/10.1126/science.abn3943) [Whalen et al. 2023](https://doi.org/10.1016/j.neuron.2022.12.026)
+
+## Key findings
+
+- King and Wilson’s original observation was that humans and chimpanzees have unexpectedly similar proteins despite marked organismal differences; it motivated regulation as a candidate explanatory layer, not a demonstrated universal rule. [Source](https://pubmed.ncbi.nlm.nih.gov/pubmed/1090005/)
+
+- Human–chimpanzee hybrid iPSC derivatives control the trans environment; allele-specific expression/accessibility therefore estimates cis divergence while avoiding many interspecies composition, developmental-stage, culture, and batch confounders. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC10245923/)
+
+- Hybrid studies find substantial contributions from both cis and trans regulation, so “regulatory evolution” must not be silently equated with cis-only evolution. [Source](https://pubmed.ncbi.nlm.nih.gov/34921118/)
+
+- Villar et al. mapped H3K27ac/H3K4me3 in liver across 20 mammals and reported that roughly half of active enhancers per species were lineage/species-specific, whereas promoters were more conserved. This is a tissue-, mark-, and orthology-dependent rate, not a genome-wide enhancer-turnover constant. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC4313353/)
+
+- The key revision is resolution and interpretation: the 240-mammal Zoonomia alignment improves detection of constrained noncoding bases, while HAR experiments show compensatory substitutions can mask substantial nucleotide-level effects behind little net reporter difference. [Zoonomia](https://doi.org/10.1126/science.abn3943) [HAR study](https://doi.org/10.1016/j.neuron.2022.12.026)
+
+- A conserved non-coding element (CNE) is operationally a noncoding aligned sequence evolving more slowly than an estimated neutral model; it is not synonymous with enhancer, and bona fide enhancers can be weakly conserved, transposable-element-derived, or lineage-specific. [GERP++](https://pubmed.ncbi.nlm.nih.gov/21152010/) [Andrews et al.](https://pubmed.ncbi.nlm.nih.gov/37104580/)
+
+- `phastCons` calls elements/base probabilities under a conserved/non-conserved phylo-HMM; `phyloP` tests sitewise conservation or acceleration; GERP++ reports “rejected substitutions” relative to neutral expectation. Their outputs depend on alignment, tree, neutral model, species sampling, and threshold. [PHAST documentation](https://manpages.ubuntu.com/manpages/focal/man1/phastCons.1.html) [GERP++](https://pubmed.ncbi.nlm.nih.gov/21152010/)
+
+- Current practical successors are dense Cactus/PHAST alignments and 241-way Zoonomia constraint tracks, plus primate-specific constraint from 239 primate genomes; these mitigate—but cannot eliminate—reference/assembly and lineage-depth limitations. [Zoonomia data](https://zoonomiaproject.org/the-data/) [Primate constraint](https://www.nature.com/articles/s41586-023-06798-8)
+
+- Bulk cross-species RNA-seq requires reciprocal/orthology-aware annotation, species-balanced biological replication, matched protocols, and an explicit design for species, batch, individual, sex, stage, and composition; gene-length/annotation differences can create false differential expression. [Torres-Oliva et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC4877740/) [SCBN](https://pmc.ncbi.nlm.nih.gov/articles/PMC6441199/)
+
+- Developmental chronological age is not adequate matching: comparative mammalian transcriptomes infer stage correspondences from expression and reveal heterochrony, including a newborn opossum corresponding approximately to mouse E11.5. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC6658352/)
+
+- Single-cell atlases support deep conservation of broad cell categories and of core regulatory programs, while also identifying lineage-specific states and deployment of conserved programs in different contexts. [Tarashansky et al.](https://doi.org/10.1016/j.celrep.2021.108803)
+
+- Cross-species cell mapping remains methodologically contested: restricting to one-to-one orthologues loses species-specific genes; permissive homology mappings and integration can overcorrect real species differences. A benchmark of 28 gene-homology/integration combinations explicitly found method- and task-dependence. [Song et al.](https://www.nature.com/articles/s41467-023-41855-w)
+
+- MPRA/STARR-seq establishes sequence-intrinsic reporter activity, not native chromatin, correct target gene, or phenotype; species-paired reporter assays are especially useful for cis effects when tested in both relevant trans environments. [Prescott et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC4848043/) [Klein et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7812811/)
+
+- Strong causal evidence is an allele swap or precise base edit at the endogenous orthologous locus, with replicated target-gene and cellular/organismal phenotypes, rescue/reversion, appropriate developmental cell state, and an independently supported enhancer–target assignment. CRISPRi deletion alone establishes regional necessity, not necessarily causal nucleotide identity. [CRISPR-CLEAR](https://pmc.ncbi.nlm.nih.gov/articles/PMC11419122/) [Huang et al. 2025](https://doi.org/10.1016/j.xgen.2025.100982)
+
+- **Changed in the past 18 months:** the Biodiversity Cell Atlas (2025) formalized a large cross-taxa atlas initiative; recent human-specific-deletion work used hybrid cells plus reporter assays to assign cis/trans targets; and a 2025 mammal–bird study added comparative enhancer assays of accelerated regions. These are advances in resources and candidate validation, not a resolution of phenotype-level causality. [BCA](https://www.nature.com/articles/s41586-025-09312-4) [HCONDEL targets](https://www.nature.com/articles/s41467-025-67424-x) [Mammal–bird comparison](https://doi.org/10.1038/s41467-025-64134-2)
+
+## Primary sources
+
+| title | year | venue | URL | why it matters |
+|---|---:|---|---|---|
+| *Evolution at Two Levels in Humans and Chimpanzees* — Mary-Claire King, Allan C. Wilson | 1975 | Science | [DOI: 10.1126/science.1090005](https://doi.org/10.1126/science.1090005) | Foundational question. |
+| *Enhancer Evolution across 20 Mammalian Species* — Diego Villar et al. | 2015 | Cell | [DOI: 10.1016/j.cell.2015.01.006](https://doi.org/10.1016/j.cell.2015.01.006) | Landmark comparative liver epigenomics/turnover study. |
+| *Identifying a high fraction of the human genome to be under selective constraint using GERP++* — Eugene V. Davydov et al. | 2010 | PLoS Computational Biology | [DOI: 10.1371/journal.pcbi.1001025](https://doi.org/10.1371/journal.pcbi.1001025) | Defines GERP++ constraint scoring. |
+| *Evolutionary constraint and innovation across hundreds of placental mammals* — Matthew J. Christmas et al., Zoonomia Consortium | 2023 | Science | [DOI: 10.1126/science.abn3943](https://doi.org/10.1126/science.abn3943) | 240-mammal alignment and high-power noncoding constraint. |
+| *Mammalian evolution of human cis-regulatory elements and transcription factor binding sites* — Gregory Andrews et al., Zoonomia Consortium | 2023 | Science | [DOI: 10.1126/science.abn7930](https://doi.org/10.1126/science.abn7930) | Evolves 0.92M human cCREs and 15.6M TFBSs across mammals. |
+| *Cell type-specific cis-regulatory divergence in gene expression and chromatin accessibility revealed by human-chimpanzee hybrid cells* — Michael Agoglia et al. | 2023 | Nature Communications | [DOI: 10.1038/s41467-023-38301-1](https://doi.org/10.1038/s41467-023-38301-1) | Cis inference with shared human–chimp trans environment. |
+| *The relationship between regulatory changes in cis and trans and the evolution of gene expression in humans and chimpanzees* — Kenneth A. Barr et al. | 2023 | Genome Biology | [DOI: 10.1186/s13059-023-03019-3](https://doi.org/10.1186/s13059-023-03019-3) | Single-cell developmental comparison and cis/trans partitioning. |
+| *Benchmarking strategies for cross-species integration of single-cell RNA sequencing data* — Yuyao Song et al. | 2023 | Nature Communications | [DOI: 10.1038/s41467-023-41855-w](https://doi.org/10.1038/s41467-023-41855-w) | Benchmark, BENGAL pipeline, and warning against over-integration. |
+| *Toward universal cell embeddings: integrating single-cell RNA-seq datasets across species with SATURN* — Zeming Chen et al. | 2024 | Nature Methods | [DOI: 10.1038/s41592-024-02191-z](https://doi.org/10.1038/s41592-024-02191-z) | Protein-embedding approach that relaxes one-to-one-orthologue-only mapping. |
+| *Massively parallel discovery of human-specific substitutions that alter enhancer activity* — Christopher D. Klein et al. | 2021 | PNAS | [DOI: 10.1073/pnas.2007049118](https://doi.org/10.1073/pnas.2007049118) | MPRA of >32,000 human-specific substitutions in neural enhancers. |
+| *Machine learning dissection of human accelerated regions in primate neurodevelopment* — Sean Whalen et al. | 2023 | Neuron | [DOI: 10.1016/j.neuron.2022.12.026](https://doi.org/10.1016/j.neuron.2022.12.026) | Demonstrates compensatory regulatory evolution. |
+| *CRISPR-CLEAR: Nucleotide-Resolution Mapping of Regulatory Elements via Allelic Readout of Tiled Base Editing* — Sangwon Park et al. | 2024 | Cell Genomics | [DOI: 10.1016/j.xgen.2024.100650](https://doi.org/10.1016/j.xgen.2024.100650) | Endogenous, nucleotide-resolution causal validation framework. |
+
+## What the standard corpus misses
+
+A 2015–2023 corpus commonly misses the shift from sparse/reference-biased mammalian alignments to the [Zoonomia 241-way Cactus/PHAST tracks](https://zoonomiaproject.org/the-data/), and the [239-primate constrained-element study](https://www.nature.com/articles/s41586-023-06798-8), which materially improve lineage-appropriate constraint inference. The canonical codebases are [PHAST](https://github.com/CshlSiepelLab/phast), [Progressive Cactus](https://github.com/ComparativeGenomicsToolkit/cactus), [Zoonomia analysis/data pointers](https://zoonomiaproject.org/the-white-paper/), and [BENGAL](https://www.nature.com/articles/s41467-023-41855-w).
+
+Also new are the [Biodiversity Cell Atlas](https://www.nature.com/articles/s41586-025-09312-4), 2025 endogenous multiplexed single-cell CRISPRi/a fine-mapping, and 2025 hybrid-cell mapping of human-specific deletions to cis and trans targets. [Huang et al.](https://doi.org/10.1016/j.xgen.2025.100982) [HCONDEL study](https://www.nature.com/articles/s41467-025-67424-x)
+
+## Caveats and open questions
+
+The field does not yet have a defensible global estimate of the fraction of phenotypic divergence caused by coding, cis-regulatory, trans-regulatory, structural, or epigenetic change; ascertainment favors candidates with accessible assays. [Source](https://www.sciencedirect.com/science/article/pii/S0168952524000970)
+
+“Enhancer turnover” is genuinely contested because biochemical peak turnover can coexist with conserved target expression, shadow-enhancer compensation, or conserved function encoded by non-alignable sequence. [Villar et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC4313353/) [Whalen et al.](https://doi.org/10.1016/j.neuron.2022.12.026)
+
+Cell-type homology is not a clustering result: one-to-many mappings can reflect lineage splitting, convergent state, annotation granularity, or integration artefact. SATURN’s broader homology strategy and one-to-one-orthologue benchmarks make different trade-offs, so agreement across methods, markers, developmental lineage, spatial position, and perturbation is preferable to a single integrated UMAP. [SATURN](https://www.nature.com/articles/s41592-024-02191-z) [Benchmark](https://www.nature.com/articles/s41467-023-41855-w)
+
+I could not verify an authoritative, field-wide “adequate” normalization pipeline or a stable current version number for every named tool; adequacy is design-specific and should be demonstrated with balanced replicates, mapping-bias analyses, pseudobulk/individual-level inference, negative controls, and sensitivity to orthology and integration choices.

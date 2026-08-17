@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structural variation, T2T, pangenome graphs</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 10 · Part IV, The structural layer · Layer F4</p>
+    <h1>Structural variation, T2T, pangenome graphs</h1>
+    <p class="standfirst">The reference coordinate stops being the biological object and becomes one
+      projection of a multi-genome alignment. A variant becomes an alternative traversal; a genotype
+      becomes support for a path.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What changes when the unit is a path through a clade, not a position?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 04, 06</dd></div>
+      <div><dt>Corpus</dt><dd><code>F4_structure</code> 18 of 30 — the best-stocked layer</dd></div>
+      <div><dt>Understood when</dt><dd>You can state what a PAV call must show before it counts as absence</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>The question itself changes</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml">from   <b>"what differs at locus x?"</b>
+
+to     <b>which paths are homologous?</b>
+       <b>which sequence does each lineage traverse?</b>
+       <b>is this apparent loss a deletion, an unassembled repeat, or an annotation mismatch?</b></pre>
+      <p class="lede">That last distinction is decisive for presence/absence variation, copy number
+        and gene-family evolution — which is to say, for Chapters 06 and 07.</p>
+      <div class="callout">
+        <h4>Why VCF-against-GRCh38 is no longer sufficient as the sole language</h4>
+        <p>The HPRC graph contains <b>129.3 Mb of non-GRCh38 sequence</b>, and a reference-tree
+          formulation identified <b>3.5 million variants not located on the linear reference</b>.
+          Sequence that is not in the reference has no coordinate to be reported at.</p>
+      </div>
+      <div class="callout warn">
+        <h4>The cost, stated plainly</h4>
+        <p>Equivalence becomes conditional on graph construction, path set, repeat resolution and
+          coordinate convention. <b>Graph topology and path sampling can change the alleles and
+          breakpoints reported.</b> So a claim must state the graph build, version and parameters,
+          the input assemblies <em>and their order</em>, coordinate projection, repeat handling, and
+          benchmarks stratified by difficult region — not only a merged VCF.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">What it buys</span>
+        <h2>The measured gains, and their status</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>HPRC Release 1</h3><span class="tag ok">published</span></div>
+          <p>Relative to GRCh38 workflows:</p>
+          <dl class="rules">
+            <dt>−34%</dt><dd>small-variant discovery errors</dd>
+            <dt>+104%</dt><dd>SVs detected per haplotype</dd>
+          </dl>
+          <div class="measured">Liao et al., Nature 2023. A pangenome-aware DeepVariant analysis later
+            cut errors a further 5% using the full 88-haplotype HPRC-v1.1 graph.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>HPRC2</h3><span class="tag warn">preprint</span></div>
+          <p><b>460 haplotypes</b>, selected to cover &gt;99% of common variation in All of Us v8,
+            plus multi-assembly alignment, pantranscriptome, panepigenome and formal pangenome
+            coordinate systems.</p>
+          <dl class="rules">
+            <dt>−36.0–52.4%</dt><dd>total point-variant errors</dd>
+            <dt>−50.1–67.7%</dt><dd>SNP errors, vs GIAB v5.0</dd>
+          </dl>
+          <div class="measured">July 2026 preprint — <b>pending independent replication.</b> Cite it
+            as such.</div>
+        </div>
+      </div>
+      <div class="callout">
+        <h4>A nomenclature trap</h4>
+        <p>The official HPRC site dates <b>Data Release 2 to 12 May 2025</b> (&gt;230 samples, phased
+          near-T2T assemblies, annotations, graph alignments, methylation). The <b>460-haplotype
+          description is a separate July 2026 preprint.</b> These get conflated; they are different
+          artifacts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">T2T</span>
+        <h2>238 Mb that used to be a gap</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">CHM13 is 3.055 Gb and closes all autosomes and X telomere-to-telomere. It adds
+        or corrects <b>238 Mb of sequence non-collinear to GRCh38</b>.</p>
+      <pre class="fml gate"><b>what that 238 Mb is</b>
+
+  76 %   centromeric satellite
+  19 %   non-satellite segmental duplication
+   4 %   rDNA
+
+<span class="cmt">These regions can now be framed as COMPARATIVE SEQUENCE rather than gaps:
+centromere architecture, acrocentric/rDNA organisation, repeat expansions,
+paralogous loci, SD-mediated rearrangement.</span></pre>
+      <div class="callout warn">
+        <h4>But CHM13 is one haplotype</h4>
+        <p>It is not a population reference. Completeness and representativeness are different
+          properties, and a complete single genome does not solve reference bias — it relocates it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Construction</span>
+        <h2>The graph you build determines the variants you find</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:19%">Method</th><th style="width:34%">How</th><th>Consequence</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">minigraph</td><td>Incrementally maps assemblies onto an initially linear backbone; compact SV-oriented GFA</td><td>Fast and scalable, but approximate mapping <b>omits much small variation</b> and gives less precise breakpoints and allelic paths</td></tr>
+            <tr><td class="mono">Minigraph-Cactus</td><td>minigraph for large SV structure, then Cactus base-level alignment for small variants. Outputs GFA, HAL, VCF, <code>vg</code> indexes</td><td>In the HPRC build, unalignable centromeric sequence may be <b>clipped</b> — do not read it as repeat-complete</td></tr>
+            <tr><td class="mono">PGGB</td><td><b>Reference-free, all-to-all:</b> wfmash → seqwish → smoothxg → gfaffix</td><td>Its identity and segment parameters <b>materially determine graph topology</b>. Not a neutral rendering of the data</td></tr>
+            <tr><td class="mono">pangene</td><td>Gene graph — maps proteins to assemblies, each genome a walk</td><td>Good for gene-content comparison; not a substitute for sequence-resolved structure</td></tr>
+            <tr><td class="mono">impg</td><td>Implicit graph — queries an all-vs-all alignment network rather than materialising a whole-genome graph</td><td>Emerging. Same caveat as pangene for SV sequence and repeat architecture</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>What comparisons actually find</h4>
+        <p>PGGB and Minigraph-Cactus retain substantially more small variation than minigraph.
+          Published comparisons find <b>broadly similar SV sets but different breakpoint and path
+          precision, and different graph complexity</b>. The disagreement is in representation, not
+          mostly in discovery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Calling and comparing</span>
+        <h2>Merging SVs is an equivalence problem, not bookkeeping</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>Discovery</h3><span class="tag warn">no winner</span></div>
+          <p>Long-read alignment callers — Sniffles2, cuteSV, SVIM, pbsv, SVDSS — and
+            assembly-comparison approaches like dipcall and SVIM-asm.</p>
+          <div class="measured">Caller, aligner, technology, coverage, SV class and truth-set region
+            all change the result. <b>No caller is uniformly best.</b></div></div>
+        <div class="card"><div class="tagrow"><h3>Genotyping</h3><span class="tag ok">scales</span></div>
+          <p><code>vg</code>/Giraffe maps reads to haplotype-threaded graph paths; PanGenie is
+            k-mer-based for graph-represented variants.</p>
+          <div class="measured">Giraffe genotyped <b>167,000 known SVs in 5,202</b> short-read
+            genomes.</div></div>
+        <div class="card"><div class="tagrow"><h3>Merging</h3><span class="tag bad">the hard part</span></div>
+          <p>Jasmine jointly refines and merges population SV calls; Truvari benchmarks and collapses
+            using sequence <em>and</em> breakpoint similarity.</p>
+          <div class="measured">Truvari's standard <code>bench</code> comparison is <b>1-to-1</b>.
+            Report thresholds, and whether alleles were sequence-harmonised before comparison.</div></div>
+      </div>
+      <div class="callout warn">
+        <h4>Why merging deserves its own paragraph</h4>
+        <p>Two callers reporting "the same" 8 kb deletion at slightly different breakpoints, with
+          different inserted sequence, are making <em>different claims</em>. Whether they merge is a
+          threshold decision that changes every downstream count — population frequency, PAV,
+          gene-family size. It is not a formatting step.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">The standard</span>
+        <h2>What a PAV call must show</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml gate"><b>before "absent" means absent</b>
+
+1  high-quality assembly with INTACT FLANKS        <span class="cmt">Ch 6's syntenic interval</span>
+2  read remapping showing absence by BREADTH and DEPTH
+3  repeat- and paralogue-aware sequence search
+4  uniform reannotation or annotation lift-over    <span class="cmt">not two pipelines compared</span>
+
+<span class="cmt">One published Brassica rule: a gene is absent only when ALL exon bases have
+&lt; 2 reads AND &lt; 5% exon breadth. That is an EXAMPLE threshold, not a
+universal standard — but a paper with no such rule has no standard at all.</span></pre>
+      <div class="callout">
+        <h4>Expression, honestly</h4>
+        <p>The strongest direct evidence is for <b>allele- and haplotype-specific</b> transcript
+          quantification: <code>mpmap</code>+<code>rpvg</code> infers transcript-path abundance from a
+          spliced graph and reduces ASE bias. <b>I could not find a comparably established general
+          improvement figure for human bulk RNA-seq</b> across cohorts — so treat "graphs fix
+          expression quantification" as unsupported in the general case.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Liao et al., <em>A draft human pangenome reference</em>, Nature</td><td>2023</td><td><b>Start here.</b> The 34% / 104% result</td></tr>
+            <tr><td class="have">✓</td><td>Hickey et al., <em>Minigraph-Cactus</em>, Nature Biotech</td><td>2024</td><td>How the HPRC graph is built</td></tr>
+            <tr><td class="have">✓</td><td><em>SV-based pangenome construction has low sensitivity and precision</em>, Genome Biology</td><td>2023</td><td>The counterweight — read it against the two above</td></tr>
+            <tr><td class="have">✓</td><td>Li et al., <em>minigraph</em> (design &amp; construction), Genome Biology</td><td>2020</td><td>The SV-oriented graph</td></tr>
+            <tr><td class="have">✓</td><td><em>Comparing methods for constructing human pangenome graphs</em>, Genome Biology</td><td>2023</td><td>Where the methods differ</td></tr>
+            <tr><td class="have">✓</td><td>Jasmine and Iris, Nature Methods</td><td>2023</td><td>Population-scale SV merging</td></tr>
+            <tr><td class="lack">·</td><td>Nurk et al., <em>The complete sequence of a human genome</em>, Science</td><td>2022</td><td>T2T-CHM13, the 238 Mb <span class="note">missing — acquire</span></td></tr>
+            <tr><td class="lack">·</td><td>Garrison et al., <em>PGGB</em>, Nature Methods</td><td>2024</td><td>Reference-free construction <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 10 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Explain linear reference bias to someone who thinks one good reference is enough — with
+            a number.</li>
+          <li>Say what a PAV call must show before it counts as a real absence.</li>
+          <li>Name what minigraph, Minigraph-Cactus and PGGB each trade away.</li>
+          <li>Explain why SV merging is an equivalence problem and what it changes downstream.</li>
+          <li>State why T2T completeness does not by itself solve reference bias.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A crop paper</b> builds a pangenome from 32 accessions with minigraph, reports 1,842
+          genes showing presence/absence variation, finds PAV genes enriched for disease resistance,
+          and concludes that the dispensable genome is a reservoir of adaptive variation. What do you
+          ask?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>construction</dt><dd>minigraph is SV-oriented and approximate — it omits much small variation and gives imprecise breakpoints. For a gene-level PAV claim, that is the wrong instrument, or at least one needing a base-level cross-check.</dd>
+          <dt>backbone order</dt><dd>minigraph builds incrementally onto a backbone. Which accession was first, and does the PAV set change if the order changes?</dd>
+          <dt>absence evidence</dt><dd>Was absence established by read breadth and depth, or by a gene model failing to appear? The four-step standard, or none.</dd>
+          <dt>annotation uniformity</dt><dd>32 accessions annotated how? Non-uniform annotation manufactures PAV directly — the 15-fold result from Chapter 4.</dd>
+          <dt>the enrichment</dt><dd>Resistance genes are typically clustered, repetitive, tandemly arrayed and fast-evolving — the single category most prone to assembly collapse and annotation failure. Enrichment for them is what an artefact looks like as well as what biology looks like.</dd>
+        </dl>
+        <p>The honest reading is that the conclusion may be right — dispensable genomes really are
+          enriched for resistance genes — while the evidence as presented cannot distinguish it from
+          the artefact that mimics it.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../09_comparative_methods/09_comparative_methods.html">← Chapter 9 · Comparative methods</a>
+    <a href="../11_selection_inference/11_selection_inference.html">Chapter 11 · Selection inference →</a>
+  </nav>
+  <footer>
+    <div>Part IV of VI · Layer F4</div>
+    <div>Research <code>research/raw/c10_structure_pangenome.md</code> — 58 sourced URLs. HPRC2 figures are preprint.</div>
+  </footer>
+
+</div>
+</body>
+</html>

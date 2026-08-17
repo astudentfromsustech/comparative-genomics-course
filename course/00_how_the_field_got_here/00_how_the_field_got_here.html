@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How the field got here</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 00 · Prologue</p>
+    <h1>How the field got here</h1>
+    <p class="standfirst">Comparative genomics did not arrive as a discipline. It arrived four times,
+      each time because something about <em>what could be compared</em> changed — and each shift left
+      behind assumptions that the next one broke.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>Why does the field have the shape it has, and which of its habits are historical accidents?</dd></div>
+      <div><dt>Prerequisite</dt><dd>None. Read before or after Chapter 1</dd></div>
+      <div><dt>Corpus</dt><dd><code>F0_foundations</code>, plus the landmark papers filed across all layers</dd></div>
+      <div><dt>Understood when</dt><dd>You can date a paper's assumptions from its methods</dd></div>
+    </dl>
+  </header>
+
+  <!-- ================= 1 ================= -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div>
+        <span class="verb">The argument of this chapter</span>
+        <h2>Four shifts, and what each one broke</h2>
+      </div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">History is not decoration here. Most of the field's persistent bad habits are
+        <em>reasonable practices from an earlier era that nobody retired</em>. Knowing which era a
+        method comes from tells you what it silently assumes.</p>
+
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:22%">Shift</th><th style="width:30%">What changed</th><th>The assumption it broke</th></tr></thead>
+          <tbody>
+            <tr><td><b>1 · One molecule → whole genomes</b><br><span class="note">1965 – 1995</span></td>
+                <td>From comparing a single protein or rRNA to comparing complete gene sets</td>
+                <td>That a well-chosen molecule represents the organism. Gene trees stopped agreeing with each other</td></tr>
+            <tr><td><b>2 · Pairwise → clade-scale</b><br><span class="note">2002 – 2011</span></td>
+                <td>From two genomes to dozens, aligned together under a tree</td>
+                <td>That “conserved between A and B” is a statement about function. Power came from <em>depth</em> of the tree, not identity</td></tr>
+            <tr><td><b>3 · A reference → a graph</b><br><span class="note">2005 – 2023</span></td>
+                <td>From one linear coordinate system per species to a pangenome path through a clade</td>
+                <td>That a species has <em>a</em> genome. Presence/absence became a property of a sample, not of a taxon</td></tr>
+            <tr><td><b>4 · Difference → evidence grade</b><br><span class="note">2012 – now</span></td>
+                <td>From detecting differences to grading the claim a difference supports</td>
+                <td>That a significant test result is a finding. The ladder, and the reproducibility reckoning</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2 ================= -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div>
+        <span class="verb">The timeline</span>
+        <h2>Sixty years, compressed</h2>
+      </div>
+    </div>
+    <div class="stage-body">
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:900px" viewBox="0 0 900 430" role="img"
+               aria-label="A broken-axis timeline of comparative genomics from 1962 to 2026, divided into four eras: one-molecule comparison, the genome era, the clade-scale era, and the pangenome and evidence era.">
+            <defs>
+              <marker id="c0ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+              </marker>
+            </defs>
+
+            <!-- era bands -->
+            <rect x="20"  y="34" width="180" height="20" fill="var(--card-2)" stroke="var(--rule)"/>
+            <rect x="208" y="34" width="180" height="20" fill="var(--card-2)" stroke="var(--rule)"/>
+            <rect x="396" y="34" width="220" height="20" fill="var(--card-2)" stroke="var(--rule)"/>
+            <rect x="624" y="34" width="256" height="20" fill="var(--card-2)" stroke="var(--rule)"/>
+            <text class="t-hd" x="110" y="48" text-anchor="middle">ONE MOLECULE</text>
+            <text class="t-hd" x="298" y="48" text-anchor="middle">THE GENOME ERA</text>
+            <text class="t-hd" x="506" y="48" text-anchor="middle">CLADE SCALE</text>
+            <text class="t-hd" x="752" y="48" text-anchor="middle">PANGENOME &amp; EVIDENCE</text>
+
+            <!-- axis with breaks -->
+            <path class="dg-line" marker-end="url(#c0ar)" d="M20,80 L880,80"/>
+            <path class="dg-line" d="M200,72 L206,88 M204,72 L210,88"/>
+            <path class="dg-line" d="M388,72 L394,88 M392,72 L398,88"/>
+            <path class="dg-line" d="M616,72 L622,88 M620,72 L626,88"/>
+
+            <!-- era 1 -->
+            <g>
+              <path class="dg-line" d="M40,80 L40,102"/><circle cx="40" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="40" y="116" text-anchor="middle">1965</text>
+              <text class="t-sm" x="40" y="130" text-anchor="middle">molecular</text>
+              <text class="t-sm" x="40" y="141" text-anchor="middle">clock</text>
+
+              <path class="dg-line" d="M96,80 L96,102"/><circle cx="96" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="96" y="116" text-anchor="middle">1970</text>
+              <text class="t-sm" x="96" y="130" text-anchor="middle">Fitch:</text>
+              <text class="t-sm" x="96" y="141" text-anchor="middle">ortholog</text>
+
+              <path class="dg-sig" d="M152,80 L152,102"/><circle cx="152" cy="80" r="4" fill="var(--signal)"/>
+              <text class="t-mono f-sig" x="152" y="116" text-anchor="middle">1975</text>
+              <text class="t-sm" x="152" y="130" text-anchor="middle">King &amp;</text>
+              <text class="t-sm" x="152" y="141" text-anchor="middle">Wilson</text>
+
+              <path class="dg-sig" d="M186,80 L186,158"/><circle cx="186" cy="80" r="4" fill="var(--signal)"/>
+              <text class="t-mono f-sig" x="186" y="172" text-anchor="middle">1977</text>
+              <text class="t-sm" x="186" y="186" text-anchor="middle">Woese ·</text>
+              <text class="t-sm" x="186" y="197" text-anchor="middle">Sanger</text>
+            </g>
+
+            <!-- era 2 -->
+            <g>
+              <path class="dg-line" d="M232,80 L232,102"/><circle cx="232" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="232" y="116" text-anchor="middle">1995</text>
+              <text class="t-sm" x="232" y="130" text-anchor="middle">H. influenzae</text>
+              <text class="t-sm" x="232" y="141" text-anchor="middle">first genome</text>
+
+              <path class="dg-acc" d="M290,80 L290,158"/><circle cx="290" cy="80" r="4" fill="var(--accept)"/>
+              <text class="t-mono f-acc" x="290" y="172" text-anchor="middle">1996</text>
+              <text class="t-sm" x="290" y="186" text-anchor="middle">first genome</text>
+              <text class="t-sm" x="290" y="197" text-anchor="middle">COMPARISON</text>
+
+              <path class="dg-line" d="M348,80 L348,102"/><circle cx="348" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="348" y="116" text-anchor="middle">2001</text>
+              <text class="t-sm" x="348" y="130" text-anchor="middle">human</text>
+              <text class="t-sm" x="348" y="141" text-anchor="middle">draft ×2</text>
+            </g>
+
+            <!-- era 3 -->
+            <g>
+              <path class="dg-sig" d="M420,80 L420,102"/><circle cx="420" cy="80" r="4" fill="var(--signal)"/>
+              <text class="t-mono f-sig" x="420" y="116" text-anchor="middle">2002</text>
+              <text class="t-sm" x="420" y="130" text-anchor="middle">MOUSE —</text>
+              <text class="t-sm" x="420" y="141" text-anchor="middle">the real start</text>
+
+              <path class="dg-line" d="M482,80 L482,158"/><circle cx="482" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="482" y="172" text-anchor="middle">2005</text>
+              <text class="t-sm" x="482" y="186" text-anchor="middle">phastCons ·</text>
+              <text class="t-sm" x="482" y="197" text-anchor="middle">pan-genome</text>
+
+              <path class="dg-line" d="M544,80 L544,102"/><circle cx="544" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="544" y="116" text-anchor="middle">2007</text>
+              <text class="t-sm" x="544" y="130" text-anchor="middle">12 Drosophila</text>
+
+              <path class="dg-line" d="M596,80 L596,158"/><circle cx="596" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="596" y="172" text-anchor="middle">2010–11</text>
+              <text class="t-sm" x="596" y="186" text-anchor="middle">Neandertal ·</text>
+              <text class="t-sm" x="596" y="197" text-anchor="middle">29 mammals</text>
+            </g>
+
+            <!-- era 4 -->
+            <g>
+              <path class="dg-sig" d="M648,80 L648,102"/><circle cx="648" cy="80" r="4" fill="var(--signal)"/>
+              <text class="t-mono f-sig" x="648" y="116" text-anchor="middle">2012</text>
+              <text class="t-sm" x="648" y="130" text-anchor="middle">ENCODE</text>
+              <text class="t-sm" x="648" y="141" text-anchor="middle">fight</text>
+
+              <path class="dg-line" d="M706,80 L706,158"/><circle cx="706" cy="80" r="3.5" fill="currentColor"/>
+              <text class="t-mono" x="706" y="172" text-anchor="middle">2018</text>
+              <text class="t-sm" x="706" y="186" text-anchor="middle">Earth</text>
+              <text class="t-sm" x="706" y="197" text-anchor="middle">BioGenome</text>
+
+              <path class="dg-acc" d="M770,80 L770,102"/><circle cx="770" cy="80" r="4" fill="var(--accept)"/>
+              <text class="t-mono f-acc" x="770" y="116" text-anchor="middle">2022</text>
+              <text class="t-sm" x="770" y="130" text-anchor="middle">T2T-CHM13</text>
+
+              <path class="dg-acc" d="M840,80 L840,158"/><circle cx="840" cy="80" r="4" fill="var(--accept)"/>
+              <text class="t-mono f-acc" x="840" y="172" text-anchor="middle">2023</text>
+              <text class="t-sm" x="840" y="186" text-anchor="middle">draft human</text>
+              <text class="t-sm" x="840" y="197" text-anchor="middle">pangenome</text>
+            </g>
+
+            <!-- the four shifts as spanning bars -->
+            <g>
+              <path class="dg-dash" d="M40,240 L290,240"/>
+              <text class="t-lbl" x="46" y="234">1 · one molecule → whole genomes</text>
+              <path class="dg-dash" d="M420,272 L596,272"/>
+              <text class="t-lbl" x="426" y="266">2 · pairwise → clade-scale</text>
+              <path class="dg-dash" d="M482,304 L840,304"/>
+              <text class="t-lbl" x="488" y="298">3 · a reference → a graph</text>
+              <path class="dg-dash" d="M648,336 L880,336"/>
+              <text class="t-lbl" x="654" y="330">4 · difference → evidence grade</text>
+            </g>
+
+            <text class="t-sm f-sig" x="20" y="372">Red = a paper that changed what the field thought it was doing.</text>
+            <text class="t-sm f-acc" x="20" y="388">Teal = a paper that changed what the field could physically compare.</text>
+            <text class="t-sm" x="20" y="404">The axis is broken — the gaps between eras are decades, and nothing important happened in some of them.</text>
+          </svg>
+        </div>
+        <figcaption><b>Note where the real start is.</b> The human genome papers of 2001 are the famous
+          ones, but a single genome answers almost nothing comparative. The field begins in earnest at
+          <b>mouse 2002</b>, when there were finally two vertebrate genomes to put side by side — and,
+          less famously, at <b>1996</b>, when the second bacterial genome made the first genome-scale
+          comparison possible at all.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= 3 ================= -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div>
+        <span class="verb">Era by era</span>
+        <h2>What each period believed, and why it was wrong</h2>
+      </div>
+    </div>
+    <div class="stage-body">
+
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><span class="tag">1962 – 1994</span></div>
+          <h3>One molecule</h3>
+          <p>Zuckerkandl and Pauling's molecular clock made sequence difference into <em>time</em>.
+            Fitch's 1970 distinction between homologous and analogous proteins gave the field its
+            vocabulary — and its first precise idea, that the <em>event</em> separating two sequences
+            is what matters.</p>
+          <p>Woese and Fox then did the boldest possible version: compare one molecule, 16S rRNA,
+            across all of life, and redraw the tree into three domains. It established the founding
+            move — <b>sequence comparison as a source of evolutionary truth</b>.</p>
+          <p class="measured"><b>The assumption it left behind:</b> that a carefully chosen molecule
+            speaks for the organism. Genome-scale data killed this — different genes give different
+            trees, which is Chapter 6's whole subject.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><span class="tag">1995 – 2001</span></div>
+          <h3>The genome era</h3>
+          <p><em>Haemophilus influenzae</em> (1995) was the first free-living organism sequenced. But
+            the comparative discipline starts in <b>1996</b>, when a second bacterial genome allowed
+            the first genome-scale comparison and the derivation of a “minimal gene set”.</p>
+          <p>That was the template: take two complete gene inventories, intersect them, interpret the
+            intersection. Yeast, worm, fly and <em>Arabidopsis</em> followed; then two human drafts in
+            2001.</p>
+          <p class="measured"><b>The assumption it left behind:</b> that a gene inventory is a fact
+            about an organism rather than an output of an annotation pipeline. Chapter 2 is the
+            correction.</p>
+        </div>
+      </div>
+
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><span class="tag bad">the pivot</span><span class="tag">2002 – 2011</span></div>
+          <h3>Clade scale</h3>
+          <p>Mouse (2002) is where comparison becomes the <em>method</em> rather than an afterthought:
+            conserved sequence between human and mouse identified functional elements that neither
+            genome alone revealed. Hardison's 2003 primer names the discipline.</p>
+          <p>Then the insight that made it powerful: statistical power for detecting constraint comes
+            from <b>total branch length of the tree</b>, not from any one pairwise identity. Hence
+            phastCons and GERP (2005), 12 <em>Drosophila</em> genomes (2007), 29 mammals (2011).
+            Meanwhile Tettelin's pan-genome (2005) and the Neandertal draft (2010) planted the two
+            ideas that would dominate the next era.</p>
+          <p class="measured"><b>The assumption it left behind:</b> that conserved means functional,
+            and that one reference genome per species suffices.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><span class="tag">2012 – now</span></div>
+          <h3>Pangenome and evidence</h3>
+          <p>ENCODE (2012) forced the field to separate <b>biochemical activity</b> from
+            <b>evolutionary constraint</b> — a fight that is really about what counts as evidence.</p>
+          <p>Simultaneously the substrate changed again: long reads, then telomere-to-telomere
+            assemblies (2022), then the draft human pangenome reference (2023). The coordinate system
+            stopped being a line and became a graph. Earth BioGenome (2018) and VGP made
+            <em>comparability across thousands of genomes</em> the binding constraint rather than
+            sequencing itself.</p>
+          <p class="measured"><b>The open question:</b> whether machine-learning models trained on
+            sequence can replace alignment-based comparative inference. Chapter 13 argues: not yet, and
+            the evidence for the strong claims is mostly author-run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4 ================= -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div>
+        <span class="verb">Why it matters practically</span>
+        <h2>Dating a paper's assumptions from its methods</h2>
+      </div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This is the chapter's payoff for refereeing. Methods carry the era they were
+        designed in, and using one outside its era is a specific, nameable mistake.</p>
+
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:30%">If a 2026 paper does this…</th><th style="width:18%">It is reasoning like</th><th>The era-specific assumption it is importing</th></tr></thead>
+          <tbody>
+            <tr><td>Uses reciprocal best BLAST hit for orthology in plants</td><td class="mono">~1996</td><td>That gene inventories intersect cleanly — pre-dates knowing duplication-rich clades break it (ch 3)</td></tr>
+            <tr><td>Reports one concatenated tree with bootstraps and no concordance factors</td><td class="mono">~2001</td><td>That genes share one history — pre-dates the multispecies coalescent becoming standard (ch 6)</td></tr>
+            <tr><td>Calls an element functional because it is conserved</td><td class="mono">~2005</td><td>Constraint implies the function you are interested in — the ENCODE fight (ch 12)</td></tr>
+            <tr><td>Treats one assembly per species as the species</td><td class="mono">~2002</td><td>That a species has <em>a</em> genome — pre-pangenome (ch 8)</td></tr>
+            <tr><td>Certifies an assembly with N50</td><td class="mono">~2010</td><td>Contiguity is quality — pre-dates QV, k-mer completeness, false-duplication metrics (ch 2)</td></tr>
+            <tr><td>Reports significant dN/dS with no alignment audit or correction</td><td class="mono">~2007</td><td>That a passing likelihood-ratio test is a finding (ch 9)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <h4>The generous reading, which is often correct</h4>
+        <p>None of these are stupid. Each was best practice once, and each persists because it is
+          cheap, familiar, and usually gives an answer that looks reasonable. The referee's job is not
+          to sneer at the method but to ask whether the <em>specific</em> conditions that break it
+          apply here — duplication-rich clade, short internal branches, one individual per species.
+          Often they do not, and the old method is fine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5 ================= -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div>
+        <span class="verb">Reading</span>
+        <h2>The landmarks, and where they are filed</h2>
+      </div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:40%">Paper</th><th style="width:8%">Year</th><th style="width:22%">Filed under</th><th>Its era</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Woese &amp; Fox, <em>Primary kingdoms</em>, PNAS</td><td>1977</td><td class="mono">F0_foundations</td><td>One molecule</td></tr>
+            <tr><td class="lack">·</td><td>Fitch, <em>Homologous vs analogous proteins</em></td><td>1970</td><td class="mono">F2/orthology</td><td>One molecule</td></tr>
+            <tr><td class="have">✓</td><td>King &amp; Wilson, <em>Evolution at two levels</em>, Science</td><td>1975</td><td class="mono">F6/regulatory_noncoding</td><td>One molecule — and still open</td></tr>
+            <tr><td class="have">✓</td><td>IHGSC, <em>Initial sequencing of the human genome</em></td><td>2001</td><td class="mono">F0_foundations</td><td>Genome era</td></tr>
+            <tr><td class="have">✓</td><td><b>Mouse Genome Consortium</b>, Nature</td><td>2002</td><td class="mono">F0_foundations</td><td><b>The pivot — read this one</b></td></tr>
+            <tr><td class="have">✓</td><td>Hardison, <em>Comparative genomics</em>, PLoS Biology</td><td>2003</td><td class="mono">F0_foundations</td><td>Clade scale · the primer</td></tr>
+            <tr><td class="lack">·</td><td>Tettelin et al., <em>The microbial pan-genome</em></td><td>2005</td><td class="mono">F4/pangenome_graph</td><td>Plants the pangenome idea</td></tr>
+            <tr><td class="have">✓</td><td>Green et al., <em>Draft Neandertal genome</em>, Science</td><td>2010</td><td class="mono">F5/introgression</td><td>Introgression enters</td></tr>
+            <tr><td class="have">✓</td><td>ENCODE Consortium, Nature</td><td>2012</td><td class="mono">F0_foundations</td><td>Evidence era begins</td></tr>
+            <tr><td class="have">✓</td><td>Earth BioGenome Project, PNAS</td><td>2018</td><td class="mono">F0_foundations</td><td>Scale as constraint</td></tr>
+            <tr><td class="have">✓</td><td>Rhie et al., VGP, Nature</td><td>2021</td><td class="mono">F1/qc_annotation</td><td>Quality as constraint</td></tr>
+            <tr><td class="have">✓</td><td>Liao et al., <em>Draft human pangenome reference</em></td><td>2023</td><td class="mono">F4/pangenome_graph</td><td>The graph era</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= test ================= -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div>
+        <span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 0 when…</h2>
+      </div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Four things you can do without notes</h3>
+        <ol>
+          <li>Name the four shifts and, for each, the assumption it broke.</li>
+          <li>Explain why 2002 rather than 2001 is the field's real starting point.</li>
+          <li>Given a method, name roughly the era it was designed for and the condition that breaks
+            it.</li>
+          <li>Say why statistical power for detecting constraint comes from tree depth rather than
+            pairwise identity.</li>
+        </ol>
+      </div>
+
+      <details class="walk">
+        <summary>Self-check — try it before opening</summary>
+        <p><b>A 2026 manuscript</b> compares two insect genomes, identifies conserved non-coding
+          elements by pairwise alignment at &gt;70% identity, and proposes them as regulatory
+          elements. Which era is this reasoning from, and what is the specific problem?</p>
+        <p style="margin-top:14px"><b>Answer.</b> This is <b>~2002 reasoning</b> — pairwise conserved
+          non-coding sequence as a functional screen — and it has two era-specific problems. First,
+          <b>pairwise identity is not constraint</b>: at a single divergence you cannot distinguish
+          sequence conserved by selection from sequence that has simply not had time to diverge. That
+          is exactly why the field moved to phylogenetic methods (phastCons, GERP) that estimate
+          substitution rate against a neutral expectation across many lineages. Second, an identity
+          <em>threshold</em> is not a statistical test — it has no null, so it has no false-positive
+          rate.</p>
+        <p>The fix is era-appropriate: multiple species spanning enough branch length, a neutral model,
+          and a rate-based statistic. And then, per Chapter 12, constraint still would not establish
+          that the element is an enhancer — that needs an assay.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../course.html">← Course index</a>
+    <a href="../01_what_the_field_asks/01_what_the_field_asks.html">Chapter 1 · What the field actually asks →</a>
+  </nav>
+  <footer>
+    <div>Prologue · Comparative genomics as a research field</div>
+    <div>Corpus: <code>resources/papers/F0_foundations/</code></div>
+  </footer>
+
+</div>
+</body>
+</html>

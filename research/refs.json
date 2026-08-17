@@ -1,0 +1,2746 @@
+[
+  {
+    "doi": "10.1038/35057062",
+    "title": "Initial sequencing and analysis of the human genome",
+    "journal": "Nature",
+    "year": 2001,
+    "journal_short": "Nature",
+    "keywords": [
+      "IHGSC",
+      "human-genome",
+      "sequencing"
+    ],
+    "stem": "Nature2001_IHGSC-human-genome-sequencing",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "International Human Genome Sequencing Consortium"
+  },
+  {
+    "doi": "10.1126/science.1058040",
+    "title": "The sequence of the human genome",
+    "journal": "Science",
+    "year": 2001,
+    "journal_short": "Science",
+    "keywords": [
+      "Venter",
+      "human-genome",
+      "sequence"
+    ],
+    "stem": "Science2001_Venter-human-genome-sequence",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "Venter JC, Adams MD, Myers EW, et al"
+  },
+  {
+    "doi": "10.1038/nature01262",
+    "title": "Initial sequencing and comparative analysis of the mouse genome",
+    "journal": "Nature",
+    "year": 2002,
+    "journal_short": "Nature",
+    "keywords": [
+      "mouse-genome",
+      "comparative",
+      "sequencing"
+    ],
+    "stem": "Nature2002_mouse-genome-comparative-sequencing",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "Mouse Genome Sequencing Consortium"
+  },
+  {
+    "doi": "10.1101/gr.8.3.163",
+    "title": "Phylogenomics: improving functional predictions for uncharacterized genes by evolutionary analysis",
+    "journal": "Genome Research",
+    "year": 1998,
+    "journal_short": "GR",
+    "keywords": [
+      "Eisen",
+      "phylogenomics",
+      "function"
+    ],
+    "stem": "GR1998_Eisen-phylogenomics-function",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "Eisen JA"
+  },
+  {
+    "doi": "10.1371/journal.pbio.0000058",
+    "title": "Comparative genomics",
+    "journal": "PLoS Biology",
+    "year": 2003,
+    "journal_short": "PLOSBiol",
+    "keywords": [
+      "Hardison",
+      "comparative-genomics",
+      "primer"
+    ],
+    "stem": "PLOSBiol2003_Hardison-comparative-genomics-primer",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "Hardison RC"
+  },
+  {
+    "doi": "10.1073/pnas.74.11.5088",
+    "title": "Phylogenetic structure of the prokaryotic domain: the primary kingdoms",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 1977,
+    "journal_short": "PNAS",
+    "keywords": [
+      "Woese",
+      "primary-kingdoms",
+      "16S"
+    ],
+    "stem": "PNAS1977_Woese-primary-kingdoms-16S",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "Woese CR, Fox GE"
+  },
+  {
+    "doi": "10.2307/2412448",
+    "title": "Distinguishing homologous from analogous proteins",
+    "journal": "Systematic Zoology",
+    "year": 1970,
+    "journal_short": "SystZool",
+    "keywords": [
+      "Fitch",
+      "homology",
+      "analogy"
+    ],
+    "stem": "SystZool1970_Fitch-homology-analogy",
+    "module": "F2_homology/orthology",
+    "repo_url": null,
+    "authors": "Fitch WM"
+  },
+  {
+    "doi": "10.1146/annurev.genet.39.073003.114725",
+    "title": "Orthologs, paralogs, and evolutionary genomics",
+    "journal": "Annual Review of Genetics",
+    "year": 2005,
+    "journal_short": "AnnRevGenet",
+    "keywords": [
+      "Orthologs",
+      "paralogs",
+      "evolutionary"
+    ],
+    "stem": "AnnRevGenet2005_Orthologs-paralogs-evolutionary",
+    "module": "F2_homology/orthology",
+    "repo_url": null,
+    "authors": "Koonin EV"
+  },
+  {
+    "doi": "10.1038/nrg3456",
+    "title": "Functional and evolutionary implications of gene orthology",
+    "journal": "Nature Reviews Genetics",
+    "year": 2013,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Functional",
+      "evolutionary",
+      "implications"
+    ],
+    "stem": "NatRevGenet2013_Functional-evolutionary-implications",
+    "module": "F2_homology/orthology",
+    "repo_url": null,
+    "authors": "Gabaldon T, Koonin EV"
+  },
+  {
+    "doi": "10.1101/gr.1224503",
+    "title": "OrthoMCL: identification of ortholog groups for eukaryotic genomes",
+    "journal": "Genome Research",
+    "year": 2003,
+    "journal_short": "GR",
+    "keywords": [
+      "OrthoMCL",
+      "ortholog",
+      "groups"
+    ],
+    "stem": "GR2003_OrthoMCL-ortholog-groups",
+    "module": "F2_homology/orthology",
+    "repo_url": "https://github.com/stajichlab/OrthoMCL",
+    "authors": "Li L, Stoeckert CJ Jr, Roos DS"
+  },
+  {
+    "doi": "10.1186/s13059-015-0721-2",
+    "title": "OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy",
+    "journal": "Genome Biology",
+    "year": 2015,
+    "journal_short": "GB",
+    "keywords": [
+      "OrthoFinder",
+      "solving",
+      "fundamental"
+    ],
+    "stem": "GB2015_OrthoFinder-solving-fundamental",
+    "module": "F2_homology/orthology",
+    "repo_url": "https://github.com/davidemms/OrthoFinder",
+    "authors": "Emms DM, Kelly S"
+  },
+  {
+    "doi": "10.1186/s13059-019-1832-y",
+    "title": "OrthoFinder: phylogenetic orthology inference for comparative genomics",
+    "journal": "Genome Biology",
+    "year": 2019,
+    "journal_short": "GB",
+    "keywords": [
+      "OrthoFinder",
+      "phylogenetic",
+      "orthology"
+    ],
+    "stem": "GB2019_OrthoFinder-phylogenetic-orthology",
+    "module": "F2_homology/orthology",
+    "repo_url": "https://github.com/davidemms/OrthoFinder",
+    "authors": "Emms DM, Kelly S"
+  },
+  {
+    "doi": "10.1093/nar/gkaa1007",
+    "title": "OMA orthology in 2021: website overhaul, conserved isoforms, ancestral gene order and more",
+    "journal": "Nucleic Acids Research",
+    "year": 2021,
+    "journal_short": "NAR",
+    "keywords": [
+      "OMA",
+      "orthology",
+      "website"
+    ],
+    "stem": "NAR2021_OMA-orthology-website",
+    "module": "F2_homology/orthology",
+    "repo_url": null,
+    "authors": "Altenhoff AM, Train CM, Gilbert KJ, et al"
+  },
+  {
+    "doi": "10.1093/nar/gky1085",
+    "title": "eggNOG 5.0: a hierarchical, functionally and phylogenetically annotated orthology resource",
+    "journal": "Nucleic Acids Research",
+    "year": 2019,
+    "journal_short": "NAR",
+    "keywords": [
+      "eggNOG-50",
+      "hierarchical",
+      "functionally"
+    ],
+    "stem": "NAR2019_eggNOG-50-hierarchical-functionally",
+    "module": "F2_homology/orthology",
+    "repo_url": null,
+    "authors": "Huerta-Cepas J, Szklarczyk D, Heller D, et al"
+  },
+  {
+    "doi": "10.1093/molbev/msab293",
+    "title": "eggNOG-mapper v2: functional annotation, orthology assignments, and domain prediction at the metagenomic scale",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2021,
+    "journal_short": "MBE",
+    "keywords": [
+      "eggNOG-mapper-v2",
+      "functional",
+      "annotation"
+    ],
+    "stem": "MBE2021_eggNOG-mapper-v2-functional-annotation",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://github.com/eggnogdb/eggnog-mapper",
+    "authors": "Cantalapiedra CP, Hernandez-Plaza A, Letunic I, Bork P, Huerta-Cepas J"
+  },
+  {
+    "doi": "10.1093/nar/gkaa1009",
+    "title": "OrthoDB in 2020: evolutionary and functional annotations of orthologs",
+    "journal": "Nucleic Acids Research",
+    "year": 2021,
+    "journal_short": "NAR",
+    "keywords": [
+      "OrthoDB-in-2020",
+      "evolutionary",
+      "functional"
+    ],
+    "stem": "NAR2021_OrthoDB-in-2020-evolutionary-functional",
+    "module": "F2_homology/orthology",
+    "repo_url": null,
+    "authors": "Zdobnov EM, Kuznetsov D, Tegenfeldt F, et al"
+  },
+  {
+    "doi": "10.1093/nar/gkr1293",
+    "title": "MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity",
+    "journal": "Nucleic Acids Research",
+    "year": 2012,
+    "journal_short": "NAR",
+    "keywords": [
+      "MCScanX",
+      "toolkit",
+      "detection"
+    ],
+    "stem": "NAR2012_MCScanX-toolkit-detection",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": "https://github.com/wyp1125/MCScanX",
+    "authors": "Wang Y, Tang H, DeBarry JD, et al"
+  },
+  {
+    "doi": "10.1093/nar/27.11.2369",
+    "title": "Alignment of whole genomes",
+    "journal": "Nucleic Acids Research",
+    "year": 1999,
+    "journal_short": "NAR",
+    "keywords": [
+      "Alignment",
+      "whole",
+      "genomes"
+    ],
+    "stem": "NAR1999_Alignment-whole-genomes",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": null,
+    "authors": "Delcher AL, Kasif S, Fleischmann RD, Peterson J, White O, Salzberg SL"
+  },
+  {
+    "doi": "10.1186/gb-2004-5-2-r12",
+    "title": "Versatile and open software for comparing large genomes",
+    "journal": "Genome Biology",
+    "year": 2004,
+    "journal_short": "GB",
+    "keywords": [
+      "Versatile",
+      "open",
+      "software"
+    ],
+    "stem": "GB2004_Versatile-open-software",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": "https://github.com/mummer4/mummer",
+    "authors": "Kurtz S, Phillippy A, Delcher AL, et al"
+  },
+  {
+    "doi": "10.1093/bioinformatics/bty191",
+    "title": "Minimap2: pairwise alignment for nucleotide sequences",
+    "journal": "Bioinformatics",
+    "year": 2018,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "Minimap2",
+      "pairwise",
+      "alignment"
+    ],
+    "stem": "Bioinf2018_Minimap2-pairwise-alignment",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": "https://github.com/lh3/minimap2",
+    "authors": "Li H"
+  },
+  {
+    "doi": "10.1371/journal.pone.0011147",
+    "title": "progressiveMauve: multiple genome alignment with gene gain, loss and rearrangement",
+    "journal": "PLoS ONE",
+    "year": 2010,
+    "journal_short": "PLOSONE",
+    "keywords": [
+      "progressiveMauve",
+      "multiple",
+      "genome"
+    ],
+    "stem": "PLOSONE2010_progressiveMauve-multiple-genome",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": null,
+    "authors": "Darling AE, Mau B, Perna NT"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btt128",
+    "title": "HAL: a hierarchical format for storing and analyzing multiple genome alignments",
+    "journal": "Bioinformatics",
+    "year": 2013,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "HAL",
+      "hierarchical",
+      "format"
+    ],
+    "stem": "Bioinf2013_HAL-hierarchical-format",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": "https://github.com/ComparativeGenomicsToolkit/hal",
+    "authors": "Hickey G, Paten B, Earl D, Zerbino D, Haussler D"
+  },
+  {
+    "doi": "10.1038/s41586-020-2871-y",
+    "title": "Progressive Cactus is a multiple-genome aligner for the thousand-genome era",
+    "journal": "Nature",
+    "year": 2020,
+    "journal_short": "Nature",
+    "keywords": [
+      "Progressive",
+      "Cactus",
+      "multiple-genome"
+    ],
+    "stem": "Nature2020_Progressive-Cactus-multiple-genome",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": "https://github.com/ComparativeGenomicsToolkit/cactus",
+    "authors": "Armstrong J, Hickey G, Diekhans M, et al"
+  },
+  {
+    "doi": "10.1038/s41467-020-19777-8",
+    "title": "Scalable multiple whole-genome alignment and locally collinear block construction with SibeliaZ",
+    "journal": "Nature Communications",
+    "year": 2020,
+    "journal_short": "NC",
+    "keywords": [
+      "Scalable",
+      "multiple",
+      "whole-genome"
+    ],
+    "stem": "NC2020_Scalable-multiple-whole-genome",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": "https://github.com/medvedevgroup/SibeliaZ",
+    "authors": "Minkin I, Medvedev P"
+  },
+  {
+    "doi": "10.1186/s13059-016-0997-x",
+    "title": "Mash: fast genome and metagenome distance estimation using MinHash",
+    "journal": "Genome Biology",
+    "year": 2016,
+    "journal_short": "GB",
+    "keywords": [
+      "Mash",
+      "fast",
+      "genome"
+    ],
+    "stem": "GB2016_Mash-fast-genome",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": "https://github.com/marbl/Mash",
+    "authors": "Ondov BD, Treangen TJ, Melsted P, et al"
+  },
+  {
+    "doi": "10.1073/pnas.0409727102",
+    "title": "Genomic insights that advance the species definition for prokaryotes",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2005,
+    "journal_short": "PNAS",
+    "keywords": [
+      "Genomic",
+      "advance",
+      "species"
+    ],
+    "stem": "PNAS2005_Genomic-advance-species",
+    "module": "X_practice/microbial_taxonomy",
+    "repo_url": null,
+    "authors": "Konstantinidis KT, Tiedje JM"
+  },
+  {
+    "doi": "10.1038/s41467-018-07641-9",
+    "title": "High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries",
+    "journal": "Nature Communications",
+    "year": 2018,
+    "journal_short": "NC",
+    "keywords": [
+      "High",
+      "throughput",
+      "ANI"
+    ],
+    "stem": "NC2018_High-throughput-ANI",
+    "module": "X_practice/microbial_taxonomy",
+    "repo_url": "https://github.com/ParBLiSS/FastANI",
+    "authors": "Jain C, Rodriguez-R LM, Phillippy AM, Konstantinidis KT, Aluru S"
+  },
+  {
+    "doi": "10.1038/nbt.4229",
+    "title": "A standardized bacterial taxonomy based on genome phylogeny substantially revises the tree of life",
+    "journal": "Nature Biotechnology",
+    "year": 2018,
+    "journal_short": "NBT",
+    "keywords": [
+      "standardized",
+      "bacterial",
+      "taxonomy"
+    ],
+    "stem": "NBT2018_standardized-bacterial-taxonomy",
+    "module": "X_practice/microbial_taxonomy",
+    "repo_url": null,
+    "authors": "Parks DH, Chuvochina M, Waite DW, et al"
+  },
+  {
+    "doi": "10.1038/s41587-020-0501-8",
+    "title": "A complete domain-to-species taxonomy for Bacteria and Archaea",
+    "journal": "Nature Biotechnology",
+    "year": 2020,
+    "journal_short": "NBT",
+    "keywords": [
+      "domain-to-species",
+      "taxonomy",
+      "Bacteria"
+    ],
+    "stem": "NBT2020_domain-to-species-taxonomy-Bacteria",
+    "module": "X_practice/microbial_taxonomy",
+    "repo_url": null,
+    "authors": "Parks DH, Chuvochina M, Chaumeil PA, Rinke C, Mussig AJ, Hugenholtz P"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btv351",
+    "title": "BUSCO: assessing genome assembly and annotation completeness with single-copy orthologs",
+    "journal": "Bioinformatics",
+    "year": 2015,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "BUSCO",
+      "genome",
+      "assembly"
+    ],
+    "stem": "Bioinf2015_BUSCO-genome-assembly",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://gitlab.com/ezlab/busco",
+    "authors": "Simao FA, Waterhouse RM, Ioannidis P, Kriventseva EV, Zdobnov EM"
+  },
+  {
+    "doi": "10.1007/978-1-4939-9173-0_14",
+    "title": "BUSCO: assessing genome assembly and annotation completeness",
+    "journal": "Methods in Molecular Biology",
+    "year": 2019,
+    "journal_short": "MiMB",
+    "keywords": [
+      "BUSCO",
+      "genome",
+      "assembly"
+    ],
+    "stem": "MiMB2019_BUSCO-genome-assembly",
+    "module": "F1_data/qc_annotation",
+    "repo_url": null,
+    "authors": "Seppey M, Manni M, Zdobnov EM"
+  },
+  {
+    "doi": "10.1093/molbev/msab199",
+    "title": "BUSCO update: novel and streamlined workflows along with broader and deeper phylogenetic coverage for scoring of eukaryotic, prokaryotic, and viral genomes",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2021,
+    "journal_short": "MBE",
+    "keywords": [
+      "BUSCO-update",
+      "streamlined",
+      "workflows"
+    ],
+    "stem": "MBE2021_BUSCO-update-streamlined-workflows",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://gitlab.com/ezlab/busco",
+    "authors": "Manni M, Berkeley MR, Seppey M, Simao FA, Zdobnov EM"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btt086",
+    "title": "QUAST: quality assessment tool for genome assemblies",
+    "journal": "Bioinformatics",
+    "year": 2013,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "QUAST",
+      "quality",
+      "assessment"
+    ],
+    "stem": "Bioinf2013_QUAST-quality-assessment",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://github.com/ablab/quast",
+    "authors": "Gurevich A, Saveliev V, Vyahhi N, Tesler G"
+  },
+  {
+    "doi": "10.1186/s13059-020-02134-9",
+    "title": "Merqury: reference-free quality, completeness, and phasing assessment for genome assemblies",
+    "journal": "Genome Biology",
+    "year": 2020,
+    "journal_short": "GB",
+    "keywords": [
+      "Merqury",
+      "reference-free",
+      "quality"
+    ],
+    "stem": "GB2020_Merqury-reference-free-quality",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://github.com/marbl/merqury",
+    "authors": "Rhie A, Walenz BP, Koren S, Phillippy AM"
+  },
+  {
+    "doi": "10.1093/nar/gky730",
+    "title": "Assessing genome assembly quality using the LTR Assembly Index",
+    "journal": "Nucleic Acids Research",
+    "year": 2018,
+    "journal_short": "NAR",
+    "keywords": [
+      "genome",
+      "assembly",
+      "quality"
+    ],
+    "stem": "NAR2018_genome-assembly-quality",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://github.com/oushujun/LTR_retriever",
+    "authors": "Ou S, Chen J, Jiang N"
+  },
+  {
+    "doi": "10.1073/pnas.1921046117",
+    "title": "RepeatModeler2 for automated genomic discovery of transposable element families",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2020,
+    "journal_short": "PNAS",
+    "keywords": [
+      "RepeatModeler2",
+      "automated",
+      "genomic"
+    ],
+    "stem": "PNAS2020_RepeatModeler2-automated-genomic",
+    "module": "F1_data/repeats_te",
+    "repo_url": "https://github.com/Dfam-consortium/RepeatModeler",
+    "authors": "Flynn JM, Hubley R, Goubert C, et al"
+  },
+  {
+    "doi": "10.1002/0471250953.bi0410s25",
+    "title": "Using RepeatMasker to identify repetitive elements in genomic sequences",
+    "journal": "Current Protocols in Bioinformatics",
+    "year": 2009,
+    "journal_short": "CurrProtBioinf",
+    "keywords": [
+      "RepeatMasker",
+      "identify",
+      "repetitive"
+    ],
+    "stem": "CurrProtBioinf2009_RepeatMasker-identify-repetitive",
+    "module": "F1_data/repeats_te",
+    "repo_url": null,
+    "authors": "Tarailo-Graovac M, Chen N"
+  },
+  {
+    "doi": "10.1186/s13059-019-1905-y",
+    "title": "Benchmarking transposable element annotation methods for creation of a streamlined, comprehensive pipeline",
+    "journal": "Genome Biology",
+    "year": 2019,
+    "journal_short": "GB",
+    "keywords": [
+      "Benchmarking",
+      "transposable",
+      "element"
+    ],
+    "stem": "GB2019_Benchmarking-transposable-element",
+    "module": "F1_data/repeats_te",
+    "repo_url": "https://github.com/oushujun/EDTA",
+    "authors": "Ou S, Su W, Liao Y, et al"
+  },
+  {
+    "doi": "10.1038/nrg2165",
+    "title": "A unified classification system for eukaryotic transposable elements",
+    "journal": "Nature Reviews Genetics",
+    "year": 2007,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "unified",
+      "classification",
+      "system"
+    ],
+    "stem": "NatRevGenet2007_unified-classification-system",
+    "module": "F1_data/repeats_te",
+    "repo_url": null,
+    "authors": "Wicker T, Sabot F, Hua-Van A, et al"
+  },
+  {
+    "doi": "10.1186/s13059-018-1577-z",
+    "title": "Ten things you should know about transposable elements",
+    "journal": "Genome Biology",
+    "year": 2018,
+    "journal_short": "GB",
+    "keywords": [
+      "things",
+      "you",
+      "should"
+    ],
+    "stem": "GB2018_things-you-should",
+    "module": "F1_data/repeats_te",
+    "repo_url": null,
+    "authors": "Bourque G, Burns KH, Gehring M, et al"
+  },
+  {
+    "doi": "10.1146/annurev-genet-040620-022145",
+    "title": "A field guide to eukaryotic transposable elements",
+    "journal": "Annual Review of Genetics",
+    "year": 2020,
+    "journal_short": "AnnRevGenet",
+    "keywords": [
+      "field",
+      "guide",
+      "eukaryotic"
+    ],
+    "stem": "AnnRevGenet2020_field-guide-eukaryotic",
+    "module": "F1_data/repeats_te",
+    "repo_url": null,
+    "authors": "Wells JN, Feschotte C"
+  },
+  {
+    "doi": "10.1038/nrg.2016.139",
+    "title": "Regulatory activities of transposable elements: from conflicts to benefits",
+    "journal": "Nature Reviews Genetics",
+    "year": 2017,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Regulatory",
+      "activities",
+      "transposable"
+    ],
+    "stem": "NatRevGenet2017_Regulatory-activities-transposable",
+    "module": "F1_data/repeats_te",
+    "repo_url": null,
+    "authors": "Chuong EB, Elde NC, Feschotte C"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btg1080",
+    "title": "Gene prediction with a hidden Markov model and a new intron submodel",
+    "journal": "Bioinformatics",
+    "year": 2003,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "Gene",
+      "prediction",
+      "hidden"
+    ],
+    "stem": "Bioinf2003_Gene-prediction-hidden",
+    "module": "F1_data/qc_annotation",
+    "repo_url": null,
+    "authors": "Stanke M, Waack S"
+  },
+  {
+    "doi": "10.1186/1471-2105-12-491",
+    "title": "MAKER2: an annotation pipeline and genome-database management tool for second-generation genome projects",
+    "journal": "BMC Bioinformatics",
+    "year": 2011,
+    "journal_short": "BMCBioinf",
+    "keywords": [
+      "MAKER2",
+      "annotation",
+      "pipeline"
+    ],
+    "stem": "BMCBioinf2011_MAKER2-annotation-pipeline",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://github.com/Yandell-Lab/maker",
+    "authors": "Holt C, Yandell M"
+  },
+  {
+    "doi": "10.1093/nar/gkw092",
+    "title": "Using intron position conservation for homology-based gene prediction",
+    "journal": "Nucleic Acids Research",
+    "year": 2016,
+    "journal_short": "NAR",
+    "keywords": [
+      "intron",
+      "position",
+      "conservation"
+    ],
+    "stem": "NAR2016_intron-position-conservation",
+    "module": "F1_data/qc_annotation",
+    "repo_url": null,
+    "authors": "Keilwagen J, Wenk M, Erickson JL, et al"
+  },
+  {
+    "doi": "10.1093/nargab/lqaa108",
+    "title": "BRAKER2: automatic eukaryotic genome annotation with GeneMark-EP+ and AUGUSTUS supported by a protein database",
+    "journal": "NAR Genomics and Bioinformatics",
+    "year": 2021,
+    "journal_short": "NARGAB",
+    "keywords": [
+      "BRAKER2",
+      "automatic",
+      "eukaryotic"
+    ],
+    "stem": "NARGAB2021_BRAKER2-automatic-eukaryotic",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://github.com/Gaius-Augustus/BRAKER",
+    "authors": "Bruna T, Hoff KJ, Lomsadze A, Stanke M, Borodovsky M"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btu031",
+    "title": "InterProScan 5: genome-scale protein function classification",
+    "journal": "Bioinformatics",
+    "year": 2014,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "InterProScan-5",
+      "genome-scale",
+      "protein"
+    ],
+    "stem": "Bioinf2014_InterProScan-5-genome-scale-protein",
+    "module": "F1_data/qc_annotation",
+    "repo_url": "https://github.com/ebi-pf-team/interproscan",
+    "authors": "Jones P, Binns D, Chang HY, et al"
+  },
+  {
+    "doi": "10.1093/nar/gkt1223",
+    "title": "Pfam: the protein families database",
+    "journal": "Nucleic Acids Research",
+    "year": 2014,
+    "journal_short": "NAR",
+    "keywords": [
+      "Pfam",
+      "protein",
+      "families"
+    ],
+    "stem": "NAR2014_Pfam-protein-families",
+    "module": "F1_data/qc_annotation",
+    "repo_url": null,
+    "authors": "Finn RD, Bateman A, Clements J, et al"
+  },
+  {
+    "doi": "10.1038/75556",
+    "title": "Gene Ontology: tool for the unification of biology",
+    "journal": "Nature Genetics",
+    "year": 2000,
+    "journal_short": "NG",
+    "keywords": [
+      "Gene-Ontology",
+      "unification",
+      "biology"
+    ],
+    "stem": "NG2000_Gene-Ontology-unification-biology",
+    "module": "F1_data/qc_annotation",
+    "repo_url": null,
+    "authors": "Ashburner M, Ball CA, Blake JA, et al"
+  },
+  {
+    "doi": "10.1093/nar/28.1.27",
+    "title": "KEGG: Kyoto Encyclopedia of Genes and Genomes",
+    "journal": "Nucleic Acids Research",
+    "year": 2000,
+    "journal_short": "NAR",
+    "keywords": [
+      "KEGG",
+      "Kyoto",
+      "Encyclopedia"
+    ],
+    "stem": "NAR2000_KEGG-Kyoto-Encyclopedia",
+    "module": "F1_data/qc_annotation",
+    "repo_url": null,
+    "authors": "Kanehisa M, Goto S"
+  },
+  {
+    "doi": "10.1086/284325",
+    "title": "Phylogenies and the comparative method",
+    "journal": "The American Naturalist",
+    "year": 1985,
+    "journal_short": "AmNat",
+    "keywords": [
+      "Felsenstein",
+      "phylogenetic",
+      "comparative-method"
+    ],
+    "stem": "AmNat1985_Felsenstein-phylogenetic-comparative-method",
+    "module": "F3_phylogeny/comparative_methods_traits",
+    "repo_url": null,
+    "authors": "Felsenstein J"
+  },
+  {
+    "doi": "10.1080/106351597260343",
+    "title": "Gene trees in species trees",
+    "journal": "Systematic Biology",
+    "year": 1997,
+    "journal_short": "SystBiol",
+    "keywords": [
+      "Gene",
+      "trees",
+      "species"
+    ],
+    "stem": "SystBiol1997_Gene-trees-species",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": null,
+    "authors": "Maddison WP"
+  },
+  {
+    "doi": "10.1016/j.tree.2009.01.009",
+    "title": "Gene tree discordance, phylogenetic inference and the multispecies coalescent",
+    "journal": "Trends in Ecology & Evolution",
+    "year": 2009,
+    "journal_short": "TREE",
+    "keywords": [
+      "Gene",
+      "tree",
+      "discordance"
+    ],
+    "stem": "TREE2009_Gene-tree-discordance",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": null,
+    "authors": "Degnan JH, Rosenberg NA"
+  },
+  {
+    "doi": "10.1093/molbev/msu300",
+    "title": "IQ-TREE: a fast and effective stochastic algorithm for estimating maximum-likelihood phylogenies",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2015,
+    "journal_short": "MBE",
+    "keywords": [
+      "IQ-TREE",
+      "fast",
+      "effective"
+    ],
+    "stem": "MBE2015_IQ-TREE-fast-effective",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": "https://github.com/iqtree/iqtree2",
+    "authors": "Nguyen LT, Schmidt HA, von Haeseler A, Minh BQ"
+  },
+  {
+    "doi": "10.1093/molbev/msaa015",
+    "title": "IQ-TREE 2: new models and efficient methods for phylogenetic inference in the genomic era",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2020,
+    "journal_short": "MBE",
+    "keywords": [
+      "IQ-TREE-2",
+      "models",
+      "efficient"
+    ],
+    "stem": "MBE2020_IQ-TREE-2-models-efficient",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": "https://github.com/iqtree/iqtree2",
+    "authors": "Minh BQ, Schmidt HA, Chernomor O, et al"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btu033",
+    "title": "RAxML version 8: a tool for phylogenetic analysis and post-analysis of large phylogenies",
+    "journal": "Bioinformatics",
+    "year": 2014,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "RAxML-version-8",
+      "phylogenetic",
+      "post-analysis"
+    ],
+    "stem": "Bioinf2014_RAxML-version-8-phylogenetic-post-analysis",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": "https://github.com/stamatak/standard-RAxML",
+    "authors": "Stamatakis A"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btz305",
+    "title": "RAxML-NG: a fast, scalable and user-friendly tool for maximum likelihood phylogenetic inference",
+    "journal": "Bioinformatics",
+    "year": 2019,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "RAxML-NG",
+      "fast",
+      "scalable"
+    ],
+    "stem": "Bioinf2019_RAxML-NG-fast-scalable",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": "https://github.com/amkozlov/raxml-ng",
+    "authors": "Kozlov AM, Darriba D, Flouri T, Morel B, Stamatakis A"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btu462",
+    "title": "ASTRAL: genome-scale coalescent-based species tree estimation",
+    "journal": "Bioinformatics",
+    "year": 2014,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "ASTRAL",
+      "genome-scale",
+      "coalescent-based"
+    ],
+    "stem": "Bioinf2014_ASTRAL-genome-scale-coalescent-based",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": "https://github.com/smirarab/ASTRAL",
+    "authors": "Mirarab S, Reaz R, Bayzid MS, Zimmermann T, Swenson MS, Warnow T"
+  },
+  {
+    "doi": "10.1186/s12859-018-2129-y",
+    "title": "ASTRAL-III: polynomial time species tree reconstruction from partially resolved gene trees",
+    "journal": "BMC Bioinformatics",
+    "year": 2018,
+    "journal_short": "BMCBioinf",
+    "keywords": [
+      "ASTRAL-III",
+      "polynomial",
+      "time"
+    ],
+    "stem": "BMCBioinf2018_ASTRAL-III-polynomial-time",
+    "module": "F3_phylogeny/tree_inference",
+    "repo_url": "https://github.com/smirarab/ASTRAL",
+    "authors": "Zhang C, Rabiee M, Sayyari E, Mirarab S"
+  },
+  {
+    "doi": "10.1186/1471-2148-7-214",
+    "title": "BEAST: Bayesian evolutionary analysis by sampling trees",
+    "journal": "BMC Evolutionary Biology",
+    "year": 2007,
+    "journal_short": "BMCEvolBiol",
+    "keywords": [
+      "BEAST",
+      "Bayesian",
+      "evolutionary"
+    ],
+    "stem": "BMCEvolBiol2007_BEAST-Bayesian-evolutionary",
+    "module": "F3_phylogeny/dating_calibration",
+    "repo_url": null,
+    "authors": "Drummond AJ, Rambaut A"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1006650",
+    "title": "BEAST 2.5: an advanced software platform for Bayesian evolutionary analysis",
+    "journal": "PLoS Computational Biology",
+    "year": 2019,
+    "journal_short": "PLOSCB",
+    "keywords": [
+      "BEAST-25",
+      "advanced",
+      "software"
+    ],
+    "stem": "PLOSCB2019_BEAST-25-advanced-software",
+    "module": "F3_phylogeny/dating_calibration",
+    "repo_url": "https://github.com/CompEvol/beast2",
+    "authors": "Bouckaert R, Vaughan TG, Barido-Sottani J, et al"
+  },
+  {
+    "doi": "10.1093/molbev/msm088",
+    "title": "PAML 4: phylogenetic analysis by maximum likelihood",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2007,
+    "journal_short": "MBE",
+    "keywords": [
+      "PAML-4",
+      "phylogenetic",
+      "maximum"
+    ],
+    "stem": "MBE2007_PAML-4-phylogenetic-maximum",
+    "module": "F5_selection/codon_models",
+    "repo_url": "https://github.com/abacus-gene/paml",
+    "authors": "Yang Z"
+  },
+  {
+    "doi": "10.1093/molbev/msr045",
+    "title": "Approximate likelihood calculation on a phylogeny for Bayesian estimation of divergence times",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2011,
+    "journal_short": "MBE",
+    "keywords": [
+      "Approximate",
+      "likelihood",
+      "calculation"
+    ],
+    "stem": "MBE2011_Approximate-likelihood-calculation",
+    "module": "F3_phylogeny/dating_calibration",
+    "repo_url": null,
+    "authors": "dos Reis M, Yang Z"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btm538",
+    "title": "GEIGER: investigating evolutionary radiations",
+    "journal": "Bioinformatics",
+    "year": 2008,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "GEIGER",
+      "investigating",
+      "evolutionary"
+    ],
+    "stem": "Bioinf2008_GEIGER-investigating-evolutionary",
+    "module": "F3_phylogeny/comparative_methods_traits",
+    "repo_url": null,
+    "authors": "Harmon LJ, Weir JT, Brock CD, Glor RE, Challenger W"
+  },
+  {
+    "doi": "10.1111/j.2041-210X.2011.00169.x",
+    "title": "phytools: an R package for phylogenetic comparative biology and other things",
+    "journal": "Methods in Ecology and Evolution",
+    "year": 2012,
+    "journal_short": "MEE",
+    "keywords": [
+      "phytools",
+      "package",
+      "phylogenetic"
+    ],
+    "stem": "MEE2012_phytools-package-phylogenetic",
+    "module": "F3_phylogeny/comparative_methods_traits",
+    "repo_url": "https://github.com/liamrevell/phytools",
+    "authors": "Revell LJ"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btl097",
+    "title": "CAFE: a computational tool for the study of gene family evolution",
+    "journal": "Bioinformatics",
+    "year": 2006,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "CAFE",
+      "computational",
+      "gene"
+    ],
+    "stem": "Bioinf2006_CAFE-computational-gene",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": "https://github.com/hahnlab/CAFE",
+    "authors": "De Bie T, Cristianini N, Demuth JP, Hahn MW"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btaa1022",
+    "title": "CAFE 5 models variation in evolutionary rates among gene families",
+    "journal": "Bioinformatics",
+    "year": 2021,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "CAFE",
+      "models",
+      "variation"
+    ],
+    "stem": "Bioinf2021_CAFE-models-variation",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": "https://github.com/hahnlab/CAFE5",
+    "authors": "Mendes FK, Vanderpool D, Fulton B, Hahn MW"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btr623",
+    "title": "BadiRate: estimating family turnover rates by likelihood-based methods",
+    "journal": "Bioinformatics",
+    "year": 2012,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "BadiRate",
+      "family",
+      "turnover"
+    ],
+    "stem": "Bioinf2012_BadiRate-family-turnover",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": "https://github.com/fgvieira/badirate",
+    "authors": "Librado P, Vieira FG, Rozas J"
+  },
+  {
+    "doi": "10.1126/science.290.5494.1151",
+    "title": "The evolutionary fate and consequences of duplicate genes",
+    "journal": "Science",
+    "year": 2000,
+    "journal_short": "Science",
+    "keywords": [
+      "evolutionary",
+      "fate",
+      "consequences"
+    ],
+    "stem": "Science2000_evolutionary-fate-consequences",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": null,
+    "authors": "Lynch M, Conery JS"
+  },
+  {
+    "doi": "10.1093/genetics/151.4.1531",
+    "title": "Preservation of duplicate genes by complementary, degenerative mutations",
+    "journal": "Genetics",
+    "year": 1999,
+    "journal_short": "Genetics",
+    "keywords": [
+      "Preservation",
+      "duplicate",
+      "genes"
+    ],
+    "stem": "Genetics1999_Preservation-duplicate-genes",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": null,
+    "authors": "Force A, Lynch M, Pickett FB, Amores A, Yan YL, Postlethwait J"
+  },
+  {
+    "doi": "10.1038/nrg2482",
+    "title": "Turning a hobby into a job: how duplicated genes find new functions",
+    "journal": "Nature Reviews Genetics",
+    "year": 2008,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "hobby",
+      "job",
+      "how"
+    ],
+    "stem": "NatRevGenet2008_hobby-job-how",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": null,
+    "authors": "Conant GC, Wolfe KH"
+  },
+  {
+    "doi": "10.1038/nature09916",
+    "title": "Ancestral polyploidy in seed plants and angiosperms",
+    "journal": "Nature",
+    "year": 2011,
+    "journal_short": "Nature",
+    "keywords": [
+      "Ancestral",
+      "polyploidy",
+      "seed"
+    ],
+    "stem": "Nature2011_Ancestral-polyploidy-seed",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": null,
+    "authors": "Jiao Y, Wickett NJ, Ayyampalayam S, et al"
+  },
+  {
+    "doi": "10.1038/nrg.2017.26",
+    "title": "The evolutionary significance of polyploidy",
+    "journal": "Nature Reviews Genetics",
+    "year": 2017,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "evolutionary",
+      "significance",
+      "polyploidy"
+    ],
+    "stem": "NatRevGenet2017_evolutionary-significance-polyploidy",
+    "module": "F2_homology/gene_family_wgd",
+    "repo_url": null,
+    "authors": "Van de Peer Y, Mizrachi E, Marchal K"
+  },
+  {
+    "doi": "10.1093/oxfordjournals.molbev.a040410",
+    "title": "Simple methods for estimating the numbers of synonymous and nonsynonymous nucleotide substitutions",
+    "journal": "Molecular Biology and Evolution",
+    "year": 1986,
+    "journal_short": "MBE",
+    "keywords": [
+      "Simple",
+      "numbers",
+      "synonymous"
+    ],
+    "stem": "MBE1986_Simple-numbers-synonymous",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Nei M, Gojobori T"
+  },
+  {
+    "doi": "10.1093/oxfordjournals.molbev.a040153",
+    "title": "A codon-based model of nucleotide substitution for protein-coding DNA sequences",
+    "journal": "Molecular Biology and Evolution",
+    "year": 1994,
+    "journal_short": "MBE",
+    "keywords": [
+      "codon-based",
+      "model",
+      "nucleotide"
+    ],
+    "stem": "MBE1994_codon-based-model-nucleotide",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Goldman N, Yang Z"
+  },
+  {
+    "doi": "10.1093/genetics/155.1.431",
+    "title": "Codon-substitution models for heterogeneous selection pressure at amino acid sites",
+    "journal": "Genetics",
+    "year": 2000,
+    "journal_short": "Genetics",
+    "keywords": [
+      "Codon-substitution",
+      "models",
+      "heterogeneous"
+    ],
+    "stem": "Genetics2000_Codon-substitution-models-heterogeneous",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Yang Z, Nielsen R, Goldman N, Pedersen AMK"
+  },
+  {
+    "doi": "10.1093/oxfordjournals.molbev.a004148",
+    "title": "Codon-substitution models for detecting molecular adaptation at individual sites along specific lineages",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2002,
+    "journal_short": "MBE",
+    "keywords": [
+      "Codon-substitution",
+      "models",
+      "molecular"
+    ],
+    "stem": "MBE2002_Codon-substitution-models-molecular",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Yang Z, Nielsen R"
+  },
+  {
+    "doi": "10.1093/bioinformatics/bti079",
+    "title": "HyPhy: hypothesis testing using phylogenies",
+    "journal": "Bioinformatics",
+    "year": 2005,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "HyPhy",
+      "hypothesis",
+      "testing"
+    ],
+    "stem": "Bioinf2005_HyPhy-hypothesis-testing",
+    "module": "F5_selection/codon_models",
+    "repo_url": "https://github.com/veg/hyphy",
+    "authors": "Pond SLK, Frost SDW, Muse SV"
+  },
+  {
+    "doi": "10.1093/molbev/msz197",
+    "title": "HyPhy 2.5: a customizable platform for evolutionary hypothesis testing using phylogenies",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2020,
+    "journal_short": "MBE",
+    "keywords": [
+      "HyPhy-25",
+      "customizable",
+      "platform"
+    ],
+    "stem": "MBE2020_HyPhy-25-customizable-platform",
+    "module": "F5_selection/codon_models",
+    "repo_url": "https://github.com/veg/hyphy",
+    "authors": "Kosakovsky Pond SL, Poon AFY, Velazquez R, et al"
+  },
+  {
+    "doi": "10.1371/journal.pgen.1002764",
+    "title": "Detecting individual sites subject to episodic diversifying selection",
+    "journal": "PLoS Genetics",
+    "year": 2012,
+    "journal_short": "PLOSGenet",
+    "keywords": [
+      "individual",
+      "sites",
+      "subject"
+    ],
+    "stem": "PLOSGenet2012_individual-sites-subject",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Murrell B, Wertheim JO, Moola S, Weighill T, Scheffler K, Kosakovsky Pond SL"
+  },
+  {
+    "doi": "10.1093/molbev/msv035",
+    "title": "Gene-wide identification of episodic selection",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2015,
+    "journal_short": "MBE",
+    "keywords": [
+      "Gene-wide",
+      "episodic",
+      "selection"
+    ],
+    "stem": "MBE2015_Gene-wide-episodic-selection",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Murrell B, Weaver S, Smith MD, et al"
+  },
+  {
+    "doi": "10.1093/molbev/msv022",
+    "title": "Less is more: an adaptive branch-site random effects model for efficient detection of episodic diversifying selection",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2015,
+    "journal_short": "MBE",
+    "keywords": [
+      "Less-is-more",
+      "adaptive",
+      "branch-site"
+    ],
+    "stem": "MBE2015_Less-is-more-adaptive-branch-site",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Smith MD, Wertheim JO, Weaver S, Murrell B, Scheffler K, Kosakovsky Pond SL"
+  },
+  {
+    "doi": "10.1093/molbev/msu400",
+    "title": "RELAX: detecting relaxed selection in a phylogenetic framework",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2015,
+    "journal_short": "MBE",
+    "keywords": [
+      "RELAX",
+      "relaxed",
+      "selection"
+    ],
+    "stem": "MBE2015_RELAX-relaxed-selection",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Wertheim JO, Murrell B, Smith MD, Kosakovsky Pond SL, Scheffler K"
+  },
+  {
+    "doi": "10.1038/351652a0",
+    "title": "Adaptive protein evolution at the Adh locus in Drosophila",
+    "journal": "Nature",
+    "year": 1991,
+    "journal_short": "Nature",
+    "keywords": [
+      "McDonald-Kreitman",
+      "Adh",
+      "Drosophila"
+    ],
+    "stem": "Nature1991_McDonald-Kreitman-Adh-Drosophila",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "McDonald JH, Kreitman M"
+  },
+  {
+    "doi": "10.1146/annurev.genet.39.073003.112420",
+    "title": "Molecular signatures of natural selection",
+    "journal": "Annual Review of Genetics",
+    "year": 2005,
+    "journal_short": "AnnRevGenet",
+    "keywords": [
+      "Molecular",
+      "signatures",
+      "natural"
+    ],
+    "stem": "AnnRevGenet2005_Molecular-signatures-natural",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Nielsen R"
+  },
+  {
+    "doi": "10.1146/annurev-genet-111212-133526",
+    "title": "Detecting natural selection in genomic data",
+    "journal": "Annual Review of Genetics",
+    "year": 2013,
+    "journal_short": "AnnRevGenet",
+    "keywords": [
+      "natural",
+      "selection",
+      "genomic"
+    ],
+    "stem": "AnnRevGenet2013_natural-selection-genomic",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Vitti JJ, Grossman SR, Sabeti PC"
+  },
+  {
+    "doi": "10.1186/s12915-017-0434-y",
+    "title": "Detecting positive selection in the genome",
+    "journal": "BMC Biology",
+    "year": 2017,
+    "journal_short": "BMCBiol",
+    "keywords": [
+      "positive",
+      "selection",
+      "genome"
+    ],
+    "stem": "BMCBiol2017_positive-selection-genome",
+    "module": "F5_selection/codon_models",
+    "repo_url": null,
+    "authors": "Booker TR, Jackson BC, Keightley PD"
+  },
+  {
+    "doi": "10.1016/j.tree.2014.10.004",
+    "title": "Advances and limits of using population genetics to understand local adaptation",
+    "journal": "Trends in Ecology & Evolution",
+    "year": 2014,
+    "journal_short": "TREE",
+    "keywords": [
+      "population",
+      "genetics",
+      "understand"
+    ],
+    "stem": "TREE2014_population-genetics-understand",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": null,
+    "authors": "Tiffin P, Ross-Ibarra J"
+  },
+  {
+    "doi": "10.1038/nrg3483",
+    "title": "The genetic causes of convergent evolution",
+    "journal": "Nature Reviews Genetics",
+    "year": 2013,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "genetic",
+      "causes",
+      "convergent"
+    ],
+    "stem": "NatRevGenet2013_genetic-causes-convergent",
+    "module": "F5_selection/convergence",
+    "repo_url": null,
+    "authors": "Stern DL"
+  },
+  {
+    "doi": "10.1038/nrg.2016.11",
+    "title": "Causes of molecular convergence and parallelism in protein evolution",
+    "journal": "Nature Reviews Genetics",
+    "year": 2016,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Causes",
+      "molecular",
+      "convergence"
+    ],
+    "stem": "NatRevGenet2016_Causes-molecular-convergence",
+    "module": "F5_selection/convergence",
+    "repo_url": null,
+    "authors": "Storz JF"
+  },
+  {
+    "doi": "10.1038/nature12511",
+    "title": "Genome-wide signatures of convergent evolution in echolocating mammals",
+    "journal": "Nature",
+    "year": 2013,
+    "journal_short": "Nature",
+    "keywords": [
+      "Genome-wide",
+      "signatures",
+      "convergent"
+    ],
+    "stem": "Nature2013_Genome-wide-signatures-convergent",
+    "module": "F5_selection/convergence",
+    "repo_url": null,
+    "authors": "Parker J, Tsagkogeorga G, Cotton JA, et al"
+  },
+  {
+    "doi": "10.1093/molbev/msv091",
+    "title": "Are convergent and parallel amino acid substitutions in protein evolution more prevalent than neutral expectations?",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2015,
+    "journal_short": "MBE",
+    "keywords": [
+      "convergent",
+      "parallel",
+      "amino"
+    ],
+    "stem": "MBE2015_convergent-parallel-amino",
+    "module": "F5_selection/convergence",
+    "repo_url": null,
+    "authors": "Zou Z, Zhang J"
+  },
+  {
+    "doi": "10.1038/nrg2958",
+    "title": "Genome structural variation discovery and genotyping",
+    "journal": "Nature Reviews Genetics",
+    "year": 2011,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Genome",
+      "structural",
+      "variation"
+    ],
+    "stem": "NatRevGenet2011_Genome-structural-variation",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Alkan C, Coe BP, Eichler EE"
+  },
+  {
+    "doi": "10.1038/s41592-018-0001-7",
+    "title": "Accurate detection of complex structural variations using single-molecule sequencing",
+    "journal": "Nature Methods",
+    "year": 2018,
+    "journal_short": "NatMethods",
+    "keywords": [
+      "Accurate",
+      "detection",
+      "complex"
+    ],
+    "stem": "NatMethods2018_Accurate-detection-complex",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": "https://github.com/fritzsedlazeck/Sniffles",
+    "authors": "Sedlazeck FJ, Rescheneder P, Smolka M, et al"
+  },
+  {
+    "doi": "10.1186/s13059-019-1828-7",
+    "title": "Structural variant calling: the long and the short of it",
+    "journal": "Genome Biology",
+    "year": 2019,
+    "journal_short": "GB",
+    "keywords": [
+      "Structural-variant-calling",
+      "long",
+      "short"
+    ],
+    "stem": "GB2019_Structural-variant-calling-long-short",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Mahmoud M, Gobet N, Cruz-Davalos DI, Mounier N, Dessimoz C, Sedlazeck FJ"
+  },
+  {
+    "doi": "10.1038/nrg3373",
+    "title": "Phenotypic impact of genomic structural variation: insights from and for human disease",
+    "journal": "Nature Reviews Genetics",
+    "year": 2013,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Phenotypic",
+      "impact",
+      "genomic"
+    ],
+    "stem": "NatRevGenet2013_Phenotypic-impact-genomic",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Weischenfeldt J, Symmons O, Spitz F, Korbel JO"
+  },
+  {
+    "doi": "10.1126/science.abj6987",
+    "title": "The complete sequence of a human genome",
+    "journal": "Science",
+    "year": 2022,
+    "journal_short": "Science",
+    "keywords": [
+      "sequence",
+      "human",
+      "genome"
+    ],
+    "stem": "Science2022_sequence-human-genome",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Nurk S, Koren S, Rhie A, et al"
+  },
+  {
+    "doi": "10.1126/science.abl3533",
+    "title": "A complete reference genome improves analysis of human genetic variation",
+    "journal": "Science",
+    "year": 2022,
+    "journal_short": "Science",
+    "keywords": [
+      "reference",
+      "genome",
+      "improves"
+    ],
+    "stem": "Science2022_reference-genome-improves",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Aganezov S, Yan SM, Soto DC, et al"
+  },
+  {
+    "doi": "10.1126/science.abl4178",
+    "title": "Complete genomic and epigenetic maps of human centromeres",
+    "journal": "Science",
+    "year": 2022,
+    "journal_short": "Science",
+    "keywords": [
+      "genomic",
+      "epigenetic",
+      "maps"
+    ],
+    "stem": "Science2022_genomic-epigenetic-maps",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Altemose N, Logsdon GA, Bzikadze AV, et al"
+  },
+  {
+    "doi": "10.1038/s41586-023-06457-y",
+    "title": "The complete sequence of a human Y chromosome",
+    "journal": "Nature",
+    "year": 2023,
+    "journal_short": "Nature",
+    "keywords": [
+      "sequence",
+      "human",
+      "chromosome"
+    ],
+    "stem": "Nature2023_sequence-human-chromosome",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Rhie A, Nurk S, Cechova M, et al"
+  },
+  {
+    "doi": "10.1073/pnas.0506758102",
+    "title": "Genome analysis of multiple pathogenic isolates of Streptococcus agalactiae: implications for the microbial pan-genome",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2005,
+    "journal_short": "PNAS",
+    "keywords": [
+      "Genome",
+      "multiple",
+      "pathogenic"
+    ],
+    "stem": "PNAS2005_Genome-multiple-pathogenic",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Tettelin H, Masignani V, Cieslewicz MJ, et al"
+  },
+  {
+    "doi": "10.1016/j.gde.2005.09.006",
+    "title": "The microbial pan-genome",
+    "journal": "Current Opinion in Genetics & Development",
+    "year": 2005,
+    "journal_short": "CurrOpinGenDev",
+    "keywords": [
+      "microbial",
+      "pan-genome"
+    ],
+    "stem": "CurrOpinGenDev2005_microbial-pan-genome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Medini D, Donati C, Tettelin H, Masignani V, Rappuoli R"
+  },
+  {
+    "doi": "10.1016/j.mib.2014.11.016",
+    "title": "Ten years of pan-genome analyses",
+    "journal": "Current Opinion in Microbiology",
+    "year": 2015,
+    "journal_short": "CurrOpinMicro",
+    "keywords": [
+      "pan-genome"
+    ],
+    "stem": "CurrOpinMicro2015_pan-genome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Vernikos G, Medini D, Riley DR, Tettelin H"
+  },
+  {
+    "doi": "10.1111/pbi.12499",
+    "title": "Towards plant pangenomics",
+    "journal": "Plant Biotechnology Journal",
+    "year": 2016,
+    "journal_short": "PBJ",
+    "keywords": [
+      "plant",
+      "pangenomics"
+    ],
+    "stem": "PBJ2016_plant-pangenomics",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Golicz AA, Batley J, Edwards D"
+  },
+  {
+    "doi": "10.1038/s41576-020-0210-7",
+    "title": "Pan-genomics in the human genome era",
+    "journal": "Nature Reviews Genetics",
+    "year": 2020,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Pan-genomics",
+      "human",
+      "genome"
+    ],
+    "stem": "NatRevGenet2020_Pan-genomics-human-genome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Sherman RM, Salzberg SL"
+  },
+  {
+    "doi": "10.1146/annurev-genom-120219-080406",
+    "title": "Pangenome graphs",
+    "journal": "Annual Review of Genomics and Human Genetics",
+    "year": 2020,
+    "journal_short": "AnnRevGenomics",
+    "keywords": [
+      "Pangenome",
+      "graphs"
+    ],
+    "stem": "AnnRevGenomics2020_Pangenome-graphs",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Eizenga JM, Novak AM, Sibbesen JA, et al"
+  },
+  {
+    "doi": "10.1038/nbt.4227",
+    "title": "Variation graph toolkit improves read mapping by representing genetic variation in the reference",
+    "journal": "Nature Biotechnology",
+    "year": 2018,
+    "journal_short": "NBT",
+    "keywords": [
+      "Variation",
+      "graph",
+      "toolkit"
+    ],
+    "stem": "NBT2018_Variation-graph-toolkit",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": "https://github.com/vgteam/vg",
+    "authors": "Garrison E, Siren J, Novak AM, et al"
+  },
+  {
+    "doi": "10.1186/s13059-020-02168-z",
+    "title": "The design and construction of reference pangenome graphs with minigraph",
+    "journal": "Genome Biology",
+    "year": 2020,
+    "journal_short": "GB",
+    "keywords": [
+      "design",
+      "reference",
+      "pangenome"
+    ],
+    "stem": "GB2020_design-reference-pangenome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": "https://github.com/lh3/minigraph",
+    "authors": "Li H, Feng X, Chu C"
+  },
+  {
+    "doi": "10.1038/s41587-023-01793-w",
+    "title": "Pangenome graph construction from genome alignments with Minigraph-Cactus",
+    "journal": "Nature Biotechnology",
+    "year": 2024,
+    "journal_short": "NBT",
+    "keywords": [
+      "Pangenome",
+      "graph",
+      "genome"
+    ],
+    "stem": "NBT2024_Pangenome-graph-genome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": "https://github.com/ComparativeGenomicsToolkit/cactus",
+    "authors": "Hickey G, Monlong J, Ebler J, et al"
+  },
+  {
+    "doi": "10.1038/s41586-023-05896-x",
+    "title": "A draft human pangenome reference",
+    "journal": "Nature",
+    "year": 2023,
+    "journal_short": "Nature",
+    "keywords": [
+      "draft",
+      "human",
+      "pangenome"
+    ],
+    "stem": "Nature2023_draft-human-pangenome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Human Pangenome Reference Consortium"
+  },
+  {
+    "doi": "10.1038/s41586-020-2547-7",
+    "title": "Telomere-to-telomere assembly of a complete human X chromosome",
+    "journal": "Nature",
+    "year": 2020,
+    "journal_short": "Nature",
+    "keywords": [
+      "Telomere-to-telomere",
+      "assembly",
+      "human"
+    ],
+    "stem": "Nature2020_Telomere-to-telomere-assembly-human",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Miga KH, Koren S, Rhie A, et al"
+  },
+  {
+    "doi": "10.1038/s41586-023-06173-7",
+    "title": "A pangenome reference of 36 Chinese populations",
+    "journal": "Nature",
+    "year": 2023,
+    "journal_short": "Nature",
+    "keywords": [
+      "pangenome",
+      "reference",
+      "Chinese"
+    ],
+    "stem": "Nature2023_pangenome-reference-Chinese",
+    "module": "X_practice/cases",
+    "repo_url": null,
+    "authors": "Gao Y, Yang X, Chen H, et al"
+  },
+  {
+    "doi": "10.1186/s13059-023-03098-2",
+    "title": "Comparing methods for constructing and representing human pangenome graphs",
+    "journal": "Genome Biology",
+    "year": 2023,
+    "journal_short": "GB",
+    "keywords": [
+      "representing",
+      "human",
+      "pangenome"
+    ],
+    "stem": "GB2023_representing-human-pangenome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Andreace F, Morales L, Paten B, et al"
+  },
+  {
+    "doi": "10.1186/s13059-023-02969-y",
+    "title": "Structural variant-based pangenome construction has low sensitivity and low precision",
+    "journal": "Genome Biology",
+    "year": 2023,
+    "journal_short": "GB",
+    "keywords": [
+      "Structural",
+      "variant-based",
+      "pangenome"
+    ],
+    "stem": "GB2023_Structural-variant-based-pangenome",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Leonard AS, Crysnanto D, Fang ZH, et al"
+  },
+  {
+    "doi": "10.1038/s41477-020-0733-0",
+    "title": "Plant pan-genomes are the new reference",
+    "journal": "Nature Plants",
+    "year": 2020,
+    "journal_short": "NatPlants",
+    "keywords": [
+      "Plant",
+      "pan-genomes",
+      "reference"
+    ],
+    "stem": "NatPlants2020_Plant-pan-genomes-reference",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Bayer PE, Golicz AA, Scheben A, Batley J, Edwards D"
+  },
+  {
+    "doi": "10.1038/s41576-024-00691-4",
+    "title": "Plant pangenomes for crop improvement, biodiversity and evolution",
+    "journal": "Nature Reviews Genetics",
+    "year": 2024,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Plant",
+      "pangenomes",
+      "crop"
+    ],
+    "stem": "NatRevGenet2024_Plant-pangenomes-crop",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": null,
+    "authors": "Schreiber M, Jayakodi M, Stein N, Mascher M"
+  },
+  {
+    "doi": "10.1038/s41586-020-2947-8",
+    "title": "The barley pan-genome reveals the hidden legacy of mutation breeding",
+    "journal": "Nature",
+    "year": 2020,
+    "journal_short": "Nature",
+    "keywords": [
+      "barley",
+      "pan-genome",
+      "reveals"
+    ],
+    "stem": "Nature2020_barley-pan-genome-reveals",
+    "module": "X_practice/cases",
+    "repo_url": null,
+    "authors": "Jayakodi M, Padmarasu S, Haberer G, et al"
+  },
+  {
+    "doi": "10.1126/science.abg5289",
+    "title": "De novo assembly, annotation, and comparative analysis of 26 diverse maize genomes",
+    "journal": "Science",
+    "year": 2021,
+    "journal_short": "Science",
+    "keywords": [
+      "novo",
+      "assembly",
+      "annotation"
+    ],
+    "stem": "Science2021_novo-assembly-annotation",
+    "module": "X_practice/cases",
+    "repo_url": null,
+    "authors": "Hufford MB, Seetharam AS, Woodhouse MR, et al"
+  },
+  {
+    "doi": "10.1016/j.cell.2020.05.023",
+    "title": "Pan-genome of wild and cultivated soybeans",
+    "journal": "Cell",
+    "year": 2020,
+    "journal_short": "Cell",
+    "keywords": [
+      "Pan-genome",
+      "wild",
+      "cultivated"
+    ],
+    "stem": "Cell2020_Pan-genome-wild-cultivated",
+    "module": "X_practice/cases",
+    "repo_url": null,
+    "authors": "Liu Y, Du H, Li P, et al"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btv421",
+    "title": "Roary: rapid large-scale prokaryote pan genome analysis",
+    "journal": "Bioinformatics",
+    "year": 2015,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "Roary",
+      "rapid",
+      "large-scale"
+    ],
+    "stem": "Bioinf2015_Roary-rapid-large-scale",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": "https://github.com/sanger-pathogens/Roary",
+    "authors": "Page AJ, Cummins CA, Hunt M, et al"
+  },
+  {
+    "doi": "10.1186/s13059-020-02090-4",
+    "title": "Producing polished prokaryotic pangenomes with the Panaroo pipeline",
+    "journal": "Genome Biology",
+    "year": 2020,
+    "journal_short": "GB",
+    "keywords": [
+      "polished",
+      "prokaryotic",
+      "pangenomes"
+    ],
+    "stem": "GB2020_polished-prokaryotic-pangenomes",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": "https://github.com/gtonkinhill/panaroo",
+    "authors": "Tonkin-Hill G, MacAlasdair N, Ruis C, et al"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1007732",
+    "title": "PPanGGOLiN: depicting microbial diversity via a partitioned pangenome graph",
+    "journal": "PLoS Computational Biology",
+    "year": 2020,
+    "journal_short": "PLOSCB",
+    "keywords": [
+      "PPanGGOLiN",
+      "depicting",
+      "microbial"
+    ],
+    "stem": "PLOSCB2020_PPanGGOLiN-depicting-microbial",
+    "module": "F4_structure/pangenome_graph",
+    "repo_url": "https://github.com/labgem/PPanGGOLiN",
+    "authors": "Gautreau G, Bazin A, Gachet M, et al"
+  },
+  {
+    "doi": "10.1016/0304-4149(82)90011-4",
+    "title": "The coalescent",
+    "journal": "Stochastic Processes and their Applications",
+    "year": 1982,
+    "journal_short": "SPA",
+    "keywords": [
+      "Kingman",
+      "coalescent"
+    ],
+    "stem": "SPA1982_Kingman-coalescent",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": null,
+    "authors": "Kingman JFC"
+  },
+  {
+    "doi": "10.1093/bioinformatics/18.2.337",
+    "title": "Generating samples under a Wright-Fisher neutral model of genetic variation",
+    "journal": "Bioinformatics",
+    "year": 2002,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "Hudson",
+      "ms",
+      "coalescent-simulator"
+    ],
+    "stem": "Bioinf2002_Hudson-ms-coalescent-simulator",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": null,
+    "authors": "Hudson RR"
+  },
+  {
+    "doi": "10.1371/journal.pgen.1000695",
+    "title": "Inferring the joint demographic history of multiple populations from multidimensional SNP frequency data",
+    "journal": "PLoS Genetics",
+    "year": 2009,
+    "journal_short": "PLOSGenet",
+    "keywords": [
+      "joint",
+      "demographic",
+      "history"
+    ],
+    "stem": "PLOSGenet2009_joint-demographic-history",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": "https://github.com/niuhuifei/dadi",
+    "authors": "Gutenkunst RN, Hernandez RD, Williamson SH, Bustamante CD"
+  },
+  {
+    "doi": "10.1038/nature10231",
+    "title": "Inference of human population history from individual whole-genome sequences",
+    "journal": "Nature",
+    "year": 2011,
+    "journal_short": "Nature",
+    "keywords": [
+      "Inference",
+      "human",
+      "population"
+    ],
+    "stem": "Nature2011_Inference-human-population",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": null,
+    "authors": "Li H, Durbin R"
+  },
+  {
+    "doi": "10.1038/ng.3015",
+    "title": "Inferring human population size and separation history from multiple genome sequences",
+    "journal": "Nature Genetics",
+    "year": 2014,
+    "journal_short": "NG",
+    "keywords": [
+      "human",
+      "population",
+      "size"
+    ],
+    "stem": "NG2014_human-population-size",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": null,
+    "authors": "Schiffels S, Durbin R"
+  },
+  {
+    "doi": "10.1038/ng.3748",
+    "title": "Robust and scalable inference of population history from hundreds of unphased whole genomes",
+    "journal": "Nature Genetics",
+    "year": 2017,
+    "journal_short": "NG",
+    "keywords": [
+      "Robust",
+      "scalable",
+      "inference"
+    ],
+    "stem": "NG2017_Robust-scalable-inference",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": "https://github.com/popgenmethods/smcpp",
+    "authors": "Terhorst J, Kamm JA, Song YS"
+  },
+  {
+    "doi": "10.1371/journal.pgen.1003905",
+    "title": "Robust demographic inference from genomic and SNP data",
+    "journal": "PLoS Genetics",
+    "year": 2013,
+    "journal_short": "PLOSGenet",
+    "keywords": [
+      "Robust",
+      "demographic",
+      "inference"
+    ],
+    "stem": "PLOSGenet2013_Robust-demographic-inference",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": null,
+    "authors": "Excoffier L, Dupanloup I, Huerta-Sanchez E, Sousa VC, Foll M"
+  },
+  {
+    "doi": "10.1534/genetics.112.145037",
+    "title": "Ancient admixture in human history",
+    "journal": "Genetics",
+    "year": 2012,
+    "journal_short": "Genetics",
+    "keywords": [
+      "Ancient",
+      "admixture",
+      "human"
+    ],
+    "stem": "Genetics2012_Ancient-admixture-human",
+    "module": "F5_selection/introgression",
+    "repo_url": null,
+    "authors": "Patterson N, Moorjani P, Luo Y, et al"
+  },
+  {
+    "doi": "10.1093/molbev/msr048",
+    "title": "Testing for ancient admixture between closely related populations",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2011,
+    "journal_short": "MBE",
+    "keywords": [
+      "Testing",
+      "ancient",
+      "admixture"
+    ],
+    "stem": "MBE2011_Testing-ancient-admixture",
+    "module": "F5_selection/introgression",
+    "repo_url": null,
+    "authors": "Durand EY, Patterson N, Reich D, Slatkin M"
+  },
+  {
+    "doi": "10.1093/molbev/msu269",
+    "title": "Evaluating the use of ABBA-BABA statistics to locate introgressed loci",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2015,
+    "journal_short": "MBE",
+    "keywords": [
+      "ABBA-BABA",
+      "statistics",
+      "locate"
+    ],
+    "stem": "MBE2015_ABBA-BABA-statistics-locate",
+    "module": "F5_selection/introgression",
+    "repo_url": null,
+    "authors": "Martin SH, Davey JW, Jiggins CD"
+  },
+  {
+    "doi": "10.1111/1755-0998.13265",
+    "title": "Dsuite: fast D-statistics and related admixture evidence from VCF files",
+    "journal": "Molecular Ecology Resources",
+    "year": 2021,
+    "journal_short": "MolEcolRes",
+    "keywords": [
+      "Dsuite",
+      "fast",
+      "D-statistics"
+    ],
+    "stem": "MolEcolRes2021_Dsuite-fast-D-statistics",
+    "module": "F5_selection/introgression",
+    "repo_url": "https://github.com/millanek/Dsuite",
+    "authors": "Malinsky M, Matschiner M, Svardal H"
+  },
+  {
+    "doi": "10.1126/science.1188021",
+    "title": "A draft sequence of the Neandertal genome",
+    "journal": "Science",
+    "year": 2010,
+    "journal_short": "Science",
+    "keywords": [
+      "draft",
+      "sequence",
+      "Neandertal"
+    ],
+    "stem": "Science2010_draft-sequence-Neandertal",
+    "module": "F5_selection/introgression",
+    "repo_url": null,
+    "authors": "Green RE, Krause J, Briggs AW, et al"
+  },
+  {
+    "doi": "10.1038/nature12961",
+    "title": "The genomic landscape of Neanderthal ancestry in present-day humans",
+    "journal": "Nature",
+    "year": 2014,
+    "journal_short": "Nature",
+    "keywords": [
+      "genomic",
+      "landscape",
+      "Neanderthal"
+    ],
+    "stem": "Nature2014_genomic-landscape-Neanderthal",
+    "module": "F5_selection/introgression",
+    "repo_url": null,
+    "authors": "Sankararaman S, Mallick S, Dannemann M, et al"
+  },
+  {
+    "doi": "10.1038/nrg3446",
+    "title": "Understanding the origin of species with genome-scale data: modelling gene flow",
+    "journal": "Nature Reviews Genetics",
+    "year": 2013,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "origin",
+      "species",
+      "genome-scale"
+    ],
+    "stem": "NatRevGenet2013_origin-species-genome-scale",
+    "module": "F6_function/speciation_landscape",
+    "repo_url": null,
+    "authors": "Sousa V, Hey J"
+  },
+  {
+    "doi": "10.1038/nrg3644",
+    "title": "Genomics and the origin of species",
+    "journal": "Nature Reviews Genetics",
+    "year": 2014,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Genomics",
+      "origin",
+      "species"
+    ],
+    "stem": "NatRevGenet2014_Genomics-origin-species",
+    "module": "F6_function/speciation_landscape",
+    "repo_url": null,
+    "authors": "Seehausen O, Butlin RK, Keller I, et al"
+  },
+  {
+    "doi": "10.1038/nrg.2016.133",
+    "title": "Making sense of genomic islands of differentiation in light of speciation",
+    "journal": "Nature Reviews Genetics",
+    "year": 2017,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "genomic",
+      "islands",
+      "differentiation"
+    ],
+    "stem": "NatRevGenet2017_genomic-islands-differentiation",
+    "module": "F6_function/speciation_landscape",
+    "repo_url": null,
+    "authors": "Wolf JBW, Ellegren H"
+  },
+  {
+    "doi": "10.1111/jeb.13047",
+    "title": "Interpreting the genomic landscape of speciation: a road map for finding barriers to gene flow",
+    "journal": "Journal of Evolutionary Biology",
+    "year": 2017,
+    "journal_short": "JEB",
+    "keywords": [
+      "Interpreting",
+      "genomic",
+      "landscape"
+    ],
+    "stem": "JEB2017_Interpreting-genomic-landscape",
+    "module": "F6_function/speciation_landscape",
+    "repo_url": null,
+    "authors": "Ravinet M, Faria R, Butlin RK, et al"
+  },
+  {
+    "doi": "10.1111/mec.12796",
+    "title": "Reanalysis suggests that genomic islands of speciation are due to reduced diversity, not reduced gene flow",
+    "journal": "Molecular Ecology",
+    "year": 2014,
+    "journal_short": "MolEcol",
+    "keywords": [
+      "Reanalysis",
+      "suggests",
+      "genomic"
+    ],
+    "stem": "MolEcol2014_Reanalysis-suggests-genomic",
+    "module": "F6_function/speciation_landscape",
+    "repo_url": null,
+    "authors": "Cruickshank TE, Hahn MW"
+  },
+  {
+    "doi": "10.1038/nature11584",
+    "title": "The genomic landscape of species divergence in Ficedula flycatchers",
+    "journal": "Nature",
+    "year": 2012,
+    "journal_short": "Nature",
+    "keywords": [
+      "genomic",
+      "landscape",
+      "species"
+    ],
+    "stem": "Nature2012_genomic-landscape-species",
+    "module": "F6_function/speciation_landscape",
+    "repo_url": null,
+    "authors": "Ellegren H, Smeds L, Burri R, et al"
+  },
+  {
+    "doi": "10.1126/science.aaw2090",
+    "title": "Genomic architecture and introgression shape a butterfly radiation",
+    "journal": "Science",
+    "year": 2019,
+    "journal_short": "Science",
+    "keywords": [
+      "Genomic",
+      "architecture",
+      "introgression"
+    ],
+    "stem": "Science2019_Genomic-architecture-introgression",
+    "module": "F5_selection/introgression",
+    "repo_url": null,
+    "authors": "Edelman NB, Frandsen PB, Miyagi M, et al"
+  },
+  {
+    "doi": "10.1126/science.1090005",
+    "title": "Evolution at two levels in humans and chimpanzees",
+    "journal": "Science",
+    "year": 1975,
+    "journal_short": "Science",
+    "keywords": [
+      "King-Wilson",
+      "two-levels",
+      "chimpanzee"
+    ],
+    "stem": "Science1975_King-Wilson-two-levels-chimpanzee",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "King MC, Wilson AC"
+  },
+  {
+    "doi": "10.1038/nrg2063",
+    "title": "The evolutionary significance of cis-regulatory mutations",
+    "journal": "Nature Reviews Genetics",
+    "year": 2007,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "evolutionary",
+      "significance",
+      "cis-regulatory"
+    ],
+    "stem": "NatRevGenet2007_evolutionary-significance-cis-regulatory",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "Wray GA"
+  },
+  {
+    "doi": "10.1038/nrg3095",
+    "title": "Cis-regulatory elements: molecular mechanisms and evolutionary processes underlying divergence",
+    "journal": "Nature Reviews Genetics",
+    "year": 2011,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Cis-regulatory-elements",
+      "molecular",
+      "mechanisms"
+    ],
+    "stem": "NatRevGenet2011_Cis-regulatory-elements-molecular-mechanisms",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "Wittkopp PJ, Kalay G"
+  },
+  {
+    "doi": "10.1038/nature05295",
+    "title": "In vivo enhancer analysis of human conserved non-coding sequences",
+    "journal": "Nature",
+    "year": 2006,
+    "journal_short": "Nature",
+    "keywords": [
+      "vivo",
+      "enhancer",
+      "human"
+    ],
+    "stem": "Nature2006_vivo-enhancer-human",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "Pennacchio LA, Ahituv N, Moses AM, et al"
+  },
+  {
+    "doi": "10.1016/j.cell.2015.01.006",
+    "title": "Enhancer evolution across 20 mammalian species",
+    "journal": "Cell",
+    "year": 2015,
+    "journal_short": "Cell",
+    "keywords": [
+      "Enhancer",
+      "evolution",
+      "mammalian"
+    ],
+    "stem": "Cell2015_Enhancer-evolution-mammalian",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "Villar D, Berthelot C, Aldridge S, et al"
+  },
+  {
+    "doi": "10.1146/annurev-biochem-051410-092902",
+    "title": "Genome regulation by long noncoding RNAs",
+    "journal": "Annual Review of Biochemistry",
+    "year": 2012,
+    "journal_short": "AnnRevBiochem",
+    "keywords": [
+      "Genome",
+      "regulation",
+      "long"
+    ],
+    "stem": "AnnRevBiochem2012_Genome-regulation-long",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "Rinn JL, Chang HY"
+  },
+  {
+    "doi": "10.1038/nrg3802",
+    "title": "Evolutionary dynamics of coding and non-coding transcriptomes",
+    "journal": "Nature Reviews Genetics",
+    "year": 2014,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "Evolutionary",
+      "dynamics",
+      "coding"
+    ],
+    "stem": "NatRevGenet2014_Evolutionary-dynamics-coding",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "Necsulea A, Kaessmann H"
+  },
+  {
+    "doi": "10.1038/nrg3891",
+    "title": "The role of regulatory variation in complex traits and disease",
+    "journal": "Nature Reviews Genetics",
+    "year": 2015,
+    "journal_short": "NatRevGenet",
+    "keywords": [
+      "role",
+      "regulatory",
+      "variation"
+    ],
+    "stem": "NatRevGenet2015_role-regulatory-variation",
+    "module": "F6_function/regulatory_noncoding",
+    "repo_url": null,
+    "authors": "Albert FW, Kruglyak L"
+  },
+  {
+    "doi": "10.1038/nature11247",
+    "title": "An integrated encyclopedia of DNA elements in the human genome",
+    "journal": "Nature",
+    "year": 2012,
+    "journal_short": "Nature",
+    "keywords": [
+      "ENCODE",
+      "DNA-elements",
+      "encyclopedia"
+    ],
+    "stem": "Nature2012_ENCODE-DNA-elements-encyclopedia",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "ENCODE Project Consortium"
+  },
+  {
+    "doi": "10.1093/nar/gku1196",
+    "title": "Rapid phylogenetic analysis of large samples of recombinant bacterial whole genome sequences using Gubbins",
+    "journal": "Nucleic Acids Research",
+    "year": 2015,
+    "journal_short": "NAR",
+    "keywords": [
+      "Rapid",
+      "phylogenetic",
+      "large"
+    ],
+    "stem": "NAR2015_Rapid-phylogenetic-large",
+    "module": "X_practice/microbial_taxonomy",
+    "repo_url": "https://github.com/nickjcroucher/gubbins",
+    "authors": "Croucher NJ, Page AJ, Connor TR, et al"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1004041",
+    "title": "ClonalFrameML: efficient inference of recombination in whole bacterial genomes",
+    "journal": "PLoS Computational Biology",
+    "year": 2015,
+    "journal_short": "PLOSCB",
+    "keywords": [
+      "ClonalFrameML",
+      "efficient",
+      "inference"
+    ],
+    "stem": "PLOSCB2015_ClonalFrameML-efficient-inference",
+    "module": "X_practice/microbial_taxonomy",
+    "repo_url": "https://github.com/xavierdidelot/ClonalFrameML",
+    "authors": "Didelot X, Wilson DJ"
+  },
+  {
+    "doi": "10.1038/s41586-021-03451-0",
+    "title": "Towards complete and error-free genome assemblies of all vertebrate species",
+    "journal": "Nature",
+    "year": 2021,
+    "journal_short": "Nature",
+    "keywords": [
+      "error-free",
+      "genome",
+      "assemblies"
+    ],
+    "stem": "Nature2021_error-free-genome-assemblies",
+    "module": "F1_data/qc_annotation",
+    "repo_url": null,
+    "authors": "Rhie A, McCarthy SA, Fedrigo O, et al"
+  },
+  {
+    "doi": "10.1073/pnas.1720115115",
+    "title": "Earth BioGenome Project: sequencing life for the future of life",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2018,
+    "journal_short": "PNAS",
+    "keywords": [
+      "Earth-BioGenome-Project",
+      "sequencing",
+      "life"
+    ],
+    "stem": "PNAS2018_Earth-BioGenome-Project-sequencing-life",
+    "module": "F0_foundations",
+    "repo_url": null,
+    "authors": "Lewin HA, Robinson GE, Kress WJ, et al"
+  },
+  {
+    "doi": "10.1093/molbev/msu136",
+    "title": "PopGenome: an efficient Swiss army knife for population genomic analyses in R",
+    "journal": "Molecular Biology and Evolution",
+    "year": 2014,
+    "journal_short": "MBE",
+    "keywords": [
+      "PopGenome",
+      "efficient",
+      "Swiss"
+    ],
+    "stem": "MBE2014_PopGenome-efficient-Swiss",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": "https://github.com/pievos101/PopGenome",
+    "authors": "Pfeifer B, Wittelsburger U, Ramos-Onsins SE, Lercher MJ"
+  },
+  {
+    "doi": "10.1186/s12859-014-0356-4",
+    "title": "ANGSD: analysis of next generation sequencing data",
+    "journal": "BMC Bioinformatics",
+    "year": 2014,
+    "journal_short": "BMCBioinf",
+    "keywords": [
+      "ANGSD",
+      "next",
+      "generation"
+    ],
+    "stem": "BMCBioinf2014_ANGSD-next-generation",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": "https://github.com/ANGSD/angsd",
+    "authors": "Korneliussen TS, Albrechtsen A, Nielsen R"
+  },
+  {
+    "doi": "10.1086/519795",
+    "title": "PLINK: a tool set for whole-genome association and population-based linkage analyses",
+    "journal": "American Journal of Human Genetics",
+    "year": 2007,
+    "journal_short": "AJHG",
+    "keywords": [
+      "PLINK",
+      "set",
+      "whole-genome"
+    ],
+    "stem": "AJHG2007_PLINK-set-whole-genome",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": null,
+    "authors": "Purcell S, Neale B, Todd-Brown K, et al"
+  },
+  {
+    "doi": "10.1186/s13742-015-0047-8",
+    "title": "Second-generation PLINK: rising to the challenge of larger and richer datasets",
+    "journal": "GigaScience",
+    "year": 2015,
+    "journal_short": "GigaScience",
+    "keywords": [
+      "PLINK2",
+      "second-generation"
+    ],
+    "stem": "GigaScience2015_PLINK2-second-generation",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": "https://github.com/chrchang/plink-ng",
+    "authors": "Chang CC, Chow CC, Tellier LC, Vattikuti S, Purcell SM, Lee JJ"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btr330",
+    "title": "The variant call format and VCFtools",
+    "journal": "Bioinformatics",
+    "year": 2011,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "VCFtools",
+      "VCF-format"
+    ],
+    "stem": "Bioinf2011_VCFtools-VCF-format",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": "https://github.com/vcftools/vcftools",
+    "authors": "Danecek P, Auton A, Abecasis G, et al"
+  },
+  {
+    "doi": "10.1093/gigascience/giab008",
+    "title": "Twelve years of SAMtools and BCFtools",
+    "journal": "GigaScience",
+    "year": 2021,
+    "journal_short": "GigaScience",
+    "keywords": [
+      "SAMtools",
+      "BCFtools",
+      "twelve-years"
+    ],
+    "stem": "GigaScience2021_SAMtools-BCFtools-twelve-years",
+    "module": "F5_selection/popgen_demography",
+    "repo_url": "https://github.com/samtools/bcftools",
+    "authors": "Danecek P, Bonfield JK, Liddle J, et al"
+  },
+  {
+    "doi": "10.1093/bioinformatics/bts480",
+    "title": "Snakemake: a scalable bioinformatics workflow engine",
+    "journal": "Bioinformatics",
+    "year": 2012,
+    "journal_short": "Bioinf",
+    "keywords": [
+      "Snakemake",
+      "scalable",
+      "bioinformatics"
+    ],
+    "stem": "Bioinf2012_Snakemake-scalable-bioinformatics",
+    "module": "X_practice/reproducibility",
+    "repo_url": "https://github.com/snakemake/snakemake",
+    "authors": "Koster J, Rahmann S"
+  },
+  {
+    "doi": "10.1038/nbt.3820",
+    "title": "Nextflow enables reproducible computational workflows",
+    "journal": "Nature Biotechnology",
+    "year": 2017,
+    "journal_short": "NBT",
+    "keywords": [
+      "Nextflow",
+      "enables",
+      "reproducible"
+    ],
+    "stem": "NBT2017_Nextflow-enables-reproducible",
+    "module": "X_practice/reproducibility",
+    "repo_url": "https://github.com/nextflow-io/nextflow",
+    "authors": "Di Tommaso P, Chatzou M, Floden EW, Barja PP, Palumbo E, Notredame C"
+  },
+  {
+    "doi": "10.1038/sdata.2016.18",
+    "title": "The FAIR Guiding Principles for scientific data management and stewardship",
+    "journal": "Scientific Data",
+    "year": 2016,
+    "journal_short": "SciData",
+    "keywords": [
+      "FAIR",
+      "Guiding",
+      "Principles"
+    ],
+    "stem": "SciData2016_FAIR-Guiding-Principles",
+    "module": "X_practice/reproducibility",
+    "repo_url": null,
+    "authors": "Wilkinson MD, Dumontier M, Aalbersberg IJ, et al"
+  },
+  {
+    "doi": "10.1038/s41592-018-0046-7",
+    "title": "Bioconda: sustainable and comprehensive software distribution for the life sciences",
+    "journal": "Nature Methods",
+    "year": 2018,
+    "journal_short": "NatMethods",
+    "keywords": [
+      "Bioconda",
+      "sustainable",
+      "comprehensive"
+    ],
+    "stem": "NatMethods2018_Bioconda-sustainable-comprehensive",
+    "module": "X_practice/reproducibility",
+    "repo_url": null,
+    "authors": "Gruning B, Dale R, Sjodin A, et al"
+  },
+  {
+    "doi": "10.1016/j.xgen.2023.100251",
+    "title": "PrecisionFDA Truth Challenge V2: calling variants from short and long reads in difficult-to-map regions",
+    "journal": "Cell Genomics",
+    "year": 2023,
+    "journal_short": "CellGenomics",
+    "keywords": [
+      "PrecisionFDA",
+      "Truth",
+      "Challenge"
+    ],
+    "stem": "CellGenomics2023_PrecisionFDA-Truth-Challenge",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Olson ND, Wagner J, McDaniel J, et al"
+  },
+  {
+    "doi": "10.1038/s41592-022-01753-3",
+    "title": "Jasmine and Iris: population-scale structural variant comparison and analysis",
+    "journal": "Nature Methods",
+    "year": 2023,
+    "journal_short": "NatMethods",
+    "keywords": [
+      "Jasmine-and-Iris",
+      "population-scale",
+      "structural"
+    ],
+    "stem": "NatMethods2023_Jasmine-and-Iris-population-scale-structural",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": "https://github.com/mkirsche/Jasmine",
+    "authors": "Kirsche M, Prabhu G, Sherman R, et al"
+  },
+  {
+    "doi": "10.1016/j.molp.2021.06.018",
+    "title": "Two gap-free reference genomes and a global view of centromere architecture in rice",
+    "journal": "Molecular Plant",
+    "year": 2021,
+    "journal_short": "MolPlant",
+    "keywords": [
+      "Two",
+      "gap-free",
+      "reference"
+    ],
+    "stem": "MolPlant2021_Two-gap-free-reference",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Song JM, Xie WZ, Wang S, Guo YX, Koo DH, Kudrna D, et al"
+  },
+  {
+    "doi": "10.1186/s13059-018-1528-8",
+    "title": "Genomic approaches for studying crop evolution",
+    "journal": "Genome Biology",
+    "year": 2018,
+    "journal_short": "GB",
+    "keywords": [
+      "Genomic",
+      "studying",
+      "crop"
+    ],
+    "stem": "GB2018_Genomic-studying-crop",
+    "module": "X_practice/cases",
+    "repo_url": null,
+    "authors": "Schreiber M, Stein N, Mascher M"
+  },
+  {
+    "doi": "10.1038/s41586-021-03420-7",
+    "title": "The structure, function and evolution of a complete human chromosome 8",
+    "journal": "Nature",
+    "year": 2021,
+    "journal_short": "Nature",
+    "keywords": [
+      "structure",
+      "function",
+      "evolution"
+    ],
+    "stem": "Nature2021_structure-function-evolution",
+    "module": "F4_structure/sv_t2t",
+    "repo_url": null,
+    "authors": "Logsdon GA, Vollger MR, Hsieh P, et al"
+  },
+  {
+    "doi": "10.1038/s41588-025-02462-1",
+    "title": "Graph pan-genome illuminates evolutionary trajectories and agronomic trait architecture in allotetraploid cotton",
+    "journal": "Nature Genetics",
+    "year": 2026,
+    "journal_short": "NG",
+    "keywords": [
+      "Graph",
+      "pan-genome",
+      "illuminates"
+    ],
+    "stem": "NG2026_Graph-pan-genome-illuminates",
+    "module": "X_practice/cases",
+    "repo_url": null,
+    "authors": "Yang Z, Yang Z, Gao C, Zhang M, Hu G, et al"
+  },
+  {
+    "doi": "10.1016/j.tplants.2023.08.013",
+    "title": "New whole-genome alignment tools are needed for tapping into plant diversity",
+    "journal": "Trends in Plant Science",
+    "year": 2024,
+    "journal_short": "TrendsPlantSci",
+    "keywords": [
+      "whole-genome",
+      "alignment",
+      "needed"
+    ],
+    "stem": "TrendsPlantSci2024_whole-genome-alignment-needed",
+    "module": "F2_homology/synteny_alignment",
+    "repo_url": null,
+    "authors": "Song B, Buckler ES, Stitzer MC"
+  }
+]

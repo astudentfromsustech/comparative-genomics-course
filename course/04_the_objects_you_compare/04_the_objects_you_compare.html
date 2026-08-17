@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The objects you compare</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 02 · Part I, Orientation · Layer F1</p>
+    <h1>The objects you compare</h1>
+    <p class="standfirst">An F1 defect raises no error. It returns a result — plausible, publishable,
+      and entirely an artefact of how the data were made.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What must be true before a comparison means anything?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapter 1</dd></div>
+      <div><dt>Corpus</dt><dd><code>F1_data</code> · 12 of 23 on disk</dd></div>
+      <div><dt>Understood when</dt><dd>You can predict which false biology a given defect produces</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>Comparability is not quality</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Two excellent assemblies can be uncomparable; two mediocre ones can be
+        perfectly comparable. What matters is whether the differences you measure are differences in
+        biology or in how the two objects were produced.</p>
+      <pre class="fml gate"><b>EBP reference standard</b>  <span class="cmt">revised January 2026 — contiguity is one axis of six</span>
+
+  6.C.Q40              contig NG50 1 Mb · chromosome-level · QV 40
+  &lt; 5 %                false duplications
+  &gt; 90 %               k-mer completeness
+  &gt; 90 %               single-copy conserved genes
+  chromosome assignment  ·  transcript mappability
+
+<span class="cmt">N50 alone certifies nothing. It never did.</span></pre>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The mapping</span>
+        <h2>Each defect manufactures a specific story</h2></div>
+    </div>
+    <div class="stage-body">
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:860px" viewBox="0 0 860 340" role="img"
+               aria-label="Five assembly or annotation defects on the left, each mapping by an arrow to the specific false evolutionary conclusion it manufactures on the right.">
+            <defs>
+              <marker id="c2ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--signal)"/>
+              </marker>
+            </defs>
+            <text class="t-hd" x="30" y="26">THE DEFECT</text>
+            <text class="t-hd" x="560" y="26">WHAT IT MANUFACTURES</text>
+            <g><rect class="dg-box-s" x="30" y="44" width="230" height="40" rx="2"/>
+              <text class="t-lbl" x="44" y="62">Uncollapsed haplotypes</text>
+              <text class="t-sm" x="44" y="77">heterozygous diploid, unpurged</text>
+              <path class="dg-sig" marker-end="url(#c2ar)" d="M268,64 L552,64"/>
+              <rect class="dg-box" x="560" y="44" width="272" height="40" rx="2"/>
+              <text class="t-lbl f-sig" x="574" y="62">Gene family EXPANSION</text>
+              <text class="t-sm" x="574" y="77">false paralogs · inflated LTR expansion</text></g>
+            <g><rect class="dg-box-s" x="30" y="100" width="230" height="40" rx="2"/>
+              <text class="t-lbl" x="44" y="118">Collapsed repeats · GC bias</text>
+              <text class="t-sm" x="44" y="133">sequence missing from the assembly</text>
+              <path class="dg-sig" marker-end="url(#c2ar)" d="M268,120 L552,120"/>
+              <rect class="dg-box" x="560" y="100" width="272" height="40" rx="2"/>
+              <text class="t-lbl f-sig" x="574" y="118">Gene LOSS</text>
+              <text class="t-sm" x="574" y="133">platypus <tspan font-style="italic">COQ6</tspan> falsely absent</text></g>
+            <g><rect class="dg-box-s" x="30" y="156" width="230" height="40" rx="2"/>
+              <text class="t-lbl" x="44" y="174">Fragmentation</text>
+              <text class="t-sm" x="44" y="189">gene split across contigs</text>
+              <path class="dg-sig" marker-end="url(#c2ar)" d="M268,176 L552,176"/>
+              <rect class="dg-box" x="560" y="156" width="272" height="40" rx="2"/>
+              <text class="t-lbl f-sig" x="574" y="174">Short “NOVEL” genes</text>
+              <text class="t-sm" x="574" y="189">broken orthogroups downstream</text></g>
+            <g><rect class="dg-box-s" x="30" y="212" width="230" height="40" rx="2"/>
+              <text class="t-lbl" x="44" y="230">Misjoins</text>
+              <text class="t-sm" x="44" y="245">wrong order or orientation</text>
+              <path class="dg-sig" marker-end="url(#c2ar)" d="M268,232 L552,232"/>
+              <rect class="dg-box" x="560" y="212" width="272" height="40" rx="2"/>
+              <text class="t-lbl f-sig" x="574" y="230">REARRANGEMENTS · SVs</text>
+              <text class="t-sm" x="574" y="245">39 Mb of cattle SDs were Btau4.2 error</text></g>
+            <g><rect class="dg-box-s" x="30" y="268" width="230" height="40" rx="2"/>
+              <text class="t-lbl" x="44" y="286">Foreign contigs</text>
+              <text class="t-sm" x="44" y="301">contamination</text>
+              <path class="dg-sig" marker-end="url(#c2ar)" d="M268,288 L552,288"/>
+              <rect class="dg-box" x="560" y="268" width="272" height="40" rx="2"/>
+              <text class="t-lbl f-sig" x="574" y="286">HGT · whole lineages</text>
+              <text class="t-sm" x="574" y="301">a 2021 ARG-transfer claim was overturned</text></g>
+          </svg>
+        </div>
+        <figcaption><b>Learn it backwards too.</b> Given a claimed result, it tells you which defect
+          to rule out first.</figcaption>
+      </figure>
+
+      <div class="callout warn">
+        <h4>Measured, not hypothetical</h4>
+        <dl class="rules">
+          <dt>26–60 %</dt><dd>of genes carried false-loss signatures in earlier vertebrate assemblies (VGP)</dd>
+          <dt>&gt; 50 %</dt><dd>of genes had the wrong copy number in examined draft assemblies</dd>
+          <dt>15×</dt><dd>inflation of apparent lineage-specific genes from mixing annotation methods</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Instruments</span>
+        <h2>Four metrics, four blind spots</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:14%">Metric</th><th style="width:32%">Measures</th><th>Blind to</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">BUSCO</td><td>Expected conserved single-copy gene content</td>
+                <td>Bases, phasing, repeats, structure, contamination. Samples conserved orthologs — silent on lineage-specific genes</td></tr>
+            <tr><td class="mono">compleasm</td><td>The same quantity via miniprot — faster, and it shifts the numbers</td>
+                <td>Everything BUSCO is. <b>Not an independent evidence class</b> — agreement with BUSCO is not corroboration</td></tr>
+            <tr><td class="mono">Merqury</td><td>Read k-mers: QV, completeness, phasing</td>
+                <td>Chromosome structure; anything absent from the reads</td></tr>
+            <tr><td class="mono">LAI</td><td>Intact LTR continuity — repeat-space quality</td>
+                <td>Gene space. Informative mainly for LTR-rich genomes, so it travels badly across clades</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>Ask for BUSCO duplicated % first</h4>
+        <p>Clean diploid runs 1–3%. A genome reporting 15% duplicated alongside “widespread gene
+          family expansion” is describing its own assembly. It costs nothing and resolves a large
+          share of expansion claims — though it raises the question rather than settling it, since
+          duplicated BUSCOs signal haplotypic <em>or</em> real duplication.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">The harder half</span>
+        <h2>Annotation is where comparability breaks</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Assembly problems yield to better data. Annotation problems do not, because
+        annotation is a modelling choice and pipelines make different ones.</p>
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>BRAKER3</h3><span class="tag ok">evidence</span></div>
+          <p>GeneMark-ETP + AUGUSTUS over RNA-seq and protein evidence; TSEBRA selects models by
+            extrinsic support.</p></div>
+        <div class="card"><div class="tagrow"><h3>Helixer</h3><span class="tag warn">learned</span></div>
+          <p>Cross-species deep-learning/HMM <em>ab initio</em> — no per-species evidence needed, which
+            is why it is both attractive and different.</p></div>
+        <div class="card"><div class="tagrow"><h3>EGAPx</h3><span class="tag ok">evidence</span></div>
+          <p>NCBI's open pipeline: protein and RNA alignment, then Gnomon plus HMM prediction.</p></div>
+        <div class="card"><div class="tagrow"><h3>Tiberius</h3><span class="tag warn">newest</span></div>
+          <p>The 2024 deep-learning shift, multi-clade in 2026. The direction of travel.</p></div>
+      </div>
+      <div class="callout warn">
+        <h4>One pipeline for every genome — necessary, not sufficient</h4>
+        <p>Do it. But there is still <b>no community-wide annotation standard</b> (2025), uniform
+          annotation does not equalise unlike <em>evidence</em> — species-specific RNA-seq versus
+          protein-only prediction — and it systematically misses fast-evolving and <em>de novo</em>
+          loci, which is exactly what many comparative papers hunt.</p>
+        <p>A 2025 benchmark showed established annotation sources still produce materially different
+          orthology results. The choice propagates into Chapter 3.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Contamination</span>
+        <h2>The defect that manufactures lineages</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>The scale</h3><span class="tag ok">measured</span></div>
+          <p>FCS-GX found 36.8 Gbp of suspected contamination across 1.6 million GenBank
+            assemblies — 0.16% overall, but <b>half of it from 161 assemblies</b>.</p>
+          <div class="measured">Contamination is concentrated, not smeared. An aggregate rate says
+            nothing about <em>your</em> genome.<br><span class="src">Astashyn et al. 2024</span></div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>The casualty</h3><span class="tag bad">overturned</span></div>
+          <p>A 2026 reanalysis concluded contamination substantially undermined a 2021 claim of
+            cross-phylum antibiotic-resistance dissemination.</p>
+          <div class="measured">The claim fell to a reference screen, not to better biology.
+            <br><span class="src">Godron et al. 2026 · code public</span></div>
+        </div>
+      </div>
+      <div class="callout warn">
+        <h4>Resolve at the locus, not by default</h4>
+        <p>FCS-GX's authors report no excess calls in genomes with high-confidence lateral transfer;
+          the 2026 reanalysis shows a contaminated reference can overturn a specific HGT conclusion.
+          Both hold. So validate per locus — raw-read coverage across the candidate and its
+          junctions, contig context, taxonomic screening, an independent assembly — rather than
+          defaulting to either HGT or contamination.</p>
+        <p><b>Open question:</b> there is no audited estimate of how much older comparative
+          literature changes under modern screening. The FCS-GX aggregate is sometimes cited as
+          though it were that estimate. It is not.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Recently</span>
+        <h2>Where a 2015–2023 reading list is behind</h2></div>
+    </div>
+    <div class="stage-body">
+      <dl class="rules">
+        <dt>Jan 2026</dt><dd>EBP assembly standards revised — the multi-metric target above</dd>
+        <dt>2024</dt><dd>FCS-GX database-scale cleanup; screening is now cheap enough that skipping it is a choice</dd>
+        <dt>Jun 2026</dt><dd>EGAPx public; EGAP 10.6 automates protein-evidence selection</dd>
+        <dt>2025</dt><dd>Direct test of annotation-source effects on orthology — turns a worry into a measurement</dd>
+        <dt>2024–26</dt><dd>Tiberius and its multi-clade extension — deep-learning annotation becomes a contender</dd>
+      </dl>
+      <p class="src">From <code>research/raw/c02_data_comparability.md</code> · 46 cited URLs, spot-checked.
+        Percentages are study-specific and quoted as such.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Rhie et al., <em>Towards complete and error-free genome assemblies</em> (VGP)</td><td>2021</td><td><b>Start here.</b> The standard, and the false-loss evidence</td></tr>
+            <tr><td class="have">✓</td><td>Rhie et al., <em>Merqury</em>, Genome Biology</td><td>2020</td><td>Reference-free QV, completeness, phasing</td></tr>
+            <tr><td class="have">✓</td><td>Manni et al., <em>BUSCO update</em>, MBE</td><td>2021</td><td>Completeness, and the duplicated-% signal</td></tr>
+            <tr><td class="have">✓</td><td>Ou et al., <em>LTR Assembly Index</em>, NAR</td><td>2018</td><td>Repeat-space quality — a QC metric, filed here not under TEs</td></tr>
+            <tr><td class="have">✓</td><td>Brůna et al., <em>BRAKER2</em>, NARGAB</td><td>2021</td><td>Read before BRAKER3</td></tr>
+            <tr><td class="lack">·</td><td>Weisman et al., <em>Mixing annotation methods inflates lineage-specific genes</em>, Curr Biol</td><td>2022</td><td><b>The key experiment</b> <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Astashyn et al., <em>FCS-GX</em>, Genome Biology</td><td>2024</td><td>Contamination at scale <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <h4>Corpus gap</h4>
+        <p>The two most decision-relevant papers here are absent from the 172-paper corpus entirely.
+          It came from one article's citation list — this is the kind of hole the research pass
+          exists to find.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 2 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Name the false biology each defect produces — haplotigs, collapsed repeats,
+            fragmentation, misjoin, contamination.</li>
+          <li>Say why high contiguity ≠ high correctness.</li>
+          <li>State what BUSCO, Merqury and LAI are blind to, and why compleasm agreeing with BUSCO
+            is not corroboration.</li>
+          <li>Explain why one annotation pipeline is necessary but not sufficient.</li>
+          <li>Give the resolution procedure for an HGT claim without defaulting either way.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A manuscript reports</b> 41 genes in a new insect genome with no homolog outside the
+          family, enriched for detoxification domains, several adjacent to bacterial-like sequence —
+          concluding horizontal acquisition then lineage-specific radiation. What do you ask for?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>1 · screen</dt><dd>FCS-GX on the assembly as submitted. “Adjacent to bacterial-like sequence” is the signature of a contaminant contig, not of transfer.</dd>
+          <dt>2 · coverage</dt><dd>Raw reads across the candidate loci and their junctions. A real insertion has continuous insect-read coverage running into flanking insect sequence; a contaminant contig does not.</dd>
+          <dt>3 · provenance</dt><dd>Were the comparison genomes annotated the same way? “No homolog outside the family” is the most annotation-sensitive claim available — see the 15× result.</dd>
+          <dt>4 · duplication</dt><dd>BUSCO duplicated %, before accepting “radiation”.</dd>
+          <dt>5 · replication</dt><dd>An independent assembly of the same species.</dd>
+        </dl>
+        <p>Each check is cheaper than the claim it would displace, and any of the first three could
+          explain the entire result on its own.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../01_what_the_field_asks/01_what_the_field_asks.html">← Chapter 1 · What the field actually asks</a>
+    <a href="../05_orthology/05_orthology.html">Chapter 3 · Orthology →</a>
+  </nav>
+  <footer>
+    <div>Part I of VI · Layer F1</div>
+    <div>Corpus <code>resources/papers/F1_data/</code> · Research <code>research/raw/c02_data_comparability.md</code></div>
+  </footer>
+
+</div>
+</body>
+</html>

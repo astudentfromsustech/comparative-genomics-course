@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulatory and non-coding comparison</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 14 · Part VI, Function · Layer F6</p>
+    <h1>Regulatory and non-coding comparison</h1>
+    <p class="standfirst">King &amp; Wilson's 1975 observation was that humans and chimpanzees have
+      unexpectedly similar proteins despite marked organismal differences. It motivated regulation as
+      a candidate explanatory layer — it did not demonstrate one.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What makes a cross-species regulatory comparison interpretable?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 06, 09</dd></div>
+      <div><dt>Corpus</dt><dd><code>F6/regulatory_noncoding</code> — <b>1 of 8 on disk</b></dd></div>
+      <div><dt>Understood when</dt><dd>You can name the confounders that make an expression difference uninterpretable</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>Conservation is not the same object as function</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>What a conserved non-coding element actually is</h4>
+        <p>Operationally: <b>a non-coding aligned sequence evolving more slowly than an estimated
+          neutral model</b>. That is the whole definition.</p>
+        <p>It is <b>not</b> a synonym for enhancer. Bona fide enhancers can be weakly conserved,
+          transposable-element-derived, or lineage-specific — so the CNE set both misses real
+          enhancers and includes constrained sequence that is not one.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:16%">Score</th><th style="width:38%">Computes</th><th>Depends on</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">phastCons</td><td>Elements and per-base probabilities under a conserved/non-conserved phylo-HMM</td><td rowspan="3">Alignment · tree · <b>neutral model</b> · species sampling · threshold. Change any and the element set changes</td></tr>
+            <tr><td class="mono">phyloP</td><td>Sitewise conservation <em>or acceleration</em></td></tr>
+            <tr><td class="mono">GERP++</td><td>"Rejected substitutions" relative to neutral expectation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Current practice is dense Cactus/PHAST alignments and the <b>241-way Zoonomia</b> constraint
+        tracks, plus primate-specific constraint from <b>239 primate genomes</b>. These mitigate but
+        cannot eliminate reference, assembly and lineage-depth limitations.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">Turnover</span>
+        <h2>The Villar result, stated precisely</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout warn">
+        <h4>Roughly half — but of what?</h4>
+        <p>Villar et al. mapped H3K27ac and H3K4me3 in <b>liver across 20 mammals</b> and reported
+          that roughly half of active enhancers per species were lineage- or species-specific, while
+          promoters were more conserved.</p>
+        <p>This is a <b>tissue-, mark- and orthology-dependent rate</b> — not a genome-wide
+          enhancer-turnover constant. It is very often cited as though it were the latter.</p>
+      </div>
+      <div class="callout">
+        <h4>And a revision that changes how you read reporter assays</h4>
+        <p>Human accelerated region experiments show that <b>compensatory substitutions can mask
+          substantial nucleotide-level effects</b> behind little net reporter difference. A null
+          result in a reporter assay is therefore weak evidence that the sequence differences do
+          nothing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Expression</span>
+        <h2>Why a cross-species expression difference is usually uninterpretable</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Bulk cross-species RNA-seq requires reciprocal, orthology-aware annotation;
+        species-balanced biological replication; matched protocols; and an <b>explicit design</b> for
+        species, batch, individual, sex, stage and cell composition.</p>
+      <dl class="rules">
+        <dt>annotation asymmetry</dt><dd>Gene-length and annotation differences can create <b>false differential expression</b> outright — Chapter 04 arriving in Chapter 14</dd>
+        <dt>composition</dt><dd>A tissue is a mixture. A "difference in expression" is often a difference in what cells the tissue contains</dd>
+        <dt>batch ≡ species</dt><dd>If each species was processed as a batch, species and batch are perfectly confounded and no normalisation recovers the difference</dd>
+        <dt>stage matching</dt><dd>See below — the one people are most confident about and most wrong about</dd>
+      </dl>
+      <div class="callout bad">
+        <h4>Chronological age is not stage matching</h4>
+        <p>Comparative mammalian transcriptomes infer stage correspondences <em>from expression</em>
+          and reveal substantial heterochrony — a <b>newborn opossum corresponds approximately to
+          mouse E11.5</b>.</p>
+        <p>Sampling "newborns" across mammals is therefore not a matched design. It is a design that
+          measures developmental timing differences and reports them as regulatory divergence.</p>
+      </div>
+      <div class="callout">
+        <h4>The elegant control: hybrid cells</h4>
+        <p>Human–chimpanzee hybrid iPSC derivatives put both genomes in a <b>shared trans
+          environment</b>. Allele-specific expression and accessibility then estimate <em>cis</em>
+          divergence while avoiding composition, stage, culture and batch confounders at once.</p>
+        <p>What those studies found matters: <b>substantial contributions from both cis and trans</b>.
+          So "regulatory evolution" must not be silently equated with cis-only evolution — a
+          conflation that is common precisely because cis is what is easiest to measure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Single cell</span>
+        <h2>Cell-type homology is contested, not solved</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Atlases support deep conservation of broad cell categories and core regulatory
+        programs, while also identifying lineage-specific states and conserved programs deployed in
+        new contexts.</p>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>One-to-one orthologues only</h3><span class="tag bad">loses signal</span></div>
+          <p>Restricting the feature space to strict orthologues discards species-specific genes —
+            often the ones the study is about.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Permissive mapping + integration</h3><span class="tag bad">overcorrects</span></div>
+          <p>Permissive homology mappings and integration methods can <b>overcorrect real species
+            differences</b>, removing the biology as though it were batch effect.</p>
+        </div>
+      </div>
+      <div class="callout warn">
+        <h4>The benchmark result</h4>
+        <p>A comparison of <b>28 gene-homology and integration combinations</b> found the outcome
+          explicitly <b>method- and task-dependent</b>. There is no default that is safe across
+          questions — so the mapping choice has to be justified against the specific question and its
+          sensitivity reported.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Validation</span>
+        <h2>What each assay actually establishes</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:24%">Evidence</th><th style="width:34%">Establishes</th><th>Does not</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">MPRA / STARR-seq</td><td><b>Sequence-intrinsic reporter activity</b></td><td>Native chromatin context, the correct target gene, or any phenotype</td></tr>
+            <tr><td class="mono">species-paired reporters</td><td>Cis effects, tested in <b>both</b> relevant trans environments</td><td>Still reporter activity, not endogenous function</td></tr>
+            <tr><td class="mono">CRISPRi / deletion</td><td><b>Regional necessity</b></td><td>Causal nucleotide identity — the region is not the base</td></tr>
+            <tr><td class="mono">allele swap / base edit</td><td>Causal effect at the <b>endogenous orthologous locus</b></td><td>Needs replicated target-gene and cellular/organismal phenotypes, rescue or reversion, the appropriate developmental cell state, and an independently supported enhancer–target assignment</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>What moved in the last 18 months</h4>
+        <p>The <b>Biodiversity Cell Atlas</b> (2025) formalised a large cross-taxa atlas initiative;
+          human-specific-deletion work used hybrid cells plus reporter assays to assign cis/trans
+          targets; and a 2025 mammal–bird study added comparative enhancer assays of accelerated
+          regions.</p>
+        <p>These are advances in <b>resources and candidate validation</b> — not a resolution of
+          phenotype-level causality. King &amp; Wilson's question remains open.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers — and the corpus problem</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>1 of 8 PDFs on disk</h4>
+        <p>Like Chapter 11, this chapter is written from verified research findings because the
+          primary literature is largely paywalled and unreachable by the open-access ladder.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="lack">·</td><td>King &amp; Wilson, <em>Evolution at two levels</em>, Science</td><td>1975</td><td><b>The founding question</b> <span class="note">missing — acquire</span></td></tr>
+            <tr><td class="lack">·</td><td>Villar et al., <em>Enhancer evolution across 20 mammalian species</em>, Cell</td><td>2015</td><td>The turnover result <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Christmas et al., Zoonomia constraint, Science</td><td>2023</td><td>240 mammals, high-power non-coding constraint <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Andrews et al., Zoonomia cCREs/TFBSs, Science</td><td>2023</td><td>0.92M cCREs, 15.6M TFBSs across mammals <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Agoglia et al., human–chimp hybrid cells, Nat Commun</td><td>2023</td><td><b>The cis/trans control</b> <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Davydov et al., <em>GERP++</em>, PLoS Comp Biol</td><td>2010</td><td>Constraint scoring <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Song et al., cross-species integration benchmark, Nat Commun</td><td>2023</td><td>The 28-combination result <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 14 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Define a CNE operationally, and say why it is not an enhancer.</li>
+          <li>State the Villar result with its scope conditions.</li>
+          <li>Name four confounders that make a cross-species expression difference uninterpretable.</li>
+          <li>Explain why hybrid cells are an unusually clean design, and what they showed about
+            cis versus trans.</li>
+          <li>Say what MPRA, CRISPRi and an allele swap each do and do not establish.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> 412 genes differentially expressed between human and macaque
+          prefrontal cortex, enrichment for synaptic genes, overlap with human accelerated regions,
+          and concludes regulatory rewiring underlying human cognitive evolution. What do you ask?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>composition</dt><dd>Cortex is a cell mixture, and neuron/glia ratios differ between species. Was composition estimated and adjusted, or is this a cell-count difference reported as expression?</dd>
+          <dt>stage &amp; state</dt><dd>Matched how? Chronological age is not stage matching, and post-mortem interval, agonal state and tissue handling differ systematically between human and macaque samples.</dd>
+          <dt>batch ≡ species</dt><dd>Human and macaque tissue almost never come from the same pipeline. If species and batch are confounded, no normalisation separates them.</dd>
+          <dt>annotation</dt><dd>Reciprocal, orthology-aware, uniformly re-annotated? Gene-length differences alone create false DE.</dd>
+          <dt>cis or trans?</dt><dd>Nothing here distinguishes them. Hybrid cells would; expression comparison alone cannot.</dd>
+          <dt>the HAR overlap</dt><dd>How was significance of overlap computed, against what background? And note the compensatory-substitution result: HAR reporter effects can be masked, so overlap direction is not interpretable without functional work.</dd>
+        </dl>
+        <p>The deepest problem is the last clause. "Underlying human cognitive evolution" is a
+          rung-four claim supported by rung-one evidence, in a system where the causal experiment is
+          not available — which is exactly why this chapter's question has stayed open for fifty
+          years.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../13_convergence/13_convergence.html">← Chapter 13 · Convergence</a>
+    <a href="../15_frontier_referee/15_frontier_referee.html">Chapter 15 · Frontier + referee →</a>
+  </nav>
+  <footer>
+    <div>Part VI of VI · Layer F6</div>
+    <div>Research <code>research/raw/c14_regulatory.md</code> — 57 sourced URLs. Corpus 1/8.</div>
+  </footer>
+
+</div>
+</body>
+</html>

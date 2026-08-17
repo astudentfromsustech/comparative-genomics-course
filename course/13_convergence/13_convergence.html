@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convergence</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 13 · Part V, Selection and history · Layers F5–F6</p>
+    <h1>Convergence</h1>
+    <p class="standfirst">The strictest application of the evidence ladder in the field — and the one
+      with the best-documented walk-backs. Two famous convergence claims were substantially
+      overturned, both instructively.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What does it take to claim convergent adaptation rather than coincidence?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 08, 09, 11, 12</dd></div>
+      <div><dt>Corpus</dt><dd><code>F5/convergence</code> 2/4</dd></div>
+      <div><dt>Understood when</dt><dd>You can count independent origins, and explain hemiplasy</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>Three conditions, all required</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Finding the same phenotype in multiple taxa is not enough. Neither is finding
+        the same substitution.</p>
+      <dl class="rules">
+        <dt>1 · independent origins</dt><dd>The phenotype has multiple <b>genuinely independent</b> origins under a defensible trait-evolution reconstruction</dd>
+        <dt>2 · exceeds a real null</dt><dd>The molecular pattern exceeds a null incorporating branch length, mutation and compositional bias, site constraint, phylogenetic uncertainty <b>and gene-tree discordance</b></dd>
+        <dt>3 · specifically aligned</dt><dd>The association tracks the phenotype rather than a correlated ecological variable, shared ancestry, relaxed constraint, or annotation bias</dd>
+      </dl>
+      <div class="callout warn">
+        <h4>Chance convergence is not rare</h4>
+        <p>It rises with total divergence, amino-acid accessibility, site constraint and reconstruction
+          error. So a convergent-substitution count must be compared to an explicit
+          <b>substitution-model expectation</b> — and <em>divergent</em> substitutions, or matched
+          branches, make useful empirical controls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The trap</span>
+        <h2>Hemiplasy — one mutation that looks like two</h2></div>
+    </div>
+    <div class="stage-body">
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:820px" viewBox="0 0 820 260" role="img"
+               aria-label="Left: a single mutation occurs on one branch of a discordant gene tree in which A and C are sisters. Right: mapped onto the species tree where A and B are sisters, the same single mutation appears as two independent gains in A and C.">
+            <text class="t-hd f-acc" x="20" y="20">WHAT HAPPENED — on the GENE tree</text>
+            <path class="dg-line" d="M40,150 L90,150 M90,80 L90,200 M90,200 L200,200
+                                     M90,80 L140,80 M140,50 L140,110 M140,50 L200,50 M140,110 L200,110"/>
+            <text class="t-mono" x="208" y="54">A</text>
+            <text class="t-mono" x="208" y="114">C</text>
+            <text class="t-mono" x="208" y="204">B</text>
+            <circle cx="140" cy="65" r="6" fill="var(--signal)"/>
+            <text class="t-mono f-sig" x="152" y="40">ONE mutation</text>
+            <text class="t-sm f-acc" x="40" y="232">A and C are sisters at THIS locus</text>
+            <text class="t-sm" x="40" y="248">(discordant — ILS or introgression)</text>
+
+            <path class="dg-dash" d="M300,10 L300,250"/>
+
+            <text class="t-hd f-sig" x="330" y="20">WHAT IS INFERRED — on the SPECIES tree</text>
+            <path class="dg-line" d="M350,150 L400,150 M400,80 L400,200 M400,200 L510,200
+                                     M400,80 L450,80 M450,50 L450,110 M450,50 L510,50 M450,110 L510,110"/>
+            <text class="t-mono" x="518" y="54">A</text>
+            <text class="t-mono" x="518" y="114">B</text>
+            <text class="t-mono" x="518" y="204">C</text>
+            <circle cx="480" cy="50" r="6" fill="var(--signal)"/>
+            <circle cx="480" cy="200" r="6" fill="var(--signal)"/>
+            <text class="t-mono f-sig" x="530" y="34">gain 1</text>
+            <text class="t-mono f-sig" x="530" y="184">gain 2</text>
+            <text class="t-lbl f-sig" x="350" y="232">"two independent origins" — CONVERGENCE</text>
+            <text class="t-sm" x="350" y="248">from a single mutational event</text>
+
+            <rect x="600" y="60" width="206" height="120" fill="none" stroke="var(--refuse)" stroke-width="1.4"/>
+            <text class="t-hd f-ref" x="614" y="82">WHEN IT BITES</text>
+            <text class="t-sm" x="614" y="104">rapid radiations</text>
+            <text class="t-sm" x="614" y="122">short internal branches</text>
+            <text class="t-sm" x="614" y="140">high ILS or introgression</text>
+            <text class="t-sm f-ref" x="614" y="164">— i.e. exactly where</text>
+            <text class="t-sm f-ref" x="614" y="176">convergence is studied</text>
+          </svg>
+        </div>
+        <figcaption><b>Hemiplasy is not a rare edge case in the systems people choose.</b> Rapid
+          radiations with short internal branches are both where repeated trait evolution is easiest
+          to find and where gene-tree discordance is highest.</figcaption>
+      </figure>
+      <div class="callout bad">
+        <h4>The required diagnostic</h4>
+        <p>Analyse <b>local genealogies and recombination blocks</b>, use coalescent-aware methods, and
+          treat gene-tree/species-tree concordance as a <em>required</em> check rather than an
+          optional one. <b>PhyloAcc-GT (2023)</b> integrates gene-tree uncertainty under the
+          multispecies coalescent specifically to reduce ILS-driven false calls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Counting</span>
+        <h2>Trait-positive tips are not independent origins</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This is Chapter 09's lesson in its sharpest form. Origins must be counted as
+        <b>posterior-distributed transitions</b>, not tip labels.</p>
+      <pre class="fml gate"><b>how to count origins defensibly</b>
+
+  fit alternative discrete-trait models
+  on a DATED SPECIES-TREE POSTERIOR          not one point-estimate tree
+  stochastic-map the transitions
+  propagate uncertainty into the genomic test
+
+<b>report</b>  the DISTRIBUTION of origins,  and effective independent contrasts
+       — not "we studied 14 species with the trait"
+
+<span class="cmt">Standard ancestral reconstructions can be biased by rate heterogeneity and
+by state-dependent diversification. Closely related trait-positive tips are
+replication-poor; treating them as independent inflates significance.</span></pre>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Case one</span>
+        <h2>Echolocating mammals — what actually happened</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>The claim, 2013</h3><span class="tag">Nature</span></div>
+          <p>Nearly <b>200 convergent loci across 2,326 proteins</b> in echolocating mammals — a
+            genome-wide shared coding basis for echolocation.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>The rebuttals, 2015</h3><span class="tag bad">no matched null</span></div>
+          <p>The tree-distortion signal had <b>no appropriate matched null</b>. Equivalent
+            "convergence" appeared for echolocators versus <em>non</em>-echolocating controls, and the
+            selection test was misapplied.</p>
+          <div class="measured">The genome-wide claim did not survive.</div>
+        </div>
+      </div>
+      <div class="callout">
+        <h4>But read the ending carefully — this is a walk-back, not a retraction</h4>
+        <p>The original article remains published. A small set of auditory candidates remained
+          plausible, and later work using a convergence-versus-divergence enrichment screen recovered
+          a <b>narrower functional enrichment in cochlear-ganglion-associated genes</b>.</p>
+        <p>So the credible disagreement now is about <em>localised functional signal</em> — not about
+          the original "widespread genome-wide convergence" conclusion, which is gone. Getting this
+          distinction right is itself a test of whether you have read the literature or the headline.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Case two</span>
+        <h2>High-altitude waterfowl — the more damaging lesson</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>Parallel substitutions were largely the wrong ones</h4>
+        <p>Claims that <b>parallel haemoglobin substitutions</b> explained repeated high-affinity
+          haemoglobin were weakened by protein engineering and direct functional measurement:</p>
+        <dl class="rules">
+          <dt>most parallel substitutions</dt><dd>were <b>irrelevant to oxygen affinity</b></dd>
+          <dt>most functional convergence</dt><dd>came from <b>non-parallel</b> substitutions</dd>
+        </dl>
+      </div>
+      <p>This is more damaging than the echolocation case, because the statistics were not obviously
+        wrong — the parallel substitutions were real. <b>Molecular parallelism and functional
+        convergence were simply different sets.</b> No amount of better null modelling would have
+        found that; only functional measurement did.</p>
+      <div class="callout warn">
+        <h4>The generalisable lesson</h4>
+        <p>Convergence detected at the sequence level is a hypothesis about <em>function</em> that
+          sequence cannot test. If the claim is adaptive convergence, the parallel sites are the
+          candidates — and the functional work is the evidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Methods</span>
+        <h2>What each detects, and what it does not</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:18%">Method</th><th style="width:38%">Detects</th><th>Does not</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">RERconverge</td><td>Correlation of branch-level relative evolutionary rates with a binary or continuous phenotype, normalised genome-wide; robust transforms, FDR, permulations</td><td>Identical substitutions, or adaptive causality. It tests <b>rate association</b></td></tr>
+            <tr><td class="mono">PhyloAcc v1</td><td>Bayesian conserved/background/accelerated models for conserved non-coding elements, compared by Bayes factors</td><td>Target-lineage acceleration is evidence of <b>changed constraint or selection</b> — not automatically positive selection</td></tr>
+            <tr><td class="mono">PhyloAcc-GT</td><td>The same, integrating gene-tree uncertainty under the MSC</td><td>The hemiplasy fix — use it in radiations</td></tr>
+            <tr><td class="mono">TRACCER</td><td>Compares trait-bearing branches to their <b>closest trait-lacking relatives</b>, ranking by topology, with permutations</td><td>Deliberately avoids treating distant branches as equivalent replicates — but still identifies rate–trait association, not causation</td></tr>
+            <tr><td class="mono">ω<sub>C</sub></td><td>Normalises nonsynonymous convergence by <b>synonymous convergence</b>, correcting phylogenetic errors that inflate both</td><td>Its authors caution that raw convergent-event counts remain essential with only two or three focal lineages</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">The ladder</span>
+        <h2>Four rungs, and the wording each buys</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:22%">Rung</th><th style="width:38%">Requires</th><th>You may write</th></tr></thead>
+          <tbody>
+            <tr><td><b>Candidate</b></td><td>An outlier, or observed homoplasy</td><td>"convergent substitutions were observed at…"</td></tr>
+            <tr><td><b>Controlled association</b></td><td>Trait-linked excess after calibrated nulls and multiplicity control</td><td>"…is associated with convergence in this trait"</td></tr>
+            <tr><td><b>Mechanistic support</b></td><td>The allele or element <b>reproducibly changes</b> the relevant molecular, cellular or organismal function</td><td>"…alters function in the expected direction"</td></tr>
+            <tr><td><b>Causal adaptive</b></td><td>Ancestral/derived swaps or precise editing — ideally <b>reciprocal rescue</b> — plus fitness or performance measurement <em>in the relevant environment</em></td><td>"…is a cause of the convergent adaptation"</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>Status of this ladder</h4>
+        <p>It is an <b>evidential standard, not a formal journal rule</b>. But high-tier papers
+          increasingly require the top two rungs before wording a hit as causal adaptation rather than
+          as associated with convergence — and the waterfowl case is why.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">8</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Parker et al., <em>Genome-wide signatures of convergent evolution in echolocating mammals</em>, Nature</td><td>2013</td><td><b>Read it, then read the rebuttals.</b> The most instructive pairing in the field</td></tr>
+            <tr><td class="have">✓</td><td><em>Causes of molecular convergence and parallelism in protein evolution</em>, NRG</td><td>2016</td><td>Storz — the standard-setting review</td></tr>
+            <tr><td class="lack">·</td><td>Thomas &amp; Hahn · Zou &amp; Zhang, rebuttals, MBE</td><td>2015</td><td><b>The matched-null argument</b> <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Guerrero &amp; Hahn, hemiplasy, PNAS</td><td>2018</td><td><b>The §2 concept</b> <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Natarajan et al., haemoglobin function, Science</td><td>2016</td><td>The waterfowl walk-back <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Marcovitz et al., cochlear ganglion, PNAS</td><td>2019</td><td>What survived echolocation <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Yan et al., <em>PhyloAcc-GT</em>, MBE</td><td>2023</td><td>The hemiplasy-aware method <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 13 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Give the three conditions for a convergent-adaptation claim.</li>
+          <li>Explain hemiplasy, and why it bites hardest exactly where convergence is studied.</li>
+          <li>Say how independent origins should be counted and reported.</li>
+          <li>State what the echolocation rebuttals actually established — and what survived.</li>
+          <li>Explain why the waterfowl case could not have been caught by better statistics.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> that across 9 independently evolved cave fish populations, 23
+          genes show convergent amino-acid substitutions, enriched for eye development, concluding
+          convergent molecular basis for eye loss. What do you require?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>are they independent?</dt><dd>"Nine populations" of one species in one cave system may be one colonisation. Give the posterior distribution of origins from stochastic mapping on a dated tree posterior — not a count of populations.</dd>
+          <dt>hemiplasy</dt><dd>Recently diverged cave populations are the maximum-risk case: high ILS, standing variation, possible gene flow. A single ancestral standing variant sorted differently would look exactly like this. Local genealogies, please.</dd>
+          <dt>matched null</dt><dd>Run the same pipeline on surface populations, or on a phenotype-shuffled control. That is precisely what the echolocation rebuttals did, and it is what changed the answer.</dd>
+          <dt>relaxed constraint</dt><dd>Eye loss is the textbook case of <em>relaxed</em> constraint, not positive selection. Convergent substitutions in eye genes are the expected consequence of released purifying selection. Run RELAX.</dd>
+          <dt>the enrichment</dt><dd>Post-hoc functional annotation of a statistical result, on a phenotype whose gene set was known in advance. Weak evidence.</dd>
+          <dt>function</dt><dd>The waterfowl lesson: are these 23 the substitutions that actually change eye development? Nothing so far tests that.</dd>
+        </dl>
+        <p>Cave fish are a genuinely strong system for repeated evolution. That is exactly why the
+          controls matter — a system where the answer is probably yes is where a weak test is least
+          likely to be challenged.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../12_popgen_introgression/12_popgen_introgression.html">← Chapter 12 · Population history</a>
+    <a href="../14_regulatory_noncoding/14_regulatory_noncoding.html">Chapter 14 · Regulatory &amp; non-coding →</a>
+  </nav>
+  <footer>
+    <div>Part V of VI · Layers F5–F6</div>
+    <div>Research <code>research/raw/c13_convergence.md</code> — 48 sourced URLs</div>
+  </footer>
+
+</div>
+</body>
+</html>

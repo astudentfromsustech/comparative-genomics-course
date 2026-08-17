@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gene families and duplication</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 05 · Part II, The homology layer · Layer F2</p>
+    <h1>Gene families and duplication</h1>
+    <p class="standfirst">Five mechanisms produce the same row in a copy-number table, and they mean
+      nothing alike. None is identifiable from that row.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>When is a copy-number change innovation, and when is it a haplotig?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 3 and 4</dd></div>
+      <div><dt>Corpus</dt><dd><code>F2_homology/gene_family_wgd</code> · <b>1 of 8 on disk</b></dd></div>
+      <div><dt>Understood when</dt><dd>You can say why a count table cannot identify the mechanism</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>Four claims stacked; papers establish the fourth</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml">1  <b>the counts are correct</b>       not an assembly or annotation artefact
+2  <b>the family is a family</b>      the orthogroup boundary is right
+3  <b>it happened on that branch</b>  needs a tree and an ancestral state
+4  the change had a consequence   the part everyone writes about</pre>
+      <div class="callout bad">
+        <h4>Claim 1 fails by haplotig</h4>
+        <p>In a heterozygous diploid assembled without purging, both haplotypes of a region are
+          assembled separately and every gene there is annotated twice. It looks exactly like a
+          recent tandem expansion.</p>
+        <p><b>BUSCO duplicated %</b> settles it cheaply: clean diploid runs 1–3%. A genome at 15%
+          claiming widespread expansion is describing its own assembly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The core point</span>
+        <h2>Mechanism comes from position and structure</h2></div>
+    </div>
+    <div class="stage-body">
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:840px" viewBox="0 0 840 320" role="img"
+               aria-label="Five duplication mechanisms as genomic arrangements: tandem copies adjacent, a segmental block duplicated, whole-genome duplication producing collinear blocks on separate chromosomes, retrotransposition producing an intronless copy elsewhere, and dispersed duplication.">
+            <defs>
+              <marker id="c5ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--accept)"/>
+              </marker>
+            </defs>
+            <g><text class="t-hd" x="16" y="26">TANDEM</text>
+              <path class="dg-line" d="M150,20 L400,20"/>
+              <rect class="dg-box-a" x="170" y="12" width="26" height="16"/>
+              <rect class="dg-box-a" x="200" y="12" width="26" height="16"/>
+              <rect class="dg-box-a" x="230" y="12" width="26" height="16"/>
+              <text class="t-sm" x="420" y="25">adjacent · diagnose by coordinates (≤10 genes apart)</text></g>
+            <g><text class="t-hd" x="16" y="76">SEGMENTAL</text>
+              <path class="dg-line" d="M150,70 L400,70"/>
+              <rect class="dg-box-a" x="170" y="62" width="70" height="16"/>
+              <rect class="dg-box-a" x="290" y="62" width="70" height="16"/>
+              <path class="dg-acc" marker-end="url(#c5ar)" d="M205,58 Q248,36 325,58"/>
+              <text class="t-sm" x="420" y="75">a multi-gene block copied · diagnose by self-synteny</text></g>
+            <g><text class="t-hd" x="16" y="130">WGD</text>
+              <path class="dg-line" d="M150,112 L400,112"/>
+              <path class="dg-line" d="M150,140 L400,140"/>
+              <rect class="dg-box-a" x="176" y="104" width="20" height="16"/>
+              <rect class="dg-box-a" x="206" y="104" width="20" height="16"/>
+              <rect class="dg-box-a" x="240" y="104" width="20" height="16"/>
+              <rect class="dg-box-a" x="176" y="132" width="20" height="16"/>
+              <rect class="dg-box-a" x="206" y="132" width="20" height="16"/>
+              <rect class="dg-box-a" x="240" y="132" width="20" height="16"/>
+              <path class="dg-dash" d="M186,120 L186,132 M216,120 L216,132 M250,120 L250,132"/>
+              <text class="t-sm" x="420" y="118">everything at once · collinear blocks, separate chromosomes</text>
+              <text class="t-sm f-sig" x="420" y="134">a Ks peak alone is not evidence</text></g>
+            <g><text class="t-hd" x="16" y="200">RETRO-</text><text class="t-hd" x="16" y="212">TRANSPOSED</text>
+              <path class="dg-line" d="M150,196 L400,196"/>
+              <rect class="dg-box-a" x="170" y="188" width="14" height="16"/>
+              <rect class="dg-box-a" x="190" y="188" width="14" height="16"/>
+              <rect class="dg-box-a" x="210" y="188" width="14" height="16"/>
+              <text class="t-sm" x="176" y="182">parent: has introns</text>
+              <rect class="dg-box-s" x="330" y="188" width="44" height="16"/>
+              <text class="t-sm f-sig" x="330" y="182">copy: intronless + polyA</text>
+              <text class="t-sm" x="420" y="201">diagnose by structure · usually a dead pseudogene</text></g>
+            <g><text class="t-hd" x="16" y="266">DISPERSED</text>
+              <path class="dg-line" d="M150,260 L400,260"/>
+              <rect class="dg-box-a" x="170" y="252" width="26" height="16"/>
+              <rect class="dg-box-a" x="340" y="252" width="26" height="16"/>
+              <text class="t-sm" x="420" y="265">no collinearity, no retro signature · by exclusion</text></g>
+            <path class="dg-dash" d="M16,288 L824,288"/>
+            <text class="t-lbl f-sig" x="16" y="308">All five produce the same row in a copy-number table.</text>
+          </svg>
+        </div>
+        <figcaption><b>The referee question is not statistical.</b> Ask <em>which mechanism, and what
+          is the syntenic evidence?</em> A 200-copy tandem array is <em>one</em> event, not 199.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Fates</span>
+        <h2>Retention is not evidence of selection</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:28%">Fate</th><th style="width:42%">Mechanism</th><th>Frequency</th></tr></thead>
+          <tbody>
+            <tr><td>Nonfunctionalization</td><td>Disabling mutations → pseudogene</td><td>The overwhelming default</td></tr>
+            <tr><td>Neofunctionalization</td><td>A copy is freed from constraint and gains a function</td><td>Rare — and the story everyone tells</td></tr>
+            <tr><td><b>Subfunctionalization (DDC)</b></td><td>Complementary losses; both copies now required</td><td>Common, and <b>needs no positive selection</b></td></tr>
+            <tr><td>Dosage</td><td>2× product is beneficial</td><td>Common for dosage-sensitive genes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <h4>Two consequences worth carrying</h4>
+        <p><b>DDC (Force 1999)</b> showed retention can be entirely neutral-to-degenerative:
+          complementary degenerative mutations in regulatory regions preserve both copies with no
+          adaptive event. Much comparative narrative silently assumes the opposite.</p>
+        <p><b>Dosage balance</b> gives a testable prediction: WGD retains dosage-sensitive genes —
+          transcription factors, ribosomal proteins, complex members — because halving one member is
+          deleterious; small-scale duplication retains the reverse (stress, defence, secondary
+          metabolism, chemosensation). So a claimed “adaptive expansion” of transcription factors
+          that turns out tandem rather than WGD-derived is suspect.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">WGD</span>
+        <h2>Four ways a <em>K</em><sub>s</sub> peak misleads</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>Saturation</h3><span class="tag bad">01</span></div>
+          <p>Beyond <em>K</em><sub>s</sub> ≈ 1–2 synonymous sites are hit repeatedly; estimates compress
+            and variance inflates. A high-<em>K</em><sub>s</sub> “peak” is often the estimator.</p></div>
+        <div class="card"><div class="tagrow"><h3>Rate variation</h3><span class="tag bad">02</span></div>
+          <p>The same <em>K</em><sub>s</sub> is a different age in two clades, so peaks cannot be aligned
+            across species to claim a shared WGD.</p></div>
+        <div class="card"><div class="tagrow"><h3>Tandem contamination</h3><span class="tag bad">03</span></div>
+          <p>A recent family expansion contributes many low-<em>K</em><sub>s</sub> pairs. Tandems are
+            removed first — check whether they were.</p></div>
+        <div class="card"><div class="tagrow"><h3>Collinearity</h3><span class="tag ok">the confirmation</span></div>
+          <p>WGD leaves syntenic blocks in doubled relationship across chromosomes. A peak without
+            block structure is a hypothesis.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Modelling</span>
+        <h2>What CAFE claims, and how it breaks</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">CAFE and BadiRate fit a birth–death process for family size along an ultrametric
+        species tree, flagging families improbable under the fitted rate. CAFE 5 allows rate
+        variation across families — a single global λ is badly misspecified for real genomes.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:30%">Assumption</th><th style="width:32%">Breaks when</th><th>Consequence</th></tr></thead>
+          <tbody>
+            <tr><td>Family sizes are correct</td><td>Annotation pipelines differ</td><td>Spurious rapid families, <b>concentrated in the odd genome</b></td></tr>
+            <tr><td>Tree and branch lengths in <em>time</em> are correct</td><td>Concatenated or uncalibrated tree</td><td>Rates and significance both wrong</td></tr>
+            <tr><td>Families evolve independently</td><td>Tandem arrays, WGD</td><td>One event moves many families; counted as independent</td></tr>
+            <tr><td>One rate fits all</td><td>Always</td><td>Inflated significance for fast families</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>The one-minute check</h4>
+        <p><b>Plot flagged families by species.</b> Concentration in one genome means you are looking
+          at its annotation, not its evolution. CAFE also takes orthogroups as given — every Chapter 3
+          error enters here as data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">The ladder</span>
+        <h2>What each rung entitles you to say</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:16%">Rung</th><th style="width:36%">You may claim</th><th>It requires</th></tr></thead>
+          <tbody>
+            <tr><td><b>Candidate</b></td><td>“More copies in A than B”</td><td>Comparable annotation, haplotig purging, BUSCO duplication check</td></tr>
+            <tr><td><b>Association</b></td><td>“Expanded on branch <em>n</em>”</td><td>Species tree + ancestral state + birth–death model</td></tr>
+            <tr><td><b>Mechanistic</b></td><td>“Tandem duplication of locus L”</td><td>Coordinates, array structure, collinear blocks, <em>K</em><sub>s</sub> among copies</td></tr>
+            <tr><td><b>Causal</b></td><td>“Contributes to phenotype P”</td><td>Expression of new copies, divergence consistent with functional change, ideally a perturbation. Cross-species correlation alone does not reach here — Chapter 7</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <h4>Fallback wording</h4>
+        <p>With rung 1 only you may write <em>“family X shows a higher copy number in A than B”</em>,
+          not <em>“family X is expanded in A”</em>. “Expanded” already asserts rung 2 — a direction,
+          on a branch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>This chapter is unreadable from the vault</h4>
+        <p><b>7 of 8 PDFs are absent.</b> Force 1999 and Lynch &amp; Conery 2000 carry the concepts;
+          the rest are tool papers. Get those two first.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:52%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Van de Peer et al., <em>The evolutionary significance of polyploidy</em>, NRG</td><td>2017</td><td><b>Start here.</b> The modern WGD synthesis</td></tr>
+            <tr><td class="lack">·</td><td>Force et al., <em>Preservation of duplicate genes by complementary, degenerative mutations</em></td><td>1999</td><td><b>The DDC model</b></td></tr>
+            <tr><td class="lack">·</td><td>Lynch &amp; Conery, <em>The evolutionary fate and consequences of duplicate genes</em></td><td>2000</td><td>Duplicate lifespan; the <em>K</em><sub>s</sub> method</td></tr>
+            <tr><td class="lack">·</td><td>Jiao et al., <em>Ancestral polyploidy in seed plants</em>, Nature</td><td>2011</td><td>WGD by phylogenomics, not <em>K</em><sub>s</sub> alone</td></tr>
+            <tr><td class="lack">·</td><td>Mendes et al., <em>CAFE 5</em>, Bioinformatics</td><td>2021</td><td>Rate variation — read before using CAFE</td></tr>
+            <tr><td class="lack">·</td><td><em>Turning a hobby into a job</em>, NRG · De Bie <em>CAFE</em> · Librado <em>BadiRate</em></td><td>2006–12</td><td>Fates and implementations</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 5 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Explain why the five mechanisms are indistinguishable from a count table, and name the
+            evidence separating each.</li>
+          <li>Say why retention is not evidence of positive selection, citing the mechanism.</li>
+          <li>List three ways a <em>K</em><sub>s</sub> peak misleads, and what confirms a WGD.</li>
+          <li>Name the first check on a manuscript claiming widespread expansion.</li>
+          <li>Give the dosage-balance prediction, and why it holds.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A beetle genome</b> has 214 copies of a detoxification family versus 31 in its sister
+          species; CAFE flags it rapidly evolving (p&nbsp;&lt;&nbsp;0.001); GO supports “response to
+          xenobiotic stimulus”; the conclusion is insecticide-resistance adaptation. What do you ask
+          for, in order?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>1 · haplotigs</dt><dd>BUSCO duplicated % and whether purging was run. 214 vs 31 is the signature of an unpurged heterozygous assembly.</dd>
+          <dt>2 · annotation</dt><dd>Same pipeline and same evidence for both genomes?</dd>
+          <dt>3 · mechanism</dt><dd>Coordinates. A tandem array is one event, not 183.</dd>
+          <dt>4 · distribution</dt><dd>Flagged families across all species — concentrated in this genome?</dd>
+          <dt>5 · intactness</dt><dd>How many of the 214 are intact ORFs rather than pseudogenes?</dd>
+        </dl>
+        <p>The answer might genuinely be yes — detoxification families really do expand under
+          insecticide pressure. That is exactly why the checks matter: <b>the plausible story is what
+          stops people from running them.</b></p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../06_synteny_wga_ancestral/06_synteny_wga_ancestral.html">← Chapter 4 · Synteny, WGA, ancestral genomes</a>
+    <a href="../08_species_tree/08_species_tree.html">Chapter 6 · The species tree →</a>
+  </nav>
+  <footer>
+    <div>Part II of VI · Layer F2</div>
+    <div>Corpus <code>resources/papers/F2_homology/gene_family_wgd/</code> — 1 of 8 on disk</div>
+  </footer>
+
+</div>
+</body>
+</html>

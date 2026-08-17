@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Population history and introgression</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 12 · Part V, Selection and history · Layer F5</p>
+    <h1>Population history and introgression</h1>
+    <p class="standfirst">Most scan statistics measure departure from a simplistic neutral, panmictic
+      baseline — not selection. Demography and gene flow are therefore not confounders at the edges.
+      They are the default explanation.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>How do demography and gene flow masquerade as adaptation?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 03, 08</dd></div>
+      <div><dt>Corpus</dt><dd><code>F5/popgen_demography</code> 5/14 · <code>F5/introgression</code> 5/7</dd></div>
+      <div><dt>Understood when</dt><dd>You can give the signature separating ILS from introgression — and say when it fails</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>Why the mimicry is structural</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">A bottleneck, range expansion or unmodelled structure changes allele-frequency
+        variance, and can make <b>neutral</b> loci extreme in F<sub>ST</sub>. Background selection
+        reduces linked neutral diversity most strongly in low-recombination, gene-dense regions —
+        inflating relative differentiation with no locus-specific barrier to gene flow anywhere.</p>
+      <div class="callout bad">
+        <h4>The single most useful rule in this chapter</h4>
+        <p><b>A high-F<sub>ST</sub> region without elevated d<sub>XY</sub> is not evidence for reduced
+          gene flow.</b> Background selection and recurrent selection create high-F<sub>ST</sub>,
+          low-π "islands" on their own.</p>
+        <p>F<sub>ST</sub> is a <em>relative</em> measure. Reduce within-population diversity and it
+          rises without any change in between-population divergence. That is what BGS does.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The signature</span>
+        <h2>ILS is symmetric; introgression is not</h2></div>
+    </div>
+    <div class="stage-body">
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:820px" viewBox="0 0 820 280" role="img"
+               aria-label="For a rooted quartet, incomplete lineage sorting predicts equal ABBA and BABA counts with symmetric branch length distributions, while introgression produces excess of one pattern and shorter internal branches for the discordant loci.">
+            <text class="t-hd" x="20" y="20">ROOTED QUARTET  (((P1,P2),P3),O)</text>
+            <path class="dg-line" d="M40,120 L80,120 M80,60 L80,180 M80,60 L140,60 M80,180 L140,180
+                                     M140,30 L140,90 M140,30 L200,30 M140,90 L200,90
+                                     M200,15 L200,45 M200,15 L250,15 M200,45 L250,45"/>
+            <text class="t-mono" x="258" y="19">P1</text><text class="t-mono" x="258" y="49">P2</text>
+            <text class="t-mono" x="208" y="94">P3</text><text class="t-mono" x="148" y="184">O</text>
+
+            <path class="dg-dash" d="M320,10 L320,270"/>
+
+            <text class="t-hd f-acc" x="350" y="34">ILS ALONE</text>
+            <rect class="dg-box" x="350" y="46" width="88" height="30"/>
+            <rect class="dg-box" x="446" y="46" width="88" height="30"/>
+            <text class="t-mono" x="394" y="66" text-anchor="middle">ABBA</text>
+            <text class="t-mono" x="490" y="66" text-anchor="middle">BABA</text>
+            <text class="t-lbl f-acc" x="350" y="96">equal expectation — symmetric</text>
+            <text class="t-sm" x="350" y="114">and branch-length distributions are</text>
+            <text class="t-sm" x="350" y="129">symmetric too</text>
+
+            <text class="t-hd f-sig" x="350" y="168">INTROGRESSION</text>
+            <rect class="dg-box-s" x="350" y="180" width="126" height="30"/>
+            <rect class="dg-box" x="484" y="180" width="50" height="30"/>
+            <text class="t-mono f-sig" x="413" y="200" text-anchor="middle">ABBA</text>
+            <text class="t-mono" x="509" y="200" text-anchor="middle">BABA</text>
+            <text class="t-lbl f-sig" x="350" y="230">excess of one pattern — the D statistic</text>
+            <text class="t-lbl f-sig" x="350" y="248">PLUS shorter internal branches at those loci</text>
+            <text class="t-sm" x="350" y="266">(a mixture of recent introgressed and older MSC coalescences)</text>
+
+            <rect x="560" y="40" width="248" height="220" fill="none" stroke="var(--refuse)" stroke-width="1.4"/>
+            <text class="t-hd f-ref" x="574" y="62">WHEN THE SIGNATURE FAILS</text>
+            <text class="t-sm" x="574" y="86">old introgression → approaches the</text>
+            <text class="t-sm" x="574" y="100">speciation-time coalescent distribution</text>
+            <text class="t-sm" x="574" y="122">recombination erases tract lengths</text>
+            <text class="t-sm" x="574" y="144">bidirectional / symmetric flow</text>
+            <text class="t-sm" x="574" y="158">CANCELS D</text>
+            <text class="t-sm" x="574" y="180">ancestral structure</text>
+            <text class="t-sm" x="574" y="202">lineage-specific rate variation</text>
+            <text class="t-sm" x="574" y="224">wrong tree or polarisation</text>
+            <text class="t-sm f-ref" x="574" y="246">unsampled GHOST donors</text>
+          </svg>
+        </div>
+        <figcaption><b>The branch-length signature is what D alone does not give you.</b> Introgressed
+          loci coalesce more recently than ILS predicts; that asymmetry in <em>times</em>, not just in
+          counts, is the second line of evidence.</figcaption>
+      </figure>
+      <div class="callout warn">
+        <h4>What a significant D licenses</h4>
+        <p>Evidence against a <b>narrow no-gene-flow quartet null</b>. Not an identified donor, not a
+          direction, not a date, and certainly not an adaptive function.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Statistics</span>
+        <h2>The introgression toolkit, scoped</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:18%">Statistic</th><th style="width:36%">Does</th><th>Does not</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Patterson's D</td><td>Tests ABBA–BABA imbalance genome-wide</td><td><b>Not a local admixture-proportion estimator</b>, and has high variance in short windows</td></tr>
+            <tr><td class="mono">f₄ / f-branch</td><td>Summarises correlated allele-frequency covariance across a supplied tree</td><td>Depends on that tree being right</td></tr>
+            <tr><td class="mono">f<sub>d</sub></td><td>Window-oriented, dynamically normalised — the right choice for localising</td><td>Still not a proportion in the causal sense</td></tr>
+            <tr><td class="mono">QuIBL</td><td><b>Supplies the branch-length signature:</b> compares ILS-only against ILS+introgression mixtures of discordant-tree internal branch lengths</td><td>Needs accurate, approximately independent local trees; <b>loses separability for old events</b></td></tr>
+            <tr><td class="mono">HyDe</td><td>Tests hybridization via phylogenetic invariants under coalescent-with-hybridization; can test individuals</td><td>Its hybrid-speciation parameterisation <b>does not reliably identify donor vs recipient</b> under all introgression and ghost scenarios</td></tr>
+            <tr><td class="mono">Dsuite</td><td>v0.5 r53 implements Dtrios, f₄-ratio, f-branch, windowed f<sub>d</sub>/f<sub>dM</sub></td><td>An implementation, not a method — the caveats above still apply</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Demography</span>
+        <h2>Resolution is measured in coalescent time, not calendar years</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout">
+        <h4>Why "PSMC works from 20 ka to 3 Ma" is not a portable fact</h4>
+        <p>That was <b>PSMC's original human validation</b>. What is actually observable is set by
+          mutation rate, recombination map, sample size, phasing, genome length, recent growth,
+          bottlenecks and migration. <b>Periods with few coalescences are intrinsically invisible</b> —
+          in any species.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:16%">Method</th><th style="width:34%">Data and strength</th><th>Limit</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">PSMC</td><td>One diploid genome</td><td>~20 ka–3 Ma <em>in the original human simulations</em>; little information more recently or much older</td></tr>
+            <tr><td class="mono">MSMC / MSMC2</td><td>First coalescences across multiple haplotypes — better recent resolution; MSMC's human application reported information to ~2 ka</td><td>MSMC2 warns limited phasing compromises very recent inference, and it becomes impractical beyond roughly <b>16 haplotypes</b></td></tr>
+            <tr><td class="mono">SMC++</td><td>SMC plus frequency-spectrum information; accepts <b>unphased</b> genomes; recent-time power from hundreds of samples</td><td>Still a model-based coalescent-rate estimate — not direct evidence of a size change</td></tr>
+            <tr><td class="mono">dadi</td><td>Fits a user-specified model to a multidimensional joint SFS (originally up to three populations)</td><td>Discards most linkage information</td></tr>
+            <tr><td class="mono">fastsimcoal2</td><td>Simulated expected SFS; supports more complex split/migration/admixture models</td><td>Same. <b>Uncertainty requires genome or block bootstrap</b> — never treat SNPs as independent</td></tr>
+            <tr><td class="mono">Relate · tsinfer/tskit</td><td>Genome-wide genealogies; coalescence rates and selection. Relate binaries at v1.2.4 (Sept 2025)</td><td>No universal calendar-time resolution guarantee</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <h4>Use these to build nulls, not histories</h4>
+        <p>All of them return <b>coalescent-rate histories</b>, confounded by structure and gene flow.
+          The productive use is to generate competing, simulation-calibrated nulls — not to declare
+          one true demographic history and then scan against it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">The standard</span>
+        <h2>What a credible selection scan requires</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml gate"><b>the null must jointly simulate</b>
+
+  the fitted demographic graph          not a constant-size population
+  recombination and mutation-rate variation
+  ascertainment and calling filters     Chapter 3's SFS problem
+  BGS — or a matched low-recombination baseline
+
+<b>and the report must show</b>
+
+  F_ST   <b>WITH</b>  π,  d_XY,  LD / haplotype structure,  replicate contrasts
+
+<span class="cmt">an F_ST tail alone is not a result. It is one number from a relative
+measure, with at least four non-adaptive explanations available.</span></pre>
+      <div class="callout">
+        <h4>Why replicate contrasts matter most</h4>
+        <p>Independent population pairs that experienced the same environmental transition are the
+          closest thing to a natural experiment available here. A peak that recurs across independent
+          contrasts survives most of the demographic explanations at once — which no amount of
+          single-contrast statistics can do.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Martin, Davey &amp; Jiggins, <em>Evaluating ABBA-BABA statistics</em>, MBE</td><td>2015</td><td><b>Start here.</b> What D can and cannot localise</td></tr>
+            <tr><td class="have">✓</td><td>Green et al., <em>A draft sequence of the Neandertal genome</em>, Science</td><td>2010</td><td>Where D entered comparative genomics</td></tr>
+            <tr><td class="have">✓</td><td>Malinsky et al., <em>Dsuite</em>, Mol Ecol Resources</td><td>2021</td><td>The implementation you will actually run</td></tr>
+            <tr><td class="have">✓</td><td>Edelman et al., <em>Genomic architecture and introgression shape a butterfly radiation</em>, Science</td><td>2019</td><td>QuIBL and the branch-length signature in practice</td></tr>
+            <tr><td class="have">✓</td><td>Ravinet et al. / <em>Interpreting the genomic landscape of speciation</em>, JEB</td><td>2017</td><td>The road map — filed under speciation_landscape</td></tr>
+            <tr><td class="lack">·</td><td>Cruickshank &amp; Hahn, Mol Ecol</td><td>2014</td><td><b>The F<sub>ST</sub>/d<sub>XY</sub> result</b> — the chapter's core rule <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Li &amp; Durbin, <em>PSMC</em>, Nature</td><td>2011</td><td>Demographic inference <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Terhorst, Kamm &amp; Song, <em>SMC++</em>, Nat Genet</td><td>2017</td><td>Unphased, many samples <span class="note">missing</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 12 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Give the statistical signature separating ILS from introgression — <b>both</b> parts.</li>
+          <li>Name five conditions under which that signature fails.</li>
+          <li>State what a significant D does and does not identify.</li>
+          <li>Explain why high F<sub>ST</sub> without elevated d<sub>XY</sub> is not evidence of
+            reduced gene flow.</li>
+          <li>Say why demographic inference should build nulls rather than histories.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> D = 0.08 (Z = 4.1) between a highland and a lowland species pair and
+          a third relative, identifies twelve high-f<sub>d</sub> windows, notes one contains a
+          haemoglobin gene with elevated F<sub>ST</sub>, and concludes adaptive introgression of a
+          high-altitude haemoglobin variant. What do you require?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>1 · direction &amp; donor</dt><dd>D establishes non-zero gene flow somewhere in the quartet. It does not say which lineage donated, or whether an unsampled ghost did. Ask what excludes a ghost donor.</dd>
+          <dt>2 · branch lengths</dt><dd>Do the discordant loci show the <em>shorter internal branches</em> expected of introgression, or symmetric distributions consistent with ILS? Without QuIBL-style evidence, D alone cannot separate them.</dd>
+          <dt>3 · window variance</dt><dd>D has high variance in short windows and is not a local proportion estimator. Twelve windows out of how many tested, and with what genome-wide FDR?</dd>
+          <dt>4 · the F<sub>ST</sub> peak</dt><dd>Is d<sub>XY</sub> elevated there? If not, BGS in a low-recombination region explains it without gene flow — and haemoglobin loci are often in gene-dense regions.</dd>
+          <dt>5 · "adaptive"</dt><dd>Nothing above tests adaptation. Introgression plus a gene with a plausible name is candidate-rung evidence. Selection on the introgressed haplotype needs its own test, and function needs an assay.</dd>
+        </dl>
+        <p>Note the compounding: the haemoglobin gene was not predicted in advance — it was found
+          inside a window and then named. That is Chapter 11's post-hoc annotation problem appearing
+          in a different statistic.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../11_selection_inference/11_selection_inference.html">← Chapter 11 · Selection inference</a>
+    <a href="../13_convergence/13_convergence.html">Chapter 13 · Convergence →</a>
+  </nav>
+  <footer>
+    <div>Part V of VI · Layer F5</div>
+    <div>Research <code>research/raw/c12_popgen_introgression.md</code> — 52 sourced URLs</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the field actually asks</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 01 · Part I, Orientation</p>
+    <h1>What the field actually asks</h1>
+    <p class="standfirst">A pipeline produces a difference. The field is the argument that turns a
+      difference into a claim.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>Where does comparative genomics end and its neighbours begin?</dd></div>
+      <div><dt>Prerequisite</dt><dd>None</dd></div>
+      <div><dt>Corpus</dt><dd><code>F0_foundations</code> · 6 of 8 on disk</dd></div>
+      <div><dt>Understood when</dt><dd>You can name the discipline that interprets a result, without naming a tool</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>One precondition holds up the whole field</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout">
+        <h4>The precondition</h4>
+        <p>A genomic difference is interpretable only inside a <b>homology relationship</b> and an
+          <b>evolutionary time frame</b>.</p>
+      </div>
+      <p class="lede">Without homology you don't know you compared the same thing. Without a time
+        frame you don't know how old the difference is, which lineage it arose on, or how many
+        independent chances it had to arise. Orthology inference, synteny, species trees, codon
+        models, pangenome graphs — all of it exists to establish those two things.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The defining move</span>
+        <h2>Every result is a candidate until the boring explanations are dead</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:23%">Observation</th><th style="width:21%">Exciting reading</th><th>Boring readings, to exclude first</th></tr></thead>
+          <tbody>
+            <tr><td>12 copies in A, 3 in B</td><td>Adaptive expansion</td>
+                <td>Uncollapsed haplotigs · different annotation pipeline · one gene fragmented across contigs</td></tr>
+            <tr><td>Gene absent in B</td><td>Gene loss</td>
+                <td>Assembly gap · annotation miss · diverged past threshold · synteny never checked</td></tr>
+            <tr><td>dN/dS = 2.1 on a branch</td><td>Positive selection</td>
+                <td>Paralog in the alignment · misaligned codons · recombination · 8,000 untested-for tests</td></tr>
+            <tr><td>SV differs between species</td><td>Fixed rearrangement</td>
+                <td>Scaffolding error · one individual per species, so polymorphism not fixation · breakpoint in a repeat</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The boring explanation is nearly always an artefact, and nearly always cheaper to test. That
+        asymmetry — not its prior probability — is why it goes first.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Vocabulary</span>
+        <h2>Four pairs that look like synonyms</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid">
+        <div class="card">
+          <div class="tagrow"><h3>Homology ≠ similarity</h3><span class="tag bad">binary</span></div>
+          <p>Homology is a historical claim: common ancestral sequence. Never “40% homologous”.
+            Similarity is a measurement, and only evidence for it.</p>
+          <div class="measured">Convergence produces similarity without homology; true homologs fall
+            below any threshold you pick.<br><span class="src">Fitch 1970</span></div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Ortholog ≠ paralog</h3><span class="tag bad">event-defined</span></div>
+          <p>Both are homologs. Speciation separates orthologs, duplication separates paralogs.
+            Orthologs are the only defensible “same gene” across species.</p>
+          <div class="measured">A paralog in a codon alignment manufactures dN/dS&nbsp;&gt;&nbsp;1.
+            <br><span class="src">ch 3 · ch 9</span></div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Conservation ≠ function</h3><span class="tag warn">evidence types</span></div>
+          <p>Conserved means constrained — mutations were removed. It does not mean the function you
+            care about, and fast-turnover enhancers are functional without being conserved.</p>
+          <div class="measured">ENCODE called ~80% of the genome biochemically functional; most of it
+            is not constrained.<br><span class="src">ENCODE 2012 · ch 12</span></div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Positive selection ≠ adaptation</h3><span class="tag warn">four rungs apart</span></div>
+          <p>A branch-site test says a model with ω&nbsp;&gt;&nbsp;1 fits better. It says nothing about
+            what the gene does or which environment favoured it.</p>
+          <div class="measured">Most papers cross that distance in one sentence.
+            <br><span class="src">ch 9 · ch 13</span></div>
+        </div>
+      </div>
+
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:760px" viewBox="0 0 760 330" role="img"
+               aria-label="A gene tree: an ancestral gene duplicates into two copies, then a speciation event splits each copy into species A and B. Copies separated by the speciation are orthologs; copies separated by the duplication are paralogs.">
+            <defs>
+              <marker id="c1ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+              </marker>
+            </defs>
+            <text class="t-lbl" x="380" y="20" text-anchor="middle">ancestral gene</text>
+            <path class="dg-line" d="M380,28 L380,58"/>
+            <circle cx="380" cy="62" r="5" fill="var(--signal)"/>
+            <text class="t-mono f-sig" x="394" y="59">duplication</text>
+            <path class="dg-sig" d="M380,62 L210,62 M380,62 L550,62 M210,62 L210,118 M550,62 L550,118"/>
+            <text class="t-lbl" x="210" y="136" text-anchor="middle">copy 1</text>
+            <text class="t-lbl" x="550" y="136" text-anchor="middle">copy 2</text>
+            <path class="dg-dash" d="M60,168 L700,168"/>
+            <text class="t-mono f-acc" x="60" y="161">speciation</text>
+            <path class="dg-line" d="M210,142 L210,168 M550,142 L550,168"/>
+            <path class="dg-acc" d="M210,168 L130,168 M210,168 L290,168 M130,168 L130,222 M290,168 L290,222"/>
+            <path class="dg-acc" d="M550,168 L470,168 M550,168 L630,168 M470,168 L470,222 M630,168 L630,222"/>
+            <rect class="dg-box" x="92" y="222" width="76" height="26" rx="2"/>
+            <rect class="dg-box" x="252" y="222" width="76" height="26" rx="2"/>
+            <rect class="dg-box" x="432" y="222" width="76" height="26" rx="2"/>
+            <rect class="dg-box" x="592" y="222" width="76" height="26" rx="2"/>
+            <text class="t-mono" x="130" y="239" text-anchor="middle">A.copy1</text>
+            <text class="t-mono" x="290" y="239" text-anchor="middle">B.copy1</text>
+            <text class="t-mono" x="470" y="239" text-anchor="middle">A.copy2</text>
+            <text class="t-mono" x="630" y="239" text-anchor="middle">B.copy2</text>
+            <path class="dg-acc" marker-start="url(#c1ar)" marker-end="url(#c1ar)" d="M130,254 Q210,290 290,254"/>
+            <text class="t-mono f-acc" x="210" y="300" text-anchor="middle">ORTHOLOGS</text>
+            <path class="dg-sig" marker-start="url(#c1ar)" marker-end="url(#c1ar)" d="M290,254 Q380,318 470,254"/>
+            <text class="t-mono f-sig" x="380" y="326" text-anchor="middle">PARALOGS</text>
+            <path class="dg-acc" marker-start="url(#c1ar)" marker-end="url(#c1ar)" d="M470,254 Q550,290 630,254"/>
+            <text class="t-mono f-acc" x="550" y="300" text-anchor="middle">ORTHOLOGS</text>
+          </svg>
+        </div>
+        <figcaption><b>A.copy1 is often more similar to A.copy2 than to its true ortholog B.copy1</b>
+          — same genome, same GC content, same codon usage. Best-hit picks similarity, so it picks the
+          paralog.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">The anti-pattern</span>
+        <h2>The template the field is leaving behind</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml">BUSCO <b>→</b> OrthoFinder <b>→</b> tree <b>→</b> CAFE <b>→</b> PAML <b>→</b> GO enrichment <b>→</b> Circos
+<span class="cmt">every box legitimate · every output read straight as a mechanistic conclusion</span></pre>
+      <div class="callout bad">
+        <h4>Analysis coverage is not evidence grade</h4>
+        <p>Seven analyses are not stronger than one done well. When refereeing, the panel count in
+          Figure 3 tells you nothing. Ask instead whether any analysis <em>could have come out the
+          other way</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">The architecture</span>
+        <h2>Six nested layers, and they have a direction</h2></div>
+    </div>
+    <div class="stage-body">
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:820px" viewBox="0 0 820 400" role="img"
+               aria-label="Six stacked layers from F1 data standard at the bottom to F6 function at the top. A red crack starting in the data layer propagates upward through every layer and emerges at the top as a publishable result.">
+            <defs>
+              <marker id="c1up" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0,10 L5,0 L10,10 z" fill="var(--signal)"/>
+              </marker>
+            </defs>
+            <g><rect class="dg-box" x="150" y="330" width="520" height="46" rx="2"/>
+              <text class="t-hd" x="168" y="349">F1 · DATA STANDARD</text>
+              <text class="t-sm" x="168" y="366">Are the objects comparable?</text>
+              <text class="t-sm f-sig" x="655" y="358" text-anchor="end">assembly · annotation · contamination</text></g>
+            <g><rect class="dg-box" x="150" y="276" width="520" height="46" rx="2"/>
+              <text class="t-hd" x="168" y="295">F2 · HOMOLOGY</text>
+              <text class="t-sm" x="168" y="312">Same evolutionary entity?</text>
+              <text class="t-sm f-sig" x="655" y="304" text-anchor="end">paralogs · isoforms · HGT · repeats</text></g>
+            <g><rect class="dg-box" x="150" y="222" width="520" height="46" rx="2"/>
+              <text class="t-hd" x="168" y="241">F3 · PHYLOGENY</text>
+              <text class="t-sm" x="168" y="258">Which lineage, and when?</text>
+              <text class="t-sm f-sig" x="655" y="250" text-anchor="end">ILS · introgression · no outgroup</text></g>
+            <g><rect class="dg-box" x="150" y="168" width="520" height="46" rx="2"/>
+              <text class="t-hd" x="168" y="187">F4 · STRUCTURE</text>
+              <text class="t-sm" x="168" y="204">How does architecture reshape units?</text>
+              <text class="t-sm f-sig" x="655" y="196" text-anchor="end">scaffolding · collapsed repeats</text></g>
+            <g><rect class="dg-box" x="150" y="114" width="520" height="46" rx="2"/>
+              <text class="t-hd" x="168" y="133">F5 · SELECTION</text>
+              <text class="t-sm" x="168" y="150">Departs from neutral?</text>
+              <text class="t-sm f-sig" x="655" y="142" text-anchor="end">alignment error · multiple testing</text></g>
+            <g><rect class="dg-box" x="150" y="60" width="520" height="46" rx="2"/>
+              <text class="t-hd" x="168" y="79">F6 · FUNCTION</text>
+              <text class="t-sm" x="168" y="96">Adaptive hypothesis?</text>
+              <text class="t-sm f-sig" x="655" y="88" text-anchor="end">correlation-as-cause · no validation</text></g>
+            <path class="dg-sig" marker-end="url(#c1up)" stroke-width="2"
+                  d="M112,368 L112,352 L124,336 L108,316 L124,296 L108,272 L124,250 L110,226
+                     L124,200 L108,176 L122,150 L110,124 L118,96 L112,46"/>
+            <text class="t-mono f-sig" x="96" y="392" text-anchor="middle">one</text>
+            <text class="t-mono f-sig" x="96" y="404" text-anchor="middle">haplotig</text>
+            <text class="t-mono f-sig" x="112" y="34" text-anchor="middle">a publishable result</text>
+          </svg>
+        </div>
+        <figcaption><b>A defect at F1 raises no error at F5 — it returns a significant p-value.</b>
+          That is why the layers are studied bottom-up, and why Chapter 9 requires Chapters 3 and 6.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Boundaries</span>
+        <h2>Where the field ends</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:34%">Result</th><th style="width:26%">Who interprets it</th><th>Because</th></tr></thead>
+          <tbody>
+            <tr><td>Gene tree ≠ species tree</td><td>Phylogenomics</td><td>Separating ILS, introgression and error needs the multispecies coalescent</td></tr>
+            <tr><td>F<sub>ST</sub> outlier</td><td>Population genetics</td><td>The comparison is within-species; the null is demography</td></tr>
+            <tr><td>Gene in 3 of 20 conspecific assemblies</td><td>Pan-genomics</td><td>The unit is a path through a clade, not a reference position</td></tr>
+            <tr><td>Divergence date</td><td>Molecular evolution</td><td>Clock model and fossil calibration are both external</td></tr>
+            <tr><td>Expanded family tracks a diet</td><td>Comparative methods</td><td>Species are not independent samples</td></tr>
+            <tr><td>Conserved element drives an enhancer</td><td>Functional genomics</td><td>Sequence comparison cannot establish causation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>The boundary rule</h4>
+        <p>Comparative genomics establishes that a difference is <b>real</b>. It rarely establishes
+          <b>why</b>. A paper claiming otherwise is usually skipping a neighbour.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Failure modes</span>
+        <h2>Four ways to get this wrong</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>Similarity as homology</h3><span class="tag bad">01</span></div>
+          <p>BLAST, take the top hit, call it the ortholog.</p></div>
+        <div class="card"><div class="tagrow"><h3>Unstated time frame</h3><span class="tag bad">02</span></div>
+          <p>95% identity means opposite things at 5 My and 500 My.</p></div>
+        <div class="card"><div class="tagrow"><h3>One genome per species</h3><span class="tag bad">03</span></div>
+          <p>Most presence/absence claims are really claims about one <em>individual</em>.</p></div>
+        <div class="card"><div class="tagrow"><h3>Borrowed conclusion, no null</h3><span class="tag bad">04</span></div>
+          <p>Using an F<sub>ST</sub> or dN/dS outlier as if demography were not an alternative.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">8</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:46%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Hardison, <em>Comparative genomics</em>, PLoS Biology</td><td>2003</td><td><b>Start here.</b> Four pages, free, correct</td></tr>
+            <tr><td class="have">✓</td><td>Mouse Genome Sequencing Consortium, Nature</td><td>2002</td><td>The field doing its job for the first time</td></tr>
+            <tr><td class="have">✓</td><td>Woese &amp; Fox, PNAS</td><td>1977</td><td>Sequence comparison becomes evolutionary inference</td></tr>
+            <tr><td class="have">✓</td><td>ENCODE Consortium, Nature</td><td>2012</td><td>Conservation vs biochemical function, in the wild</td></tr>
+            <tr><td class="have">✓</td><td>Earth BioGenome Project, PNAS</td><td>2018</td><td>Why comparability is now the constraint</td></tr>
+            <tr><td class="lack">·</td><td>Eisen, <em>Phylogenomics</em>, Genome Research</td><td>1998</td><td>Coined the term <span class="note">missing</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">The field's history is its own chapter —
+        <a href="../00_how_the_field_got_here/00_how_the_field_got_here.html">Chapter 0</a>. One fact
+        to carry here: the famous 2001 human papers are not the starting point. A single genome
+        answers nothing comparative. The field begins at mouse, 2002.</p>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 1 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Four things, without notes</h3>
+        <ol>
+          <li>Name the discipline that interprets a given result — without naming a tool.</li>
+          <li>Say why <code>homology ≠ similarity</code> and <code>positive selection ≠ adaptation</code>,
+            one sentence each.</li>
+          <li>Take any row of the candidate table and list the boring explanations first, unprompted.</li>
+          <li>Explain why seven analyses are not stronger than one done well.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>“We found 340 rapidly evolving genes enriched for immune function, showing immune
+          adaptation in this lineage.”</b> Name every layer at which this could be wrong, and the one
+          check you would ask for first.</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>F1 · ask first</dt><dd>Were both genomes annotated the same way? Differential annotation
+            alone manufactures the family-size differences <em>and</em> the alignment errors driving dN/dS.</dd>
+          <dt>F2</dt><dd>Paralog contamination in the alignments.</dd>
+          <dt>F3</dt><dd>Was the branch specified in advance, or chosen after looking?</dd>
+          <dt>F5</dt><dd>340 tests, correction unstated.</dd>
+          <dt>F6</dt><dd>GO enrichment against an inappropriate background.</dd>
+        </dl>
+        <p>“Enriched for immune function” is also the weakest available functional evidence: immune
+          genes are the most numerous and fastest-evolving category in most genomes, so they surface
+          in nearly every scan. Their appearance is uninformative, not confirmatory.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../00_how_the_field_got_here/00_how_the_field_got_here.html">← Chapter 0 · How the field got here</a>
+    <a href="../04_the_objects_you_compare/04_the_objects_you_compare.html">Chapter 2 · The objects you compare →</a>
+  </nav>
+  <footer>
+    <div>Part I of VI · Comparative genomics as a research field</div>
+    <div>Corpus <code>resources/papers/F0_foundations/</code></div>
+  </footer>
+
+</div>
+</body>
+</html>

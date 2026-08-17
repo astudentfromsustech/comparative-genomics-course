@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orthology</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 03 · Part II, The homology layer · Layer F2</p>
+    <h1>Orthology</h1>
+    <p class="standfirst">Orthology is a claim about history, not similarity. The event that
+      separated two genes is not observable — everything difficult follows from that.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What makes two genes the same object, and why does best-hit fail?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapter 2 — annotation quality is <em>part of</em> the inference</dd></div>
+      <div><dt>Corpus</dt><dd><code>F2_homology/orthology</code> · 6 of 9 on disk</dd></div>
+      <div><dt>Understood when</dt><dd>You can place every homology term on a gene tree and say what an orthogroup is <em>not</em></dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>The event fixes the relationship</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Speciation gives orthology; duplication gives paralogy; horizontal transfer
+        complicates both. Orthology is therefore <b>not</b> “same function”, <b>not</b> “most similar
+        sequence”, <b>not</b> “one gene per species”. Each of those is a heuristic adopted because
+        the event history is unavailable, and each fails in its own way.</p>
+      <div class="callout warn">
+        <h4>There is no universal winner</h4>
+        <p>The apparent best method changes with benchmark type, precision-versus-recall preference,
+          submitted configuration, and whether a developer chose to publish their result. Anyone
+          telling you method X is simply best is over-reading a benchmark.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">Vocabulary</span>
+        <h2>The full lattice</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:16%">Term</th><th style="width:36%">Separated by</th><th>What confusing it costs</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">ortholog</td><td>Speciation</td><td>The only defensible “same gene” across species</td></tr>
+            <tr><td class="mono">paralog</td><td>Duplication</td><td>In a codon alignment, manufactures dN/dS&nbsp;&gt;&nbsp;1</td></tr>
+            <tr><td class="mono">in-paralog</td><td>Duplication <em>after</em> the speciation in question</td><td>Collectively <b>co-orthologs</b> of the other lineage's gene — so “the ortholog” is the wrong question</td></tr>
+            <tr><td class="mono">out-paralog</td><td>Duplication <em>before</em> that speciation</td><td>The pair differential loss turns into a false ortholog (§3)</td></tr>
+            <tr><td class="mono">ohnolog</td><td>Whole-genome duplication</td><td><span class="note">Contested: whether it covers allopolyploid-derived duplicates varies across credible sources</span></td></tr>
+            <tr><td class="mono">xenolog</td><td>Horizontal transfer in the connecting history</td><td><span class="note">Unsettled — event-based and transfer-aware definitions return different sets</span></td></tr>
+            <tr><td class="mono">homoeolog</td><td>Speciation, then reunion in an allopolyploid</td><td>Often used loosely for any WGD duplicate — police it in review</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>An orthogroup is not a set of pairwise orthologs</h4>
+        <p><b>It is</b> a clade descending from one gene in the last common ancestor of the specified
+          species set — defined <em>relative to that set</em>. <b>It deliberately contains
+          within-species paralogs</b>, and it is not a taxon-independent “gene family”: change the
+          species set and the groups change.</p>
+        <p>Chapter 5 feeds orthogroup <em>sizes</em> to a birth–death model and Chapter 9 feeds
+          orthogroup <em>members</em> to codon models. Neither re-examines the boundary you handed it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">The core failure</span>
+        <h2>Why reciprocal best hit misses so much</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Sequence closeness proxies event history imperfectly. RBH holds up in simple
+        prokaryotic settings, but in duplication-rich animals and plants it <b>misses up to 60% of
+        orthologous relations</b>.</p>
+
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:800px" viewBox="0 0 800 372" role="img"
+               aria-label="An ancestral gene duplicates into alpha and beta before speciation. Species A then loses beta and species B loses alpha. The two survivors are each other's best hits, so reciprocal best hit calls them orthologs, but their last common ancestor was the duplication, making them paralogs.">
+            <defs>
+              <marker id="c3ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--signal)"/>
+              </marker>
+            </defs>
+            <text class="t-lbl" x="400" y="18" text-anchor="middle">ancestral gene</text>
+            <path class="dg-line" d="M400,26 L400,48"/>
+            <circle cx="400" cy="52" r="5" fill="var(--signal)"/>
+            <text class="t-mono f-sig" x="414" y="49">duplication</text>
+            <path class="dg-sig" d="M400,52 L240,52 M400,52 L560,52 M240,52 L240,92 M560,52 L560,92"/>
+            <text class="t-lbl" x="240" y="108" text-anchor="middle">α</text>
+            <text class="t-lbl" x="560" y="108" text-anchor="middle">β</text>
+            <path class="dg-dash" d="M60,140 L740,140"/>
+            <text class="t-mono f-acc" x="60" y="133">speciation</text>
+            <path class="dg-line" d="M240,114 L240,140 M560,114 L560,140"/>
+            <path class="dg-line" d="M240,140 L150,140 M240,140 L330,140 M150,140 L150,196 M330,140 L330,196"/>
+            <path class="dg-line" d="M560,140 L470,140 M560,140 L650,140 M470,140 L470,196 M650,140 L650,196"/>
+            <rect class="dg-box-a" x="112" y="196" width="76" height="28" rx="2"/>
+            <text class="t-mono" x="150" y="214" text-anchor="middle">A.α</text>
+            <rect class="dg-box-a" x="612" y="196" width="76" height="28" rx="2"/>
+            <text class="t-mono" x="650" y="214" text-anchor="middle">B.β</text>
+            <g opacity="0.45">
+              <rect class="dg-box" x="292" y="196" width="76" height="28" rx="2" stroke-dasharray="3 3"/>
+              <text class="t-mono" x="330" y="214" text-anchor="middle">B.α</text>
+              <rect class="dg-box" x="432" y="196" width="76" height="28" rx="2" stroke-dasharray="3 3"/>
+              <text class="t-mono" x="470" y="214" text-anchor="middle">A.β</text>
+            </g>
+            <path class="dg-sig" d="M308,202 L352,218 M352,202 L308,218"/>
+            <path class="dg-sig" d="M448,202 L492,218 M492,202 L448,218"/>
+            <text class="t-sm f-sig" x="400" y="240" text-anchor="middle">differential loss — each lineage keeps a different copy</text>
+            <path class="dg-sig" marker-start="url(#c3ar)" marker-end="url(#c3ar)" d="M150,236 Q400,300 650,236"/>
+            <text class="t-mono f-sig" x="400" y="316" text-anchor="middle">RBH: reciprocal best hits → “orthologs”</text>
+            <text class="t-lbl f-sig" x="400" y="338" text-anchor="middle">but their last common ancestor is the DUPLICATION — they are out-paralogs</text>
+          </svg>
+        </div>
+        <figcaption><b>Nothing about the surviving pair looks wrong</b> — reciprocal best hits, both
+          directions, high identity. Only the gene tree or the syntenic context exposes it, which is
+          why Chapter 4 is a co-requisite.</figcaption>
+      </figure>
+
+      <dl class="rules">
+        <dt>post-speciation duplication</dt><dd>Creates one-to-many co-orthology; RBH returns one pair and discards the rest</dd>
+        <dt>differential loss</dt><dd>Surviving paralogs become reciprocal “best” — the figure above</dd>
+        <dt>rate variation</dt><dd>A fast-evolving true ortholog loses the best-hit contest to a slower paralog</dd>
+        <dt>fusion / fission · annotation error</dt><dd>Perturbs the score directly — Chapter 2 arriving here</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Benchmarks</span>
+        <h2>Know their construction, not their rankings</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Rankings move; construction problems do not.</p>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>Quest for Orthologs</h3><span class="tag warn">developer submissions</span></div>
+          <p>Twelve tests — species-tree discordance, reference gene trees, functional concordance,
+            curated mammalian relations — evaluated against <em>proxies</em>, since true histories are
+            unknowable.</p>
+          <div class="measured">The aggregate rank depends on the classifier scheme; square-quartile
+            privileges precision and reorders methods. “Top of QfO” is an incomplete sentence.
+            <br><span class="src">orthology.benchmarkservice.org</span></div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>OrthoBench, revised</h3><span class="tag warn">authored by a competitor</span></div>
+          <p>The original had <b>39% of RefOGs judged incorrect</b> on reanalysis. The revision
+            publishes inputs, trees, rationale and scoring code — but is 70 deliberately difficult
+            Bilaterian groups, not genome-wide truth.</p>
+          <div class="measured">Best method: <b>~77%</b> accurate, exactly recovering <b>23 of 70</b>
+            groups. The revision was authored by OrthoFinder's developers.
+            <br><span class="src">Emms &amp; Kelly 2020</span></div>
+        </div>
+      </div>
+      <div class="callout warn">
+        <h4>What could not be verified</h4>
+        <p>No independent 2025–2026 leaderboard compares OrthoFinder v3, current OMA StandAlone,
+          SonicParanoid2, Broccoli and Proteinortho6 under one frozen dataset. SonicParanoid2's
+          aggregate claim used QfO results from February 2023, with Broccoli absent. Treat any
+          stronger “current winner” statement as unsupported.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Choosing</span>
+        <h2>Pick by what you need out</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:17%">Tool</th><th style="width:31%">Use when</th><th>Know this</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">OrthoFinder v3<br><span class="note">Nat Methods 2026</span></td>
+                <td>You need gene trees and reconciliation, and will keep adding species</td>
+                <td><b>The material 2026 change.</b> Core-set + linear species addition (<code>--assign</code>), FAMSA default, ASTRAL-Pro trees. The corpus stops at 2019</td></tr>
+            <tr><td class="mono">OMA / HOGs</td><td>You want curated hierarchical groups with explicit evolutionary levels</td>
+                <td>Different in role, not just accuracy. May 2026 release covers 2,983 species; can pick an evolutionarily conserved isoform rather than the longest</td></tr>
+            <tr><td class="mono">SonicParanoid2</td><td>Many genomes, compute-bound</td>
+                <td>ML-selected reciprocal searches + domain architecture; 5× faster than OrthoFinder fast mode — <em>author-run</em></td></tr>
+            <tr><td class="mono">Proteinortho6</td><td>Very large sets, memory-bound</td>
+                <td>Pseudo-reciprocal DIAMOND by default. Still best-match inference — <b>speed does not remove RBH's blind spots</b></td></tr>
+            <tr><td class="mono">Broccoli</td><td>Network plus phylogenetic placement</td>
+                <td>Fast on QfO, memory-intensive; failed a 2,000-MAG test in one comparison</td></tr>
+            <tr><td class="mono">eggNOG-mapper</td><td>Functional annotation against precomputed groups</td>
+                <td><b>Not a de novo orthogrouper.</b> v2.1.15 stable; v3 under heavy testing, not officially released</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Upstream</span>
+        <h2>Your annotation is part of the inference</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Different annotation sources yield materially different orthology calls. Short
+        or fragmented proteins split one gene across groups or prevent matching; isoform choice
+        changes comparisons, trees, and benchmark recall.</p>
+      <dl class="rules">
+        <dt>one protein per locus</dt><dd>Documented, consistent policy. Longest isoform is common and required by many tools; OMA can pick an evolutionarily conserved one instead</dd>
+        <dt>audit outliers</dt><dd>Length and domain outliers, before believing any group containing them</dd>
+        <dt>drop redundancy</dt><dd>Contamination and near-identical proteomes</dd>
+        <dt>keep coordinates</dt><dd>You need synteny to adjudicate the §3 case</dd>
+        <dt>reannotate first</dt><dd>Suspicious families, before interpretation — not after</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">The frontier</span>
+        <h2>Do protein language models change this?</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout warn">
+        <h4>They improve the input, not the assignment</h4>
+        <p>PLMSearch and embedding-to-Foldseek methods measurably improve <b>remote-homology
+          retrieval</b> below ~20% identity — real, because that is where BLAST-family search goes
+          blind. But <b>no independent QfO or OrthoBench evidence</b> shows they supplant gene-tree
+          reconciliation for orthology assignment.</p>
+        <p>Detecting that two sequences are homologous and determining which event separated them
+          remain different problems — Chapter 1's distinction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">8</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Emms &amp; Kelly, <em>OrthoFinder: phylogenetic orthology inference</em>, Genome Biology</td><td>2019</td><td><b>Start here.</b> The reconciliation workflow</td></tr>
+            <tr><td class="have">✓</td><td>Altenhoff et al., <em>OMA orthology in 2021</em>, NAR</td><td>2021</td><td>HOGs and hierarchical levels</td></tr>
+            <tr><td class="have">✓</td><td>Li et al., <em>OrthoMCL</em>, Genome Research</td><td>2003</td><td>The graph-clustering ancestor</td></tr>
+            <tr><td class="lack">·</td><td>Fitch, <em>Distinguishing homologous from analogous proteins</em></td><td>1970</td><td>Where the vocabulary is defined</td></tr>
+            <tr><td class="lack">·</td><td>Koonin, <em>Orthologs, paralogs and evolutionary genomics</em></td><td>2005</td><td>The concept review</td></tr>
+            <tr><td class="lack">·</td><td>Altenhoff et al., <em>Bidirectional best hits miss many orthologs</em>, GBE</td><td>2013</td><td><b>The evidence for §3</b> <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Emms &amp; Kelly, <em>Revisiting OrthoBench</em>, GBE</td><td>2020</td><td>The 39% / 77% numbers <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Belcher et al., <em>OrthoFinder v3</em>, Nature Methods</td><td>2026</td><td>Current version <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 3 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Place every homology term on a gene tree, and name the two whose definitions are
+            contested.</li>
+          <li>State what an orthogroup is not, in two clauses.</li>
+          <li>Draw the differential-loss case and say what evidence exposes it.</li>
+          <li>Explain why “method X tops QfO” is incomplete.</li>
+          <li>Name your isoform policy and why it must be documented.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A manuscript</b> builds single-copy ortholog sets across 12 plant genomes by reciprocal
+          best BLAST hit, finds 4,102, concatenates them into a tree, and runs branch-site tests on
+          all of them. Name the three compounding problems.</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>1 · worst case for RBH</dt><dd>Plants are duplication-rich with repeated WGD — exactly where RBH misses up to 60% of relations and differential loss converts out-paralogs into apparent orthologs.</dd>
+          <dt>2 · “single-copy” is a filter</dt><dd>Requiring one copy per species preferentially keeps genes that resisted duplication <em>and</em> silently admits families where all but one copy was lost. The set is both biased and contaminated.</dd>
+          <dt>3 · correlated downstream</dt><dd>The same mis-assigned genes enter the tree and every branch-site test, so the tree cannot check the alignments — and 4,102 tests with no stated correction compounds it.</dd>
+        </dl>
+        <p>The fix is not a better cutoff. It is gene trees plus syntenic verification, and reporting
+          how many families were excluded and why.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../04_the_objects_you_compare/04_the_objects_you_compare.html">← Chapter 2 · The objects you compare</a>
+    <a href="../06_synteny_wga_ancestral/06_synteny_wga_ancestral.html">Chapter 4 · Synteny, WGA, ancestral genomes →</a>
+  </nav>
+  <footer>
+    <div>Part II of VI · Layer F2</div>
+    <div>Corpus <code>resources/papers/F2_homology/orthology/</code> · Research <code>research/raw/c03_orthology.md</code></div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The frontier, and the referee checklist</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 15 · Part VI · Capstone</p>
+    <h1>The frontier, and the referee checklist</h1>
+    <p class="standfirst">Where the field is actually moving as of August 2026 — and the minimum
+      reportable record for each kind of claim the previous fourteen chapters taught you to make.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What is genuinely new, and what is the minimum evidence for each claim type?</dd></div>
+      <div><dt>Prerequisite</dt><dd>All</dd></div>
+      <div><dt>Corpus</dt><dd><code>X_practice/ml_constraint</code> — <b>declared gap</b> · reproducibility 1/4</dd></div>
+      <div><dt>Understood when</dt><dd>Given a manuscript sentence, you can name the evidence it needs and the wording it falls back to</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">Constraint at scale</span>
+        <h2>What Zoonomia actually delivered</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">A reference-free <b>240-placental-mammal Cactus alignment</b>, 131 new
+        assemblies, TOGA orthology annotations, codon alignments and PHAST conservation tracks. At 5%
+        FDR, its phyloP call identifies <b>3.1% of human bases as constrained</b>.</p>
+      <div class="callout warn">
+        <h4>Two things routinely misstated</h4>
+        <p><b>phyloP and phastCons are not the same test.</b> phyloP gives basewise rate
+          deviation; phastCons gives element-like calls. And the published primate-wide phastCons
+          analysis uses <b>43 primates</b> while phyloP uses all <b>239</b> — so the two tracks are
+          not even built on the same data.</p>
+        <p><b>Constraint is an observability statement.</b> Power depends on branch length, taxon
+          sampling, alignment coverage and neutral-model choice. Zoonomia explicitly reports sitewise
+          species coverage <b>ranging from 1 to 240</b>, with more constraint detected where close
+          relatives are available.</p>
+      </div>
+      <div class="callout bad">
+        <h4>The asymmetry that matters for interpretation</h4>
+        <p>Constraint is not synonymous with function, <b>and non-constraint does not establish
+          neutrality</b>. Rapidly evolving, turnover-prone, lineage-specific, repetitive and
+          unalignable functional sequence is <em>systematically disadvantaged</em> by the test — which
+          is precisely the category Chapter 14 says carries much regulatory function.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">Genomic language models</span>
+        <h2>What they do, and what no source shows they do</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:17%">Model</th><th style="width:36%">What it is</th><th>Measured performance</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Nucleotide<br>Transformer v2</td><td>Trained on 3,202 human and 850 diverse-species genomes; low-data fine-tuning, variant prioritization</td><td>Useful frozen embeddings for many classification tasks</td></tr>
+            <tr><td class="mono">DNABERT-2</td><td>135-species BPE model</td><td>As above</td></tr>
+            <tr><td class="mono">Enformer</td><td>Predicts human/mouse chromatin and expression from sequence</td><td><b>eQTL AUC 0.77</b> vs 0.65 for the best general model in one independent comparison</td></tr>
+            <tr><td class="mono">Borzoi</td><td>Extends to RNA-seq coverage across &gt;500 kb</td><td>Mean eQTL AUROC <b>0.794</b> vs Enformer's 0.747 across GTEx — but only <b>marginally better than TSS distance</b> at identifying the target gene</td></tr>
+            <tr><td class="mono">AlphaGenome</td><td>Up to 1 Mb input; expression, splicing, chromatin, contact maps. Published <b>28 Jan 2026</b></td><td>Public API explicitly intended for small-to-medium analyses, not &gt;1M predictions</td></tr>
+            <tr><td class="mono">Evo 2</td><td>7B/40B open model, ~9 trillion bases, 1M-token context. Published <b>4 Mar 2026</b></td><td>Demonstrates variant scoring and model-guided generation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout bad">
+        <h4>The finding to hold onto</h4>
+        <p><b>No visited primary source demonstrates that any of these has replaced phyloP/phastCons
+          for genome-wide, phylogeny-calibrated constraint or branch-specific selection inference.</b>
+          Claims that they have should be treated as unsupported.</p>
+        <p>Independent benchmarking found general DNA models <em>underperformed a task-trained CNN</em>
+          on several multispecies and epigenetic tasks. And the Borzoi target-gene result is the
+          sharpest caution available: a model can improve a headline metric while barely beating
+          "pick the nearest TSS" on the question you actually care about.</p>
+      </div>
+      <p><b>Structure search is the clearer win.</b> AlphaFold DB plus Foldseek — which encodes local
+        tertiary interactions as a 3Di alphabet — made proteome-scale structural similarity search
+        operational, changing candidate discovery and domain/family assignment. That is Chapter 02's
+        remote-homology problem, genuinely advanced.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">The capstone</span>
+        <h2>The referee checklist, by claim type</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout warn">
+        <h4>Status of this table</h4>
+        <p>There is <b>no validated field-wide checklist</b> specifying minimum evidence separately
+          for these claim types. What follows is a synthesis of published standards, error analyses
+          and documented method limits — assembled across this course, not an endorsed consensus
+          document. Use it as a working standard and say that is what it is.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:17%">Claim</th><th style="width:41%">Minimum evidence</th><th>Fallback wording if absent</th></tr></thead>
+          <tbody>
+            <tr><td><b>Gene family expansion</b><br><span class="note">ch 7</span></td>
+                <td>Comparable annotation across genomes · BUSCO duplicated % · mechanism from coordinates and synteny · ancestral state on a dated tree · flagged families not concentrated in one genome</td>
+                <td>"family X shows a higher copy number in A than B"</td></tr>
+            <tr><td><b>Gene loss</b><br><span class="note">ch 6</span></td>
+                <td>Conserved flanking syntelogs defining one orthologous interval · direct DNA search of that interval · search of unannotated sequence · read/assembly evidence excluding a gap · outgroup polarisation</td>
+                <td>"no intact copy was detected in the assembly of B"</td></tr>
+            <tr><td><b>Positive selection</b><br><span class="note">ch 11</span></td>
+                <td>The ten-item pre-flight — foreground declared in advance, codon-aware alignment with masking sensitivity, recombination screening, dS/saturation and composition diagnostics, MNM sensitivity, RELAX, FDR over the full tested family, sites inspected</td>
+                <td>"candidate episodic diversifying selection, robust to the stated checks"</td></tr>
+            <tr><td><b>Introgression</b><br><span class="note">ch 12</span></td>
+                <td>Site-pattern asymmetry <b>and</b> the branch-length signature · ghost-donor consideration · window-variance control · f<sub>d</sub> rather than D for localisation</td>
+                <td>"the data reject a no-gene-flow model for this quartet". <b>Positive D alone establishes neither donor, recipient, timing, nor tract boundaries</b></td></tr>
+            <tr><td><b>Convergent adaptation</b><br><span class="note">ch 13</span></td>
+                <td>Posterior distribution of independent origins · matched phenotype-specific null · hemiplasy diagnostics on local genealogies · relaxed-constraint alternative tested · functional measurement</td>
+                <td>"convergent substitutions were observed at these sites"</td></tr>
+            <tr><td><b>Fixed structural variant</b><br><span class="note">ch 10</span></td>
+                <td>Graph build, version, parameters and assembly order stated · breakpoints validated independently (long reads, second assembly, optical map) · more than one individual per species · merging thresholds and sequence harmonisation reported</td>
+                <td>"an SV differing between these assemblies", not "fixed between species"</td></tr>
+            <tr><td><b>Regulatory divergence</b><br><span class="note">ch 14</span></td>
+                <td>Orthology-aware uniform annotation · composition and stage matching from expression, not chronology · species not confounded with batch · cis/trans separated (hybrid design) · assay establishing more than reporter activity</td>
+                <td>"expression differs between these samples"</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Practice</span>
+        <h2>Reproducibility, and its honest limit</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout">
+        <h4>The limit worth stating out loud</h4>
+        <p>Containers and workflow engines improve <b>repeatability</b>. They cannot make a
+          biologically under-specified analysis <b>valid</b>. A perfectly containerised branch-site
+          scan with a post-hoc foreground is exactly as wrong as an uncontainerised one, and easier to
+          rerun.</p>
+        <p>No comparative-genomics-specific survey of how many published pipelines are truly rerunnable
+          was verified — so treat confident claims about the field's reproducibility rate, in either
+          direction, as unsupported.</p>
+      </div>
+      <div class="callout warn">
+        <h4>A clade-specific disagreement to know</h4>
+        <p><b>ANI species boundaries.</b> The 95–96% threshold remains operationally useful, while
+          GTDB cautions that global genome comparisons <b>do not show a clean universal gap</b>. Both
+          positions are held by credible sources; the threshold is a convention that works, not a
+          discovered boundary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">The compressed version</span>
+        <h2>One page, if you keep nothing else</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml gate"><b>the six questions, in order, for any comparative claim</b>
+
+F1  are the objects comparable?        same annotation? purged? screened?
+F2  is it the same entity?             orthologs, not best hits; synteny checked
+F3  which lineage, and when?           declared in advance; discordance quantified
+F4  what does architecture do?         breakpoints validated; graph stated
+F5  does it depart from neutral?       against WHICH null? demography included?
+F6  does function follow?              an assay, or a fallback wording
+
+<b>and the one habit</b>
+
+  the boring explanation is nearly always an artefact,
+  and nearly always cheaper to test.  <b>So it goes first.</b></pre>
+      <p class="lede">The mark of someone who knows this field is not that they can run the tools.
+        It is that when shown a result they can name the failure mode before they name the method —
+        and that when their own result is beautiful, they run the cheap check anyway.</p>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>The final test</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Given a manuscript sentence, you can…</h3>
+        <ol>
+          <li>Name the claim type and the chapter that governs it.</li>
+          <li>State the minimum evidence it requires.</li>
+          <li>Give the exact weaker wording it falls back to if that evidence is absent.</li>
+          <li>Say which single check you would ask for first, and why it is the cheapest.</li>
+          <li>Distinguish a genuine frontier advance from a headline metric — e.g. why Borzoi's eQTL
+            AUROC does not mean it identifies target genes.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>The whole course, in one manuscript abstract</summary>
+        <p><b>"We assembled the genome of X, identified 214 expanded gene families and 47 losses
+          relative to its sister species, detected 62 genes under positive selection on the X branch,
+          found evidence of introgression from Y, and identified convergent substitutions shared with
+          the distantly related Z — together revealing the genomic basis of X's adaptation to
+          high altitude."</b></p>
+        <p style="margin-top:14px">Every clause is a separate claim at a separate rung, and the
+          abstract joins them with "together revealing", which is not an inference.</p>
+        <dl class="rules" style="margin-top:12px">
+          <dt>one assembly</dt><dd>Every downstream claim rests on one genome. Ask F1 first: BUSCO duplicated %, contamination screen, annotation parity with the sister species. This single answer can invalidate all five clauses at once — which is why it is the cheapest question in the abstract.</dd>
+          <dt>214 + 47</dt><dd>Copy-number and absence claims — ch 7 and ch 6 standards. Mechanism? Syntenic intervals? Or annotation asymmetry producing both simultaneously?</dd>
+          <dt>62 selected</dt><dd>ch 11. Foreground declared? Recombination screened? MNMs? RELAX? FDR over how many tests — and does that family include the branch choice?</dd>
+          <dt>introgression</dt><dd>ch 12. D or f<sub>d</sub>? Branch-length signature? Ghost donors excluded? And note it sits awkwardly with the selection claim: introgressed regions have different genealogies, which is a ch 11 assumption violation.</dd>
+          <dt>convergence with Z</dt><dd>ch 13. How many independent origins of high altitude? Hemiplasy checked? Matched null? Relaxed constraint excluded?</dd>
+          <dt>"adaptation to high altitude"</dt><dd>ch 9 and ch 15. Altitude is one environmental axis among many correlated ones, and the species count is not the effective sample size. No functional evidence is offered for any of it.</dd>
+        </dl>
+        <p>The honest version of that abstract ends: <em>"…providing candidate loci for X's
+          high-altitude phenotype, which remain to be functionally tested."</em> That sentence is
+          publishable, defensible, and describes the same work.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../14_regulatory_noncoding/14_regulatory_noncoding.html">← Chapter 14 · Regulatory &amp; non-coding</a>
+    <a href="../course.html">Course index →</a>
+  </nav>
+  <footer>
+    <div>Part VI of VI · Capstone</div>
+    <div>Research <code>research/raw/c15a_frontier_ml.md</code> (69 URLs) · <code>c15b_reporting_standards.md</code> (47 URLs)</div>
+  </footer>
+
+</div>
+</body>
+</html>

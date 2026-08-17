@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------- papers
+# The corpus is 402 MB of PUBLISHER PDFs. Do not commit them:
+#   · redistributing paywalled papers is copyright infringement, private repo or not
+#   · they are hard links to a central corpus, so git would store full copies
+#   · GitHub warns above 50 MB per file
+#
+# Rebuild your own copy instead — see README, "Getting the papers".
+resources/papers/**/*.pdf
+resources/papers/**/*.PDF
+resources/papers/**/*_suppl*
+resources/papers/**/*supplement*
+
+# Cloned tool repos (symlinks into the corpus; clone them yourself)
+resources/papers/**/[A-Za-z]*/
+
+# ---------------------------------------------------------------- books
+# Coop is CC-BY 3.0 and Harmon is freely published, so both are legally
+# redistributable — but they are 96 MB and 12 MB. Fetch with scripts/get_books.sh.
+resources/books/**/*.pdf
+
+# ---------------------------------------------------------------- research logs
+# Codex JSONL transcripts: large, machine-only, and regenerable.
+# research/briefs/ and research/raw/ ARE committed — they are the audit trail.
+research/logs/
+research/*.log
+research/download_log.jsonl*
+research/dl_run.log
+
+# ---------------------------------------------------------------- junk
+.DS_Store
+**/.DS_Store
+__pycache__/
+*.pyc
+.venv/
+scratchpad/
+
+# stray driver output (1.2 MB, regenerable)
+research/download.out
+research/chain.out
+research/*.out
+research/refs.json.bak

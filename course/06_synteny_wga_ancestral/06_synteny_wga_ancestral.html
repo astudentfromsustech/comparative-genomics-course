@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Synteny, whole-genome alignment, ancestral genomes</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 06 · Part II, The homology layer · Layer F2</p>
+    <h1>Synteny, whole-genome alignment, ancestral genomes</h1>
+    <p class="standfirst">A failed search is not an absence. Collinearity locates the place a gene
+      should be, independently of the gene — which is the only way to tell loss from
+      not-detected.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>How do you align whole genomes across a clade, and what makes a gene-loss claim defensible?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 02, 05</dd></div>
+      <div><dt>Corpus</dt><dd><code>F2/synteny_alignment</code> 9/10 · <code>F2/ancestral_reconstruction</code> <b>declared gap</b></dd></div>
+      <div><dt>Understood when</dt><dd>You can state the evidence a gene-loss claim requires, in order</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>Why similarity cannot establish loss</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">A failed BLAST or orthology hit follows equally from gene-model failure, an
+        assembly gap or collapse, high divergence, pseudogenisation, or paralogue reassignment.
+        The search failing tells you about the search.</p>
+      <div class="callout">
+        <h4>What collinearity adds</h4>
+        <p>It locates the <b>expected locus independently of the missing gene</b>. If both flanking
+          syntelogs map in conserved order and orientation to a single orthologous interval, you now
+          have a place to point at — and absence <em>from that interval</em> is a different, much
+          stronger claim than absence from a search.</p>
+      </div>
+
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:820px" viewBox="0 0 820 290" role="img"
+               aria-label="Species A shows genes W X Y Z in order. Species B shows W X blank Z with conserved flanking genes, establishing a syntenic interval where Y should be. Species C shows W X and then a scaffold gap, which cannot support a loss claim.">
+            <defs>
+              <marker id="c6ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="var(--accept)"/>
+              </marker>
+            </defs>
+            <g>
+              <text class="t-hd" x="20" y="38">SPECIES A</text>
+              <path class="dg-line" d="M150,44 L780,44"/>
+              <rect class="dg-box-a" x="170" y="34" width="70" height="20"/><text class="t-mono" x="205" y="48" text-anchor="middle">W</text>
+              <rect class="dg-box-a" x="270" y="34" width="70" height="20"/><text class="t-mono" x="305" y="48" text-anchor="middle">X</text>
+              <rect class="dg-box-s" x="370" y="34" width="70" height="20"/><text class="t-mono f-sig" x="405" y="48" text-anchor="middle">Y</text>
+              <rect class="dg-box-a" x="470" y="34" width="70" height="20"/><text class="t-mono" x="505" y="48" text-anchor="middle">Z</text>
+            </g>
+            <path class="dg-dash" d="M205,58 L205,104 M305,58 L305,104 M505,58 L505,104"/>
+            <g>
+              <text class="t-hd" x="20" y="128">SPECIES B</text>
+              <text class="t-sm f-acc" x="20" y="142">loss is defensible</text>
+              <path class="dg-line" d="M150,134 L780,134"/>
+              <rect class="dg-box-a" x="170" y="124" width="70" height="20"/><text class="t-mono" x="205" y="138" text-anchor="middle">W</text>
+              <rect class="dg-box-a" x="270" y="124" width="70" height="20"/><text class="t-mono" x="305" y="138" text-anchor="middle">X</text>
+              <rect x="370" y="124" width="70" height="20" fill="none" stroke="var(--signal)" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <text class="t-mono f-sig" x="405" y="138" text-anchor="middle">—</text>
+              <rect class="dg-box-a" x="470" y="124" width="70" height="20"/><text class="t-mono" x="505" y="138" text-anchor="middle">Z</text>
+              <path class="dg-acc" marker-start="url(#c6ar)" marker-end="url(#c6ar)" d="M240,158 L470,158"/>
+              <text class="t-sm f-acc" x="355" y="174" text-anchor="middle">flanks conserved in ORDER and ORIENTATION</text>
+              <text class="t-sm f-acc" x="355" y="188" text-anchor="middle">→ one orthologous interval, and it is empty</text>
+            </g>
+            <g>
+              <text class="t-hd" x="20" y="234">SPECIES C</text>
+              <text class="t-sm f-sig" x="20" y="248">loss is NOT supportable</text>
+              <path class="dg-line" d="M150,240 L780,240"/>
+              <rect class="dg-box-a" x="170" y="230" width="70" height="20"/><text class="t-mono" x="205" y="244" text-anchor="middle">W</text>
+              <rect class="dg-box-a" x="270" y="230" width="70" height="20"/><text class="t-mono" x="305" y="244" text-anchor="middle">X</text>
+              <rect x="370" y="230" width="170" height="20" fill="none" stroke="var(--refuse)" stroke-width="1.4" stroke-dasharray="5 3"/>
+              <text class="t-mono f-ref" x="455" y="244" text-anchor="middle">NNNN — scaffold gap</text>
+              <text class="t-sm f-ref" x="560" y="244">the gene may simply be unassembled</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption><b>Species C is the case most papers do not distinguish from species B.</b> Both
+          return no hit. Only one of them is evidence.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The standard</span>
+        <h2>What a gene-loss claim requires, in order</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml gate"><b>convergent evidence for loss</b>  — each step is cheap, and each can kill the claim
+
+1  <b>conserved flanks</b>      both syntelogs map, in order and orientation,
+                          to ONE orthologous interval
+2  <b>interval is empty</b>     no intact gene there, by direct DNA search —
+                          not by annotation, which is what failed
+3  <b>search unannotated</b>    protein and transcript search against the raw
+                          sequence, not the gene set
+4  <b>assembly evidence</b>     read depth and continuity EXCLUDE a gap or collapse
+5  <b>polarise</b>              outgroups and close relatives place the event on a
+                          branch — otherwise you have a difference, not a loss</pre>
+      <div class="callout warn">
+        <h4>Step 2 is the one that gets skipped</h4>
+        <p>Searching the <em>annotation</em> for a gene that the annotation failed to call is
+          circular. The search has to run against genomic sequence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Aligners</span>
+        <h2>Choose by what you have, not by divergence alone</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>There is no credible universal divergence cutoff</h4>
+        <p>Repeat content, duplications, assembly continuity and rearrangement rate matter at least
+          as much as ANI. "Use tool X above 90% identity" is not a rule anyone can support.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:19%">Tool</th><th style="width:30%">Built for</th><th>Watch out</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Progressive Cactus</td>
+                <td><b>The clade-scale default.</b> Reference-free, duplication-tolerant, progressive MSA. Scaled to hundreds/thousands of large genomes. Emits HAL <em>and reconstructs internal-node assemblies</em></td>
+                <td>Requires a guide tree — so Chapter 08 is an input, not an output. Its own docs recommend Minigraph-Cactus for same-species samples</td></tr>
+            <tr><td class="mono">Minigraph-Cactus</td>
+                <td>Many <em>closely related</em> assemblies; pangenomes. Demonstrated on 90 human haplotypes</td>
+                <td>Not a substitute for deeply divergent clade alignment without a sensitivity evaluation</td></tr>
+            <tr><td class="mono">AnchorWave</td>
+                <td>High sequence diversity, extensive structural polymorphism, WGD — unusually relevant to plants. Uses lifted-over full-length CDS anchors</td>
+                <td>Sensitivity depends on <b>coding-gene annotation</b> and retained anchor homology. Chapter 04's problem becomes this chapter's</td></tr>
+            <tr><td class="mono">SibeliaZ</td>
+                <td>Locally collinear blocks via a compacted de Bruijn graph; fast for closely related, largely collinear genomes (microbial-style)</td>
+                <td>Collinearity assumption is the point and the limit</td></tr>
+            <tr><td class="mono">GSAlign</td>
+                <td><b>Pairwise, intra-species only.</b> Fast aligner/variant caller</td>
+                <td>Not a clade-wide MSA method. Frequently miscited as one</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <h4>Why reference-free matters</h4>
+        <p>Pairwise-to-one-reference alignment cannot represent non-reference-specific sequence,
+          duplications, or rearranged loci. A reference-free MSA represents homology among <em>all</em>
+          genomes and permits multiple orthology — which is exactly what a clade-scale comparison
+          needs and a reference-based one silently discards.</p>
+        <p><b>HAL</b> stores that hierarchical alignment including ancestral nodes; Cactus tooling
+          exports MAF, chains, FASTA, conservation tracks and PhyloP, and supports liftover and
+          comparative annotation. Record the exact version and configuration — releases through
+          <b>v3.2.1 (May 2026)</b> changed graph-mapping, HAL compression, conservation and pangenome
+          behaviour.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Synteny tools</span>
+        <h2>Three jobs that get confused</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>MCScanX</h3><span class="tag ok">detect</span></div>
+          <p>Anchor-based collinearity — the canonical toolkit for finding syntenic blocks from gene
+            anchors.</p></div>
+        <div class="card"><div class="tagrow"><h3>GENESPACE</h3><span class="tag ok">constrain</span></div>
+          <p>Constrains <em>orthology</em> with synteny, and explicitly models copy-number and
+            tandem-array context — the direct answer to Chapter 05's differential-loss trap.</p></div>
+        <div class="card"><div class="tagrow"><h3>SynGAP</h3><span class="tag warn">repair</span></div>
+          <p>Uses syntenic evidence to <b>polish annotation</b> (2024). It is not an aligner, and it
+            is not a synteny detector — it fixes gene models.</p></div>
+      </div>
+      <p>For rearrangements specifically, pairwise WGA plus <b>SyRI</b> identifies syntenic regions
+        first, then classifies inversions, translocations, duplications and local differences. At
+        clade scale, map each event onto the species tree and validate key breakpoints independently.</p>
+      <div class="callout bad">
+        <h4>Scaffolding manufactures rearrangements</h4>
+        <p>Scaffold joins can mimic inversions, relocations and translocations. Hi-C has known
+          orientation limitations at short distances, and reference-guided scaffolding can simply
+          <b>impose the reference arrangement</b> on the new genome — producing "conserved synteny"
+          that is an artefact of the method.</p>
+        <p>So a breakpoint claim needs independent support: another assembly, long reads spanning the
+          junction, optical maps, or cytogenetics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">The corpus gap</span>
+        <h2>Ancestral genome reconstruction</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This literature was entirely absent from the corpus — the
+        <code>ancestral_reconstruction</code> directory was created empty on purpose. Here is what
+        belongs in it.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:18%">Method</th><th style="width:34%">Infers</th><th>Nature of the output</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Cactus</td><td>Ancestral <em>sequence assemblies</em> at internal nodes</td><td>Conditional on its guide tree and alignment — a byproduct of the WGA, not an independent estimate</td></tr>
+            <tr><td class="mono">DESCHRAMBLER</td><td>Ordered, oriented syntenic fragments</td><td><b>Reference-assisted</b> — inherits a reference's arrangement bias</td></tr>
+            <tr><td class="mono">AGORA</td><td>Ancestral gene content and order, from gene histories and adjacencies</td><td>Gene-level, not base-level</td></tr>
+            <tr><td class="mono">EdgeHOG</td><td>Linear-time HOG-based ancestral gene order. Applied to <b>2,845 genomes / 1,133 ancestors</b> (2025)</td><td>Scales where the others do not</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>Legitimately supports</h3><span class="tag ok">use it for</span></div>
+          <p>Comparative coordinates · mapping rearrangements onto a tree · hypotheses about ancestral
+            karyotype · conserved gene neighbourhoods.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Does not support</h3><span class="tag bad">do not claim</span></div>
+          <p>Base-perfect ancient genomes · unqualified statements about repetitive DNA being absent
+            or rearranged in the ancestor — repeats are exactly what these methods cannot reconstruct.</p>
+        </div>
+      </div>
+      <div class="callout warn">
+        <h4>The framing to keep</h4>
+        <p>Ancestral reconstruction is useful and is <b>not time travel</b>. Every output is
+          conditional on a guide tree, an alignment, and in one case a reference. Treat a
+          reconstructed ancestor as a hypothesis with a stated dependency, the way you would treat
+          any other model output.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="have">✓</td><td>Armstrong et al., <em>Progressive Cactus</em>, Nature Biotech</td><td>2020</td><td><b>Start here.</b> Clade-scale reference-free WGA + ancestral sequences</td></tr>
+            <tr><td class="have">✓</td><td>Hickey et al., <em>HAL</em>, Bioinformatics</td><td>2013</td><td>The data model everything downstream consumes</td></tr>
+            <tr><td class="have">✓</td><td>Wang et al., <em>MCScanX</em>, NAR</td><td>2012</td><td>Anchor-based collinearity</td></tr>
+            <tr><td class="have">✓</td><td>Hickey et al., <em>Minigraph-Cactus</em>, Nature Biotech</td><td>2024</td><td>Where WGA meets pangenomes → Ch 10</td></tr>
+            <tr><td class="have">✓</td><td>Minkin &amp; Medvedev, <em>SibeliaZ</em>, Nat Commun</td><td>2020</td><td>Locally collinear blocks</td></tr>
+            <tr><td class="lack">·</td><td>Song et al., <em>AnchorWave</em>, PNAS</td><td>2022</td><td>Diversity/SV/WGD-tolerant alignment <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Goel et al., <em>SyRI</em>, Genome Biology</td><td>2019</td><td>Rearrangement classification <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Kim et al., <em>DESCHRAMBLER</em> · Muffato et al., <em>AGORA</em> · <em>EdgeHOG</em></td><td>2017–25</td><td><b>The declared gap</b> <span class="note">acquire these to fill it</span></td></tr>
+            <tr><td class="lack">·</td><td>Lovell et al., <em>GENESPACE</em>, eLife</td><td>2022</td><td>Synteny-constrained orthology <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 6 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Give the five-step evidence standard for a gene-loss claim, in order.</li>
+          <li>Say why a failed search is not an absence, and name four other causes.</li>
+          <li>Explain what reference-free WGA represents that pairwise-to-reference cannot.</li>
+          <li>Name three ways scaffolding manufactures a rearrangement.</li>
+          <li>State what a reconstructed ancestral genome does and does not license.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> that 47 immune genes were lost in a bat lineage, based on absence
+          from the annotated gene sets of three bat genomes but presence in mouse and human,
+          concluding immune-system streamlining associated with flight and viral tolerance. What do
+          you require?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>1 · the interval</dt><dd>Syntenic flanks for each of the 47 in each bat genome. Absence from a gene set is not absence from a genome.</dd>
+          <dt>2 · raw search</dt><dd>tblastn against genomic sequence, not the annotation that failed. Immune genes are fast-evolving — precisely the category annotation misses.</dd>
+          <dt>3 · gaps</dt><dd>Read depth across each interval. If any sits in or beside an assembly gap it is unusable.</dd>
+          <dt>4 · one event or 47?</dt><dd>Are they clustered? A single deleted array is <em>one</em> loss, not 47 — the same counting error as Chapter 7's tandem arrays.</dd>
+          <dt>5 · polarisation</dt><dd>Outgroups. Mouse and human are not an outgroup pair for bats; without a proper outgroup, "lost in bats" may be "gained in the mouse/human lineage".</dd>
+        </dl>
+        <p>And the framing check: fast-evolving immune genes are the single most likely category to
+          produce false losses by all four mechanisms at once — divergence past detection, annotation
+          failure, tandem-array collapse and lineage-specific turnover. A plausible story again
+          arriving exactly where the artefacts are densest.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../05_orthology/05_orthology.html">← Chapter 5 · Orthology</a>
+    <a href="../07_gene_families_duplication/07_gene_families_duplication.html">Chapter 7 · Gene families →</a>
+  </nav>
+  <footer>
+    <div>Part II of VI · Layer F2</div>
+    <div>Research <code>research/raw/c06_wga_ancestral.md</code> — 58 sourced URLs</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sequence comparison</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 02 · Part 0, Foundations</p>
+    <h1>Sequence comparison</h1>
+    <p class="standfirst">Every comparative result is a conditional statement: <em>if</em> these
+      sequences are homologous, <em>if</em> the alignment represents positional homology, <em>if</em>
+      the model is adequate — then the tree follows. No software supplies those premises.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What must you understand about alignment, search and likelihood before any later result is interpretable?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapter 1</dd></div>
+      <div><dt>Feeds</dt><dd>Ch 05 orthology · 06 WGA · 08 trees · 11 dN/dS · 14 conservation</dd></div>
+      <div><dt>Understood when</dt><dd>You can name which premise a given claim depends on, and how to test it</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">Before anything</span>
+        <h2>Six different claims, routinely collapsed into one</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This distinction comes first, because once BLAST is running it is too late.
+        Readers silently convert an E-value into evolutionary and then functional annotation, and
+        every step of that conversion is a separate claim requiring separate evidence.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:20%">Claim</th><th style="width:34%">What it asserts</th><th>What actually supports it</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">similarity</td><td>These sequences score highly against each other</td><td>A score, under a stated matrix and gap cost. A measurement</td></tr>
+            <tr><td class="mono">alignability</td><td>Positions can be put in correspondence</td><td>An optimisation result — and it succeeds even on unrelated sequences</td></tr>
+            <tr><td class="mono">homology</td><td>Common ancestral sequence</td><td>A historical inference. Binary. Never a percentage</td></tr>
+            <tr><td class="mono">domain membership</td><td>A region matches a family profile</td><td>A profile hit — which may cover 15% of the gene</td></tr>
+            <tr><td class="mono">orthology</td><td>Separated by speciation</td><td>A gene tree, or synteny. Never a best hit (Ch 05)</td></tr>
+            <tr><td class="mono">function</td><td>Does the same job</td><td>An assay. Nothing above implies it</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout bad">
+        <h4>The chain that breaks quietly</h4>
+        <p><code>high score → alignable → homologous → same domain → ortholog → same function</code>
+          — six inferential steps, each defensible on its own, presented in most papers as one arrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The gate</span>
+        <h2>Is this sequence even usable?</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Primary-sequence errors can dominate downstream phylogenetic and selection
+        results. Check before aligning, not after a surprising answer.</p>
+      <dl class="rules">
+        <dt>ORF integrity</dt><dd>Internal stops and frameshifts wreck codon alignments — and Chapter 11 runs on codon alignments</dd>
+        <dt>pseudogenes</dt><dd>A decayed copy in the set adds real substitutions that mean nothing adaptive</dd>
+        <dt>chimeras &amp; fusions</dt><dd>One "gene" that is two; its two halves have different histories</dd>
+        <dt>annotation artefacts</dt><dd>Fragmentation and mispredicted boundaries — Chapter 04's failure modes arriving here</dd>
+        <dt>contamination</dt><dd>A foreign sequence aligns beautifully to its true relatives</dd>
+        <dt>domain architecture</dt><dd>Two proteins sharing one domain are not comparable end-to-end</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">Alignment</span>
+        <h2>It optimises a score, not historical truth</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Global alignment assumes full-length correspondence is a meaningful hypothesis;
+        local alignment seeks one high-scoring region. Affine gaps
+        (<code>open + k×extend</code>) encode a preference for one indel event over many short ones.</p>
+      <div class="callout warn">
+        <h4>The consequence that matters downstream</h4>
+        <p>Changing gap-open, gap-extension or the substitution matrix <b>moves indel boundaries and
+          forces different residues into columns</b> — which changes what every downstream program
+          counts as a substitution. The alignment is an input hypothesis, not an observation.</p>
+      </div>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>PAM</h3><span class="tag">extrapolated</span></div>
+          <p>Built from replacements observed among <em>close</em> proteins, then extrapolated. One PAM
+            = an average accepted change at 1% of positions.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>BLOSUM</h3><span class="tag">observed</span></div>
+          <p>Log-odds scores estimated directly from conserved ungapped blocks, clustering sequences
+            above the matrix's identity threshold.</p>
+        </div>
+      </div>
+      <pre class="fml gate"><b>NCBI's practical defaults</b>
+  BLOSUM62      general purpose
+  BLOSUM45      long, weak similarity        <span class="cmt">lower number → more distant</span>
+  PAM30 / PAM70 short queries
+
+<span class="cmt">These are DETECTION HEURISTICS, not estimates of divergence time.
+Choosing BLOSUM45 does not mean you believe the divergence is deep.</span></pre>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Search</span>
+        <h2>What an E-value is, and what it is not</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml">Karlin–Altschul, ungapped local scores:
+
+    <b>E ≈ K·m·n·e^(−λS)</b>
+
+    m,n = query and database lengths   →  E depends on the SEARCH SPACE
+    S   = score                        →  E depends on the SCORING SYSTEM
+
+<span class="cmt">So "significant" changes when the database grows. The same alignment,
+the same biology, a different E-value next year.</span></pre>
+      <div class="callout bad">
+        <h4>An E-value is not a probability of homology</h4>
+        <p>It is the expected number of chance local scores at least as good, under a specified
+          random-sequence model. It is not a posterior probability of homology, and it is certainly
+          not evidence of orthology or function.</p>
+        <p>A <b>top hit</b> means "best database match under this query, this database, and this
+          scoring procedure". Domain sharing, uneven database representation, fast evolution, gene
+          loss, fusion/fission and paralogy each invalidate the leap to "homolog".</p>
+      </div>
+      <p>Mask low-complexity and repetitive sequence, and inspect compositional bias. NCBI protein
+        BLAST applies conditional compositional score adjustment by default; DIAMOND applies tantan
+        repeat masking by default. Defaults are versioned methods metadata — record them.</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Reach</span>
+        <h2>Profiles — the answer when pairwise search runs out</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Profile HMMs keep position-specific residue and indel distributions from an MSA,
+        so they detect remote family relationships pairwise similarity misses. They fail
+        <em>differently</em>, which is why they are not simply better.</p>
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>Seed bias</h3><span class="tag bad">failure</span></div>
+          <p>A profile inherits the errors and taxonomic skew of the alignment it was built from.</p></div>
+        <div class="card"><div class="tagrow"><h3>Domain ≠ gene</h3><span class="tag bad">failure</span></div>
+          <p>A hit may represent one domain, not the full-gene history you are about to infer.</p></div>
+        <div class="card"><div class="tagrow"><h3>False transfer</h3><span class="tag bad">failure</span></div>
+          <p>A weak partial domain match becomes a confident functional annotation downstream.</p></div>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:22%">Tool</th><th>Appropriate when</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">DIAMOND <code>--ultra-sensitive</code></td><td>Scalable protein search below the twilight zone. v2.2.1 (May 2026)</td></tr>
+            <tr><td class="mono">MMseqs2</td><td>Adjustable sensitivity, iterative sequence–profile search. 2026 release changed the CLI; precomputed indices above sensitivity 6 need a workaround</td></tr>
+            <tr><td class="mono">HMMER / Pfam / InterPro</td><td>Known remote domain families — the profile case</td></tr>
+            <tr><td class="mono">Foldseek</td><td>A credible experimental or predicted structure exists. Its authors note discriminating true from false positives can be challenging</td></tr>
+            <tr><td class="mono">PLMSearch</td><td>Promising (2024), but needs independent task-specific calibration before it is an annotation authority</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">The big one</span>
+        <h2>Multiple alignment is a source of error, not a preprocessing step</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>How large the disagreement actually is</h4>
+        <p>On difficult empirical cases, one assessment found only <b>34–52% of columns correctly
+          aligned</b> across PRANK, MAFFT, ClustalW and T-Coffee. No aligner wins under every
+          simulation, data type, indel process or downstream task.</p>
+      </div>
+      <div class="callout warn">
+        <h4>And it manufactures selection</h4>
+        <p>In the 12-<em>Drosophila</em> reanalysis, ordinary aligners placed <b>non-homologous codons
+          in the same column</b>, producing false branch-site positives — and <b>stripping gap columns
+          did not remove them</b>. Codon-aware PRANK outperformed PRANK-amino-acid, MAFFT, MUSCLE and
+          ClustalW.</p>
+        <p class="src">Markova-Raina &amp; Petrov 2011, Genome Research · doi:10.1101/gr.115949.110</p>
+      </div>
+      <p><b>Codon-aware alignment is mandatory when the question is dN/dS.</b> Protein-guided
+        back-translation preserves reading frame and codon columns; MACSE additionally models
+        frameshifts and stop codons, where PAL2NAL-style workflows cannot handle unexpected
+        frameshifts automatically.</p>
+
+      <h3 class="col">The filtering controversy — genuinely unresolved</h3>
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>Filtering helps</h3><span class="tag ok">2007</span></div>
+          <p>Gblocks-style removal improved simulated protein-tree analyses.</p>
+          <div class="measured">Talavera &amp; Castresana, Syst Biol</div></div>
+        <div class="card"><div class="tagrow"><h3>Filtering hurts</h3><span class="tag bad">2015</span></div>
+          <p>Gblocks, trimAl, BMGE and ZORRO generally <b>worsened</b> single-gene phylogeny as more
+            columns were removed — discarding signal along with noise.</p>
+          <div class="measured">Tan et al., Syst Biol</div></div>
+        <div class="card"><div class="tagrow"><h3>Targeted filtering helps</h3><span class="tag warn">2019</span></div>
+          <p>HmmCleaner/PREQUAL-style <em>segment</em> filtering helps specifically against
+            primary-sequence errors — a different problem from column noise.</p>
+          <div class="measured">Di Franco et al., BMC Evol Biol</div></div>
+      </div>
+      <p>The resolution is not a winner. It is that <b>block filtering and error-segment filtering
+        target different problems</b>, and reporting which you used — with the alternative — is the
+        minimum standard.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Models</span>
+        <h2>Likelihood, selection, and the adequacy question nobody asks</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">A substitution model is a continuous-time Markov process. JC69 assumes equal
+        base frequencies and equal rates; GTR allows unequal frequencies and reversible
+        exchangeabilities; <code>+G</code> models site-rate heterogeneity and <code>+I</code> adds
+        invariant sites. Felsenstein pruning computes the site likelihood by recursively summing over
+        unobserved ancestral states.</p>
+      <div class="callout bad">
+        <h4>What likelihood is</h4>
+        <p>It is <b>P(alignment | tree, model)</b>. It is <b>not</b> the probability that the inferred
+          tree is true. Every downstream support value inherits that distinction.</p>
+      </div>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>Model SELECTION</h3><span class="tag ok">routine</span></div>
+          <p>ModelFinder/jModelTest compare candidates by AIC/BIC. In many settings the criterion has
+            little effect on <em>topology</em>; branch lengths, support values and hard regions are
+            more sensitive — though under misspecification in difficult regions topology can change.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Model ADEQUACY</h3><span class="tag bad">skipped</span></div>
+          <p>Asks whether the selected model could plausibly have <em>generated</em> the observed data
+            at all — posterior-predictive or parametric-bootstrap thinking.</p>
+          <div class="measured"><b>A selected model can still be inadequate.</b> Selection picks the
+            best of a bad set; adequacy asks whether the set was bad.</div>
+        </div>
+      </div>
+      <p><code>+G</code> is not a general cure. Lineage-specific composition, heterotachy,
+        recombination and saturation each violate assumptions that <code>+G</code> does not address —
+        and each is waiting in Chapters 08 and 11.</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">8</div>
+      <div><span class="verb">The practice</span>
+        <h2>Report what survives a sensitivity set</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This is the chapter's operational deliverable, and it is what separates a
+        defensible comparative result from a lucky one.</p>
+      <pre class="fml gate"><b>THE SENSITIVITY SET</b>  — vary, then report only what is stable
+
+  aligner         MAFFT · PRANK · MUSCLE      <span class="cmt">(codon-aware if dN/dS)</span>
+  filtering       none · block · error-segment
+  model           selected · one simpler · one richer
+  homolog set     with and without the marginal members
+  taxon sampling  with and without the long branch
+
+<b>claim</b>   survives all of the above    → report it
+       survives some                → report it WITH the range
+       survives one configuration   → you have a configuration, not a finding</pre>
+      <div class="callout">
+        <h4>Why this is the chapter's real content</h4>
+        <p>Alignment uncertainty is empirically large, filtering is contested, and model adequacy is
+          rarely checked. None of that is fixable by picking better defaults. It is fixable by
+          reporting the range — which also happens to be the cheapest thing to demand as a referee.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">9</div>
+      <div><span class="verb">Downstream</span>
+        <h2>Where each premise fails later</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:30%">Premise from this chapter</th><th style="width:16%">Breaks in</th><th>As</th></tr></thead>
+          <tbody>
+            <tr><td>Top hit ≠ homolog</td><td>Ch 05</td><td>RBH orthology in duplication-rich clades</td></tr>
+            <tr><td>Alignment is a hypothesis</td><td>Ch 06</td><td>Whole-genome alignment disagreement between aligners</td></tr>
+            <tr><td>Likelihood ≠ P(tree is true)</td><td>Ch 08</td><td>Bootstrap 100 on a wrong topology</td></tr>
+            <tr><td>Codon columns must be real</td><td>Ch 11</td><td>False branch-site positives from misaligned codons</td></tr>
+            <tr><td>Model adequacy ≠ selection</td><td>Ch 08, 11</td><td>Composition shift and heterotachy read as signal</td></tr>
+            <tr><td>Profile ≠ full-gene history</td><td>Ch 14</td><td>Domain-level hit becomes a functional claim</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 2 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Separate similarity, alignability, homology, domain membership, orthology and function,
+            and say what evidence each needs.</li>
+          <li>Explain why an E-value changes when the database grows, and what it is not.</li>
+          <li>State how much aligners disagree on hard cases, and why gap-stripping does not fix it.</li>
+          <li>Give both sides of the filtering controversy without picking a winner.</li>
+          <li>Distinguish model selection from model adequacy in one sentence each.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> 62 genes under positive selection (branch-site, p&nbsp;&lt;&nbsp;0.05
+          after FDR) across 20 mammals. Methods: orthologs by reciprocal BLAST, aligned with MAFFT on
+          amino acids then back-translated, Gblocks-filtered, PAML with the best model from
+          ModelFinder. What is wrong before you look at a single gene?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>homolog set</dt><dd>Reciprocal BLAST for orthology — Chapter 5's problem, and it puts paralogs into codon alignments.</dd>
+          <dt>alignment</dt><dd>MAFFT on amino acids then back-translated is <em>not</em> codon-aware in the sense that matters. The 12-<em>Drosophila</em> result is precisely this configuration producing false positives.</dd>
+          <dt>filtering</dt><dd>Gblocks removes columns, but the documented failure is non-homologous codons <em>surviving</em> gap-stripping. It also may have discarded signal.</dd>
+          <dt>model</dt><dd>ModelFinder selected; nothing tested adequacy. Composition shift across 20 mammals is exactly the unaddressed violation.</dd>
+          <dt>reporting</dt><dd>One configuration, one number. No sensitivity set, so there is no way to know whether 62 is stable or an artefact of these five choices.</dd>
+        </dl>
+        <p>None of this says the 62 genes are wrong. It says the paper has not yet given you grounds
+          to believe them — which is the distinction this whole chapter exists to make.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../01_what_the_field_asks/01_what_the_field_asks.html">← Chapter 1 · What the field actually asks</a>
+    <a href="../03_molecular_evolution/03_molecular_evolution.html">Chapter 3 · Molecular evolution →</a>
+  </nav>
+  <footer>
+    <div>Part 0 of VI · Foundations</div>
+    <div>Research <code>research/raw/c02_sequence_comparison.md</code> — 79 sourced URLs, verified.
+      One citation corrected: the 12-<em>Drosophila</em> aligner study is Genome Research, not MBE.</div>
+  </footer>
+
+</div>
+</body>
+</html>

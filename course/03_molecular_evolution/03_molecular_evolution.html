@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Molecular evolution</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 03 · Part 0, Foundations</p>
+    <h1>Molecular evolution</h1>
+    <p class="standfirst">You need a generative model, not a catalogue of tests. The genome is a
+      correlated set of local genealogies — so a dN/dS value, an F<sub>ST</sub> peak or a discordant
+      gene tree is a statistic several competing histories could produce.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>What would this look like under neutrality?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapter 1</dd></div>
+      <div><dt>Feeds</dt><dd>Ch 08 species trees · 11 selection · 12 introgression · 13 convergence</dd></div>
+      <div><dt>Understood when</dt><dd>You can state the null a given comparative claim is being tested against</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">Forward time, first</span>
+        <h2>Frequencies before histories</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">The coalescent runs backward, which is elegant and unintuitive. One page
+        forward-in-time makes it readable.</p>
+      <pre class="fml">an allele's frequency changes each generation under four forces:
+
+  <b>mutation</b>     introduces it                    rate μ
+  <b>drift</b>        random sampling of 2N gametes    strength ∝ 1/Ne
+  <b>selection</b>    changes expected contribution    coefficient s
+  <b>migration</b>    imports frequencies              rate m
+
+what decides which force wins is the SCALED parameter, not the raw one:
+
+  <b>Ne·s</b>   ≪ 1  →  drift dominates; the allele is effectively neutral
+  <b>Ne·s</b>   ≫ 1  →  selection dominates
+  <b>Ne·μ</b>, <b>Ne·m</b>, <b>Ne·r</b>   likewise
+
+<span class="cmt">A new neutral allele fixes with probability 1/2N and takes ~4Ne generations.
+Almost all are lost. This is why "most substitutions" is a claim about
+the mutations that survived, not about the mutations that occurred.</span></pre>
+      <div class="callout">
+        <h4>The one idea to carry forward</h4>
+        <p>The <b>same mutation</b> can be effectively neutral in a small population and efficiently
+          selected in a large one, because only the product <em>N</em><sub>e</sub><em>s</em> matters.
+          Selection efficacy is therefore a property of the population, not of the mutation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The null</span>
+        <h2>Neutrality is a null, not a belief — and not one thing</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">"Neutral" is indispensable because it supplies explicit predictions for
+        diversity, the site-frequency spectrum, linkage disequilibrium, fixation and gene-tree
+        variation. It is not a claim that biology is neutral.</p>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>Neutral theory</h3><span class="tag">Kimura 1968</span></div>
+          <p>Most molecular substitutions are neutral. Its classic result: the neutral substitution
+            rate equals the neutral mutation rate — <b>independent of population size</b>.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Nearly-neutral theory</h3><span class="tag">Ohta 1973</span></div>
+          <p>Adds weakly selected mutations whose fate depends on <em>N</em><sub>e</sub><em>s</em>. So
+            lineages with different <em>N</em><sub>e</sub> differ in both polymorphism and protein
+            evolution rate.</p>
+        </div>
+      </div>
+      <div class="callout warn">
+        <h4>The distinction almost everyone skips</h4>
+        <p>Neither the original nor the nearly-neutral theory <b>is</b> the strict-neutrality null
+          used in tests. They are substantive hypotheses about biology; the null is a model. Treating
+          "neutral theory" and "the null" as the same object is what makes the neutralist/selectionist
+          dispute look settled when it is not.</p>
+      </div>
+      <div class="callout">
+        <h4>Where the field actually stands</h4>
+        <p>Not "selection versus neutrality". Direct selection, weak selection, drift and
+          <b>linked</b> selection all contribute, with relative importance varying by taxon, genomic
+          region and question. Claims about the <em>proportion</em> of adaptive substitutions remain
+          model-dependent, because demography, the distribution of fitness effects, gBGC and linkage
+          all confound them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">The discipline</span>
+        <h2>Identifiability — different histories, same signature</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This belongs immediately after neutrality, because it is what stops a null from
+        becoming a rubber stamp. Neutral expectations are <em>conditional</em> on the mutation model,
+        sampling, structure, recombination and ascertainment.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:30%">Observation</th><th style="width:32%">The headline reading</th><th>At least one other history producing it</th></tr></thead>
+          <tbody>
+            <tr><td>Excess rare variants in the SFS</td><td>Population expansion</td><td>Purifying selection · a sweep · sequencing error at low depth</td></tr>
+            <tr><td>Reduced local diversity, high F<sub>ST</sub></td><td>Selective sweep / barrier locus</td><td>Background selection · low local recombination · low mutation rate</td></tr>
+            <tr><td>Gene tree ≠ species tree</td><td>Introgression</td><td>Incomplete lineage sorting — <b>expected under no gene flow</b></td></tr>
+            <tr><td>Elevated dN/dS on a branch</td><td>Positive selection</td><td>Relaxed constraint · small <em>N</em><sub>e</sub> · gBGC · misalignment</td></tr>
+            <tr><td>Lineage-specific rate acceleration</td><td>Adaptive evolution</td><td>Mutation-rate or spectrum shift · generation-time change</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout bad">
+        <h4>The question this chapter exists to install</h4>
+        <p><em>Which assumed genealogy, sampling process and error model would generate this signal
+          <b>without</b> the headline biological explanation?</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Forces</span>
+        <h2>Mutation, recombination, gene conversion, linked selection</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid">
+        <div class="card">
+          <div class="tagrow"><h3>Mutation is not a clock</h3><span class="tag warn">2× revision</span></div>
+          <p>Directly counting <em>de novo</em> mutations in pedigrees gave human rates roughly
+            <b>twofold below</b> older indirect evolutionary estimates — materially changing
+            divergence-time interpretations, and raising mutation-rate evolution as a live
+            possibility.</p>
+          <div class="measured">Ignored, rate and spectrum heterogeneity reads as lineage-specific
+            selection or accelerated evolution.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Recombination</h3><span class="tag">structural</span></div>
+          <p>Breaks associations and lets local genealogies differ along a chromosome. Its rate is
+            <em>heterogeneous</em>.</p>
+          <div class="measured">Ignoring that heterogeneity makes sweep signals and demographic
+            inferences look more spatially coherent than they are.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>gBGC</h3><span class="tag bad">mimics selection</span></div>
+          <p>GC-biased gene conversion preferentially transmits GC over AT alleles, and can drive even
+            <b>deleterious</b> GC alleles to fixation — including at coding sites.</p>
+          <div class="measured">A non-selective process that produces the signature of positive
+            selection. High downstream cost in Ch 11 and 13.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Linked selection</h3><span class="tag bad">pervasive</span></div>
+          <p>Background selection (purifying selection on linked deleterious alleles) reduces linked
+            neutral diversity and alters coalescence times; sweeps do the same by hitchhiking.</p>
+          <div class="measured">In one human analysis, BGS and gBGC jointly affected <b>up to 95% of
+            variants</b> and biased demographic inference even at synonymous and non-transcribed
+            sites. <span class="src">Human-specific — not a universal figure</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">After the forces, not before</span>
+        <h2><em>N</em><sub>e</sub> is not a headcount</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This section comes after linked selection deliberately. Meet
+        <em>N</em><sub>e</sub> too early and you reify it as a single number for a species.</p>
+      <div class="callout">
+        <h4>What it actually is</h4>
+        <p>The size of an <b>idealised</b> population that matches a <b>specified process</b> —
+          coalescence, drift, inbreeding, or variance in allele-frequency change. These give different
+          answers. There is no single <em>N</em><sub>e</sub>.</p>
+      </div>
+      <dl class="rules">
+        <dt>varies in time</dt><dd>Bottlenecks and expansions; a PSMC curve is a trajectory, not a constant</dd>
+        <dt>varies along the genome</dt><dd>Linked selection makes local <em>N</em><sub>e</sub> lower where recombination is low</dd>
+        <dt>varies by estimator</dt><dd>Which process you measured determines which number you get</dd>
+        <dt>is not census size</dt><dd>Skewed reproductive success, sex ratio, age structure and migration all separate <em>N</em><sub>e</sub> from <em>N</em></dd>
+      </dl>
+      <p>Treating <em>N</em><sub>e</sub> as census size miscalibrates drift, every mutation-scaled
+        parameter, selection efficacy, and divergence dates — which is to say, most of Chapters 11
+        and 12.</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Backward time</span>
+        <h2>The coalescent, and what breaks it</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Drift, viewed backward from a sample: follow lineages until they merge, then
+        place mutations on the resulting random genealogy. Polymorphism is a consequence of tree shape.</p>
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:800px" viewBox="0 0 800 300" role="img"
+               aria-label="Left: a coalescent genealogy of five sampled lineages merging backward in time to a most recent common ancestor, with mutations marked on branches. Right: the same genealogy under recombination becomes a sequence of different local trees along the chromosome.">
+            <text class="t-hd" x="20" y="20">ONE LOCUS — a genealogy</text>
+            <path class="dg-line" d="M40,270 L40,210 M100,270 L100,210"/>
+            <path class="dg-line" d="M40,210 L100,210 M70,210 L70,160"/>
+            <path class="dg-line" d="M160,270 L160,175 M70,160 L70,120"/>
+            <path class="dg-line" d="M70,160 L160,160 M160,160 L160,175"/>
+            <path class="dg-line" d="M220,270 L220,120 M70,120 L220,120 M145,120 L145,70"/>
+            <path class="dg-line" d="M280,270 L280,70 M145,70 L280,70 M212,70 L212,40"/>
+            <circle cx="212" cy="40" r="4" fill="var(--accept)"/>
+            <text class="t-mono f-acc" x="224" y="43">MRCA</text>
+            <g fill="var(--signal)">
+              <circle cx="40" cy="240" r="3"/><circle cx="70" cy="140" r="3"/>
+              <circle cx="160" cy="230" r="3"/><circle cx="220" cy="200" r="3"/>
+              <circle cx="280" cy="150" r="3"/><circle cx="280" cy="220" r="3"/>
+            </g>
+            <text class="t-sm f-sig" x="300" y="153">mutations fall on branches</text>
+            <text class="t-sm" x="300" y="168">→ long branches carry more</text>
+            <text class="t-sm" x="300" y="183">→ tree shape makes the SFS</text>
+            <text class="t-sm" x="20" y="288">present</text>
+
+            <path class="dg-dash" d="M420,20 L420,290"/>
+
+            <text class="t-hd" x="450" y="20">WITH RECOMBINATION — an ARG</text>
+            <text class="t-sm" x="450" y="40">the genealogy CHANGES along the chromosome</text>
+            <g>
+              <rect class="dg-box" x="450" y="56" width="100" height="14"/>
+              <rect class="dg-box" x="556" y="56" width="86" height="14"/>
+              <rect class="dg-box" x="648" y="56" width="120" height="14"/>
+              <text class="t-mono" x="500" y="67" text-anchor="middle">tree 1</text>
+              <text class="t-mono" x="599" y="67" text-anchor="middle">tree 2</text>
+              <text class="t-mono" x="708" y="67" text-anchor="middle">tree 3</text>
+              <text class="t-sm f-sig" x="553" y="86">↑</text><text class="t-sm f-sig" x="645" y="86">↑</text>
+              <text class="t-sm f-sig" x="450" y="100">recombination breakpoints</text>
+            </g>
+            <path class="dg-acc" d="M470,130 L470,180 M500,130 L500,180 M470,180 L500,180 M485,180 L485,215
+                                     M530,130 L530,215 M485,215 L530,215 M507,215 L507,250"/>
+            <path class="dg-acc" d="M580,130 L580,200 M610,130 L610,165 M640,130 L640,165
+                                     M610,165 L640,165 M625,165 L625,200 M580,200 L625,200 M602,200 L602,250"/>
+            <path class="dg-acc" d="M680,130 L680,175 M710,130 L710,175 M680,175 L710,175 M695,175 L695,195
+                                     M740,130 L740,195 M695,195 L740,195 M717,195 L717,250"/>
+            <text class="t-sm" x="450" y="272">neighbouring trees are CORRELATED, not independent —</text>
+            <text class="t-sm" x="450" y="288">which is why loci along a genome are not independent samples</text>
+          </svg>
+        </div>
+        <figcaption><b>The single-tree assumption is the one recombination breaks.</b> Every method
+          that treats loci as independent replicates is making a claim about recombination it usually
+          does not state.</figcaption>
+      </figure>
+      <div class="callout warn">
+        <h4>What the elementary coalescent assumes</h4>
+        <p>A panmictic, randomly mating Wright–Fisher-like population of constant size; neutral,
+          non-recombining loci; simple mutation. <b>Population structure, selection and recombination
+          each require a different extension</b> — and each is the norm, not the exception, in
+          comparative datasets.</p>
+      </div>
+      <p>The <b>multispecies coalescent</b> embeds within-population coalescence inside species-tree
+        branches, predicting gene-tree discordance through incomplete lineage sorting on short
+        internal branches. Discordance is therefore <em>expected under no gene flow</em> — the single
+        most important thing Chapter 08 inherits from here.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Before the SFS</span>
+        <h2>From reads to genotypes — where the spectrum is decided</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">The site-frequency spectrum counts derived alleles by sample frequency, and it
+        is the workhorse summary of Chapters 11 and 12. What it looks like is decided upstream, by
+        data generation — which is why this section precedes it.</p>
+      <div class="callout bad">
+        <h4>Hard genotype calls throw away uncertainty, and it biases the SFS</h4>
+        <p>In simulation, call-based allele counting biased the spectrum in <b>opposite directions
+          depending on the calling strategy</b>: multisample calling can <em>understate</em> rare
+          variants, single-sample calling can <em>overstate</em> them. Both then bias demographic and
+          selection inference.</p>
+        <p>Genotype-likelihood methods (ANGSD-style) integrate base and mapping-quality evidence
+          instead of pretending an uncertain genotype was observed. <b>Required</b> whenever depth or
+          error uncertainty is material relative to the signal: ancient DNA, low-pass resequencing,
+          pooled or uneven data, and anything dominated by rare variants.</p>
+      </div>
+      <dl class="rules">
+        <dt>reference bias</dt><dd>Reads matching the reference map better — a systematic, directional error</dd>
+        <dt>paralogs &amp; SVs</dt><dd>Mismapping there creates false heterozygotes and false variants</dd>
+        <dt>ancestral state</dt><dd>The SFS needs polarisation; outgroup error folds into the spectrum</dd>
+        <dt>ascertainment</dt><dd>How sites were chosen determines what frequencies you can even see</dd>
+        <dt>missingness</dt><dd>Non-random missing data is non-random frequency data</dd>
+      </dl>
+      <p>So an SFS departure is evidence against a <b>specified</b> neutral-demographic model. It is
+        not a selection call, and demography and selection are frequently non-identifiable from the
+        spectrum alone.</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">8</div>
+      <div><span class="verb">Where it is going</span>
+        <h2>From summaries to genealogies</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">An ancestral recombination graph is the correlated sequence of local
+        genealogies along a genome — conceptually the right object for joint inference of demography,
+        selection and ancestry.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:16%">Method</th><th style="width:14%">Scale reached</th><th>What it contributes</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Relate</td><td>thousands</td><td>Genome-wide local trees</td></tr>
+            <tr><td class="mono">tsinfer / tskit</td><td>large</td><td>Infers and efficiently stores correlated genealogies</td></tr>
+            <tr><td class="mono">ARG-Needle</td><td><b>337,464</b></td><td>Biobank-scale ARG inference (UK Biobank)</td></tr>
+            <tr><td class="mono">SINGER</td><td>hundreds</td><td><b>Samples from a posterior</b> rather than reporting one ARG — foregrounds uncertainty. Published Sept 2025</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <h4>Read the scale column carefully</h4>
+        <p>ARG-Needle reaches biobank scale; SINGER's contribution is <em>uncertainty</em>, at
+          hundreds of genomes. These are different achievements and are sometimes cited as though
+          interchangeable. Estimated ARGs remain model-based and uncertain — the field is moving
+          toward ARG-aware analysis, <b>not</b> abandoning summary statistics, which remain essential
+          for robustness, speed and model checking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">9</div>
+      <div><span class="verb">The bridge</span>
+        <h2>Divergence and polymorphism are the same process</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">This is the hinge between population genetics and everything the rest of this
+        course does.</p>
+      <pre class="fml gate"><b>one mutational process, two parts of one genealogy</b>
+
+  <b>polymorphism</b>   mutation on recent, still-uncoalesced within-species branches
+  <b>divergence</b>     mutation on branches separating lineages after shared ancestry
+
+<span class="cmt">The boundary is NOT a biological wall:
+  · ancestral polymorphism persists beyond speciation  → ILS (Ch 08)
+  · gene flow crosses it                               → introgression (Ch 12)</span>
+
+<b>consequence</b>  substitution-only dN/dS and polymorphism-plus-divergence tests
+             (McDonald–Kreitman) answer DIFFERENT questions. Neither is
+             a better version of the other.</pre>
+      <div class="callout">
+        <h4>Why the course is ordered this way</h4>
+        <p>Every later chapter is an application of this one section. Chapter 08 needs ancestral
+          polymorphism to explain ILS. Chapter 11 needs the substitution process to have a null.
+          Chapter 12 needs gene flow crossing the boundary. Chapter 13 needs all three at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 3 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Six things, without notes</h3>
+        <ol>
+          <li>Explain why only <em>N</em><sub>e</sub><em>s</em> matters, and what that implies about
+            selection efficacy across lineages.</li>
+          <li>Say why "neutral theory" and "the strict-neutrality null" are not the same object.</li>
+          <li>Give two histories other than the headline one for each row of the identifiability
+            table.</li>
+          <li>State why <em>N</em><sub>e</sub> is not a single number for a species — three reasons.</li>
+          <li>Name what the elementary coalescent assumes and what recombination breaks.</li>
+          <li>Explain why polymorphism and divergence are one process, and what follows for dN/dS
+            versus McDonald–Kreitman.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> a 400 kb region in a montane bird population with reduced diversity,
+          elevated F<sub>ST</sub> against the lowland population, and an excess of rare variants —
+          concluding a selective sweep on an altitude-adaptation locus. What must be excluded first?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>recombination</dt><dd>Is local recombination rate low there? Low-recombination regions show reduced diversity and elevated F<sub>ST</sub> <em>without</em> any sweep.</dd>
+          <dt>background selection</dt><dd>Purifying selection on linked sites produces the same three signatures. It is the default alternative, not an exotic one.</dd>
+          <dt>gBGC</dt><dd>Check the base composition of the elevated substitutions. GC-biased gene conversion mimics selection and needs no adaptation.</dd>
+          <dt>data generation</dt><dd>What coverage, and were genotypes called or likelihood-based? An excess of rare variants is exactly what single-sample calling manufactures.</dd>
+          <dt>demography</dt><dd>A montane population is a strong prior for a bottleneck, which also produces an SFS distortion — genome-wide, so compare against the genomic background.</dd>
+          <dt>mutation rate</dt><dd>Reduced diversity can be reduced <em>mutation</em>, not increased removal.</dd>
+        </dl>
+        <p>Note that the three reported signatures are not three independent pieces of evidence —
+          reduced diversity, elevated F<sub>ST</sub> and SFS distortion are largely the <em>same</em>
+          observation viewed three ways, and every alternative above produces all three together.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../02_sequence_comparison/02_sequence_comparison.html">← Chapter 2 · Sequence comparison</a>
+    <a href="../04_the_objects_you_compare/04_the_objects_you_compare.html">Chapter 4 · The objects you compare →</a>
+  </nav>
+  <footer>
+    <div>Part 0 of VI · Foundations</div>
+    <div>Research <code>research/raw/c03_molecular_evolution.md</code> — 42 sourced URLs, verified.
+      Structure informed by Coop, <em>Population and Quantitative Genetics</em> (CC-BY), in <code>resources/books/</code>.</div>
+  </footer>
+
+</div>
+</body>
+</html>

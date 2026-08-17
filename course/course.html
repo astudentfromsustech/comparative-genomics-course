@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparative genomics as a research field</title>
+<link rel="stylesheet" href="_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">A course · foundations to referee</p>
+    <h1>Comparative genomics as a research field</h1>
+    <p class="standfirst">Sixteen chapters, all written. The organising idea is that the field's methods are
+      <em>nested</em>: a failure at any layer does not raise an error — it emerges at the top as a
+      plausible, publishable evolutionary story.</p>
+    <dl class="mast-rail">
+      <div><dt>Scope</dt><dd>Foundations → research / referee level</dd></div>
+      <div><dt>Purpose</dt><dd>To do research in the field, and to review it</dd></div>
+      <div><dt>Corpus</dt><dd>172 papers by framework layer · 93 PDFs on disk · 2 open books</dd></div>
+      <div><dt>Research</dt><dd>15 briefs · ~800 sourced URLs · verified</dd></div>
+    </dl>
+  </header>
+
+  <!-- prerequisites -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">§</div>
+      <div><span class="verb">Read this first</span>
+        <h2>What this course assumes</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout warn">
+        <h4>An earlier version of this page claimed Chapter 1 assumes no genomics. That was wrong.</h4>
+        <p>A survey of eleven real curricula — MIT 6.047, Stanford CS262, Bologna 91407, Evomics,
+          EMBL-EBI and others — found the course jumped straight to orthology and selection while
+          assuming the reader could already judge an alignment, a substitution model and a likelihood
+          calculation. <b>Chapters 02 and 03 are that missing floor</b>, added in response.</p>
+      </div>
+      <dl class="rules">
+        <dt>assumed</dt><dd>Programming, statistics, and comfort with bioinformatics tooling — you have run MAFFT and IQ-TREE</dd>
+        <dt>taught here</dt><dd>What those tools assume, and what their assumptions license you to claim</dd>
+        <dt>not taught</dt><dd>Unix, workflow managers, and lab methods. The Evomics workshop and Bologna 91407 cover these well</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- the frame -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">◆</div>
+      <div><span class="verb">The frame</span>
+        <h2>One precondition, six layers, one ladder</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout">
+        <h4>The precondition</h4>
+        <p>A genomic difference is interpretable only inside a <b>homology relationship</b> and an
+          <b>evolutionary time frame</b>. Everything else is machinery for establishing those two.</p>
+      </div>
+
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:840px" viewBox="0 0 840 300" role="img"
+               aria-label="Six framework layers as a rising staircase from F1 data standard to F6 function, each labelled with the question it answers and the chapters covering it.">
+            <g><rect class="dg-box" x="20" y="230" width="128" height="52" rx="2"/>
+              <text class="t-hd" x="32" y="250">F1 DATA</text><text class="t-sm" x="32" y="265">Comparable at all?</text>
+              <text class="t-mono f-acc" x="32" y="277">ch 4</text></g>
+            <g><rect class="dg-box" x="156" y="192" width="128" height="52" rx="2"/>
+              <text class="t-hd" x="168" y="212">F2 HOMOLOGY</text><text class="t-sm" x="168" y="227">Same entity?</text>
+              <text class="t-mono f-acc" x="168" y="239">ch 5 · 6 · 7</text></g>
+            <g><rect class="dg-box" x="292" y="154" width="128" height="52" rx="2"/>
+              <text class="t-hd" x="304" y="174">F3 PHYLOGENY</text><text class="t-sm" x="304" y="189">Which lineage, when?</text>
+              <text class="t-mono f-acc" x="304" y="201">ch 8 · 9</text></g>
+            <g><rect class="dg-box" x="428" y="116" width="128" height="52" rx="2"/>
+              <text class="t-hd" x="440" y="136">F4 STRUCTURE</text><text class="t-sm" x="440" y="151">Architecture?</text>
+              <text class="t-mono f-acc" x="440" y="163">ch 10</text></g>
+            <g><rect class="dg-box" x="564" y="78" width="128" height="52" rx="2"/>
+              <text class="t-hd" x="576" y="98">F5 SELECTION</text><text class="t-sm" x="576" y="113">Non-neutral?</text>
+              <text class="t-mono f-acc" x="576" y="125">ch 11 · 12</text></g>
+            <g><rect class="dg-box" x="700" y="40" width="128" height="52" rx="2"/>
+              <text class="t-hd" x="712" y="60">F6 FUNCTION</text><text class="t-sm" x="712" y="75">Adaptive?</text>
+              <text class="t-mono f-acc" x="712" y="87">ch 13 · 14</text></g>
+            <path class="dg-dash" d="M84,230 L84,206 L220,206 M220,192 L220,168 L356,168
+                                     M356,154 L356,130 L492,130 M492,116 L492,92 L628,92
+                                     M628,78 L628,54 L764,54"/>
+            <text class="t-sm f-sig" x="20" y="298">a defect here…</text>
+            <text class="t-sm f-sig" x="700" y="28">…arrives here as a publishable result</text>
+          </svg>
+        </div>
+        <figcaption><b>Nested, not parallel — so study bottom-up.</b> A collapsed haplotig at F1
+          raises no error at F5; it returns a significant p-value.</figcaption>
+      </figure>
+
+      <pre class="fml gate"><b>the evidence ladder</b>  — every claim sits on a rung, and each has a fallback wording
+
+candidate  <b>→</b>  association  <b>→</b>  mechanistic support  <b>→</b>  causal
+<span class="cmt">the difference    it is on that     the mechanism is       it produces
+is real           branch           identified             the phenotype</span></pre>
+    </div>
+  </section>
+
+  <!-- chapters -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">16</div>
+      <div><span class="verb">The chapters</span>
+        <h2>Read in order — the dependency claims are real</h2></div>
+    </div>
+    <div class="stage-body">
+
+      <h4>Part 0 · Foundations</h4>
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3><a href="00_how_the_field_got_here/00_how_the_field_got_here.html">0 · How the field got here</a></h3><span class="tag ok">written</span></div>
+          <p>Four shifts, and a table for dating a paper's assumptions from its methods. Most bad
+            habits are dated, not stupid.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="01_what_the_field_asks/01_what_the_field_asks.html">1 · What the field asks</a></h3><span class="tag ok">written</span></div>
+          <p>Homology ≠ similarity, conservation ≠ function, positive selection ≠ adaptation. Where
+            the field ends and its neighbours begin.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="02_sequence_comparison/02_sequence_comparison.html">2 · Sequence comparison</a></h3><span class="tag ok">written</span></div>
+          <p>Alignment as a hypothesis, E-values, MSA error, the filtering controversy, model adequacy
+            — and the sensitivity set.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="03_molecular_evolution/03_molecular_evolution.html">3 · Molecular evolution</a></h3><span class="tag ok">written</span></div>
+          <p>Neutrality as a null, identifiability, linked selection, <em>N</em><sub>e</sub>, the
+            coalescent, and the divergence/polymorphism bridge.</p></div>
+      </div>
+
+      <h4 style="margin-top:20px">Part I · Orientation to the data · F1</h4>
+      <div class="grid duo">
+        <div class="card"><div class="tagrow"><h3><a href="04_the_objects_you_compare/04_the_objects_you_compare.html">4 · The objects you compare</a></h3><span class="tag ok">written</span></div>
+          <p>Assemblies, annotation, repeats, contamination — which false biology each defect
+            manufactures.</p></div>
+        <div class="card" style="background:var(--card-2)"><div class="tagrow"><span class="tag">why it matters</span></div>
+          <h3>The layer that kills the most papers</h3>
+          <p>Mixing annotation methods inflated apparent lineage-specific genes <b>15-fold</b>; VGP
+            found false-loss signatures in 26–60% of genes in earlier assemblies.</p></div>
+      </div>
+
+      <h4 style="margin-top:20px">Part II · The homology layer · F2</h4>
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3><a href="05_orthology/05_orthology.html">5 · Orthology</a></h3><span class="tag ok">written</span></div>
+          <p>The homology lattice, the differential-loss trap RBH cannot see, and what benchmarks do
+            not establish.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="06_synteny_wga_ancestral/06_synteny_wga_ancestral.html">6 · Synteny, WGA, ancestral genomes</a></h3><span class="tag ok">written</span></div>
+          <p>Why collinearity adjudicates a gene loss, clade-scale alignment, and what a reconstructed
+            ancestor licenses.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="07_gene_families_duplication/07_gene_families_duplication.html">7 · Gene families &amp; duplication</a></h3><span class="tag ok">written</span></div>
+          <p>Five mechanisms, one identical count table. Retention is not evidence of selection.</p></div>
+      </div>
+
+      <h4 style="margin-top:20px">Part III · The tree layer · F3</h4>
+      <div class="grid duo">
+        <div class="card"><div class="tagrow"><h3><a href="08_species_tree/08_species_tree.html">8 · The species tree</a></h3><span class="tag ok">written</span></div>
+          <p>The multispecies coalescent, why concatenation/coalescent disagreement is information,
+            and why divergence dates are soft.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="09_comparative_methods/09_comparative_methods.html">9 · Phylogenetic comparative methods</a></h3><span class="tag ok">written</span></div>
+          <p>Why <em>N</em> species are not <em>N</em> data points — the most common referee-level
+            failure in the field.</p></div>
+      </div>
+
+      <h4 style="margin-top:20px">Part IV · The structural layer · F4</h4>
+      <div class="grid duo">
+        <div class="card"><div class="tagrow"><h3><a href="10_structure_pangenome/10_structure_pangenome.html">10 · SV, T2T, pangenome graphs</a></h3><span class="tag ok">written</span></div>
+          <p>When the unit stops being a position on a reference and becomes a path through a clade.</p></div>
+        <div class="card" style="background:var(--card-2)"><div class="tagrow"><span class="tag">corpus</span></div>
+          <h3>Best-stocked chapter</h3>
+          <p><code>F4_structure</code> holds 30 papers, 18 on disk.</p></div>
+      </div>
+
+      <h4 style="margin-top:20px">Part V · Selection and history · F5</h4>
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3><a href="11_selection_inference/11_selection_inference.html">11 · Selection inference</a></h3><span class="tag ok">written</span><span class="tag bad">corpus 2/15</span></div>
+          <p>What dN/dS licenses. The four false-positive generators, and the confounders that raise
+            ω without selection.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="12_popgen_introgression/12_popgen_introgression.html">12 · Population history &amp; introgression</a></h3><span class="tag ok">written</span></div>
+          <p>How demography and gene flow masquerade as adaptation; separating introgression from
+            ILS.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="13_convergence/13_convergence.html">13 · Convergence</a></h3><span class="tag ok">written</span></div>
+          <p>What it takes to claim convergent adaptation rather than coincidence.</p></div>
+      </div>
+
+      <h4 style="margin-top:20px">Part VI · Function, practice, frontier · F6</h4>
+      <div class="grid duo">
+        <div class="card"><div class="tagrow"><h3><a href="14_regulatory_noncoding/14_regulatory_noncoding.html">14 · Regulatory &amp; non-coding</a></h3><span class="tag ok">written</span><span class="tag bad">corpus 1/8</span></div>
+          <p>Why comparing proteins misses most phenotypic difference. King &amp; Wilson's 1975
+            problem, still open.</p></div>
+        <div class="card"><div class="tagrow"><h3><a href="15_frontier_referee/15_frontier_referee.html">15 · Frontier + referee checklist</a></h3><span class="tag ok">written</span></div>
+          <p>Constraint at scale, genomic language models, and the minimum reportable record for each
+            claim type.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- corpus -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">◧</div>
+      <div><span class="verb">The corpus</span>
+        <h2>What is on disk, and what is missing</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">172 papers filed by framework layer. Real files live in the central papers
+        corpus and are <b>hard-linked</b> here — same inode, zero extra disk, and deleting either tree
+        loses nothing.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>Layer</th><th style="width:11%">Papers</th><th style="width:11%">On disk</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">F0_foundations</td><td>8</td><td class="have">6</td><td>—</td></tr>
+            <tr><td class="mono">F1_data</td><td>23</td><td class="have">12</td><td>qc_annotation · repeats_te</td></tr>
+            <tr><td class="mono">F2_homology</td><td>27</td><td class="have">16</td><td><b>ancestral_reconstruction empty — declared gap</b> · gene_family_wgd 1/8</td></tr>
+            <tr><td class="mono">F3_phylogeny</td><td>14</td><td class="have">6</td><td>tree_inference · dating · comparative_methods</td></tr>
+            <tr><td class="mono">F4_structure</td><td>30</td><td class="have">18</td><td>Best-covered</td></tr>
+            <tr><td class="mono">F5_selection</td><td>40</td><td class="lack">14</td><td><b>codon_models 2/15 — worst-covered core chapter</b></td></tr>
+            <tr><td class="mono">F6_function</td><td>14</td><td class="lack">4</td><td>regulatory_noncoding 1/8</td></tr>
+            <tr><td class="mono">X_practice</td><td>16</td><td class="have">7</td><td><b>ml_constraint empty — declared gap</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <h4>Three honest gaps</h4>
+        <p><b>1.</b> 79 of 172 PDFs are still missing, unevenly. They are paywalled — the open-access
+          ladder cannot reach them, so chapters 11 and 14 cannot yet be written from the vault.</p>
+        <p><b>2.</b> Two directories are empty on purpose. The field has those literatures; this
+          corpus does not. Chapter 6 lists what belongs in the first of them.</p>
+        <p><b>3.</b> The corpus inherits one article's citation list — a real bibliography, not a
+          systematic survey. The research found what it omitted: OrthoFinder v3, the
+          annotation-mixing experiment, FCS-GX, the bidirectional-best-hit critique.</p>
+      </div>
+      <p class="src">Papers <code>resources/papers/INDEX.md</code> · books
+        <code>resources/books/INDEX.md</code> · routing <code>research/remap_modules.py</code> ·
+        findings <code>research/raw/</code></p>
+    </div>
+  </section>
+
+  <!-- compressed -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">∎</div>
+      <div><span class="verb">If you forget everything else</span>
+        <h2>The one paragraph</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">A difference between genomes means nothing until you know it is a real
+        difference between corresponding things, and you know when and on which lineage it arose.
+        Establishing that takes six nested layers of machinery, and a failure in any lower layer
+        emerges from the top not as an error but as a plausible, publishable evolutionary story. So
+        the discipline is not the pipeline — it is the ordered exclusion of the boring explanations,
+        cheapest first, before the interesting one is entertained. Every method has a characteristic
+        way of failing silently, and the mark of someone who knows the field is that they can name
+        the failure before they name the tool.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div><b>Syllabus</b> <code>PLAN.md</code> · built with the <code>html_build</code> skill · researched with <code>research</code></div>
+    <div>Each chapter is one self-contained file — it still works moved, zipped or emailed.</div>
+  </footer>
+
+</div>
+</body>
+</html>

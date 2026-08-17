@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phylogenetic comparative methods</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 09 · Part III, The tree layer · Layer F3</p>
+    <h1>Phylogenetic comparative methods</h1>
+    <p class="standfirst">One ancestral change plus many descendants can produce a very small
+      <em>P</em>-value. This is the machinery that licenses every cross-species claim in Part VI —
+      and the most common referee-level failure in the field.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>Why are <em>N</em> species not <em>N</em> data points?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapter 08 — you need the tree and its lengths</dd></div>
+      <div><dt>Corpus</dt><dd><code>F3/comparative_methods_traits</code> 1/3</dd></div>
+      <div><dt>Understood when</dt><dd>You can say what a correction assumes, and what it does not fix</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>Phylogenetic pseudoreplication</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Each tip inherits most of its phenotype and genome from shared ancestors, so
+        close relatives contribute <b>correlated observations, not new evolutionary trials</b>.
+        Ordinary regression treats clade membership as repeated evidence.</p>
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:800px" viewBox="0 0 800 260" role="img"
+               aria-label="A phylogeny where a single trait change on one internal branch is inherited by eight descendant tips, so naive analysis counts eight data points where one evolutionary event occurred.">
+            <path class="dg-line" d="M40,130 L120,130"/>
+            <path class="dg-line" d="M120,40 L120,220 M120,40 L200,40 M120,220 L200,220"/>
+            <path class="dg-sig" stroke-width="2.4" d="M120,40 L210,40"/>
+            <circle cx="165" cy="40" r="6" fill="var(--signal)"/>
+            <text class="t-mono f-sig" x="165" y="28" text-anchor="middle">ONE change</text>
+            <path class="dg-line" d="M210,15 L210,65 M210,15 L280,15 M210,65 L280,65
+                                     M280,5 L280,25 M280,5 L340,5 M280,25 L340,25
+                                     M280,55 L280,75 M280,55 L340,55 M280,75 L340,75"/>
+            <path class="dg-line" d="M200,190 L200,250 M200,190 L280,190 M200,250 L280,250
+                                     M280,180 L280,200 M280,180 L340,180 M280,200 L340,200
+                                     M280,240 L280,258 M280,240 L340,240 M280,258 L340,258"/>
+            <g fill="var(--signal)">
+              <circle cx="350" cy="5" r="5"/><circle cx="350" cy="25" r="5"/>
+              <circle cx="350" cy="55" r="5"/><circle cx="350" cy="75" r="5"/>
+            </g>
+            <g fill="none" stroke="var(--ink-3)">
+              <circle cx="350" cy="180" r="5"/><circle cx="350" cy="200" r="5"/>
+              <circle cx="350" cy="240" r="5"/><circle cx="350" cy="258" r="5"/>
+            </g>
+            <text class="t-sm f-sig" x="368" y="44">4 tips with the derived state</text>
+            <text class="t-sm" x="368" y="222">4 tips without</text>
+
+            <path class="dg-dash" d="M520,10 L520,250"/>
+            <g>
+              <text class="t-hd f-sig" x="548" y="40">NAIVE ANALYSIS</text>
+              <text class="t-lbl" x="548" y="62">n = 8 species</text>
+              <text class="t-lbl" x="548" y="82">perfect trait association</text>
+              <text class="t-mono f-sig" x="548" y="104">P &lt; 0.001</text>
+              <path class="dg-dash" d="M548,120 L780,120"/>
+              <text class="t-hd f-acc" x="548" y="146">WHAT HAPPENED</text>
+              <text class="t-lbl" x="548" y="168">one evolutionary event</text>
+              <text class="t-lbl" x="548" y="188">inherited eight times</text>
+              <text class="t-mono f-acc" x="548" y="210">effective n ≈ 1</text>
+              <text class="t-sm" x="548" y="238">the correlation is real; the</text>
+              <text class="t-sm" x="548" y="252">evidence for it is one observation</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption><b>In genomics this is worse, not better.</b> Loci additionally share linkage,
+          rate, annotation, alignment and gene-tree histories — several more ways for observations to
+          be correlated that a species-level correction does not touch.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">A real casualty</span>
+        <h2>What the correction actually costs a result</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>Rubisco kinetic trade-offs</h4>
+        <p>Long-cited trade-offs were <b>greatly reduced</b> under phylogenetic reanalysis. The
+          CO₂-specificity / carboxylation-turnover relationship fell from <b>37.4% to 2.2% explained
+          variance</b> — while <b>phylogeny explained 56.1%</b>.</p>
+        <p>The relationship did not vanish because the biology was fake. It shrank because most of the
+          apparent signal was shared ancestry being counted as independent evidence.</p>
+      </div>
+      <div class="callout warn">
+        <h4>And a failure mode specific to comparative functional genomics</h4>
+        <p>Pairwise cross-species comparisons are non-independent when duplicated or ancestral
+          comparisons are involved — and <b>node-age and clade structure can manufacture apparent
+          ortholog–paralog differences under null simulations</b>. The difference appears with no
+          biological cause at all.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">The machinery</span>
+        <h2>Three corrections, one shared assumption</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:22%">Method</th><th style="width:38%">What it does</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">PIC</td><td>Converts tip values to standardised, non-overlapping ancestral contrasts under Brownian motion</td><td>The original idea (Felsenstein 1985)</td></tr>
+            <tr><td class="mono">PGLS</td><td>Regression with a phylogeny-derived residual covariance matrix</td><td><b>Under BM, PIC and PGLS regression estimators are equivalent</b> — they are not competing choices</td></tr>
+            <tr><td class="mono">Phylogenetic<br>mixed models</td><td>Random phylogenetic effects; partitions phylogenetic vs residual variance; extends to multivariate and categorical</td><td>Retains assumptions about the phylogenetic covariance and exchangeable residual structure</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout bad">
+        <h4>None of them "corrects for phylogeny"</h4>
+        <p>Each corrects residual covariance <b>conditional on</b> a supplied phylogeny and
+          evolutionary covariance model. That means the correction inherits: the topology, the branch
+          lengths, the trait model, measurement error, and — for genomic traits especially —
+          whether the tree you supplied is the <em>relevant history</em> for that locus at all.</p>
+        <p>It does not establish causality, and it does not repair an incorrect tree.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Trait models</span>
+        <h2>OU support is not evidence of stabilizing selection</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="grid">
+        <div class="card"><div class="tagrow"><h3>BM</h3><span class="tag">baseline</span></div>
+          <p>Constant-rate diffusion — a random walk. Variance accumulates with time.</p></div>
+        <div class="card"><div class="tagrow"><h3>OU</h3><span class="tag warn">over-read</span></div>
+          <p>Mean reversion toward one or more optima. Routinely reported as evidence of stabilizing
+            selection. It is not.</p></div>
+        <div class="card"><div class="tagrow"><h3>EB</h3><span class="tag">rarely fit</span></div>
+          <p>Exponentially declining rate. Rarely supported in a broad trait survey — which does
+            <b>not</b> prove adaptive radiations are rare, because extant-tip EB inference can lack
+            power.</p></div>
+      </div>
+      <div class="callout warn">
+        <h4>Why multi-regime OU fitting goes wrong</h4>
+        <p>Unknown shift placement makes candidate models proliferate — a large-<em>p</em>,
+          small-<em>n</em> model-selection problem. ML parameters can be non-unique or inaccurately
+          estimated, and conventional criteria can favour excessive complexity. An AIC-only OU claim
+          on a small or uninformative tree needs simulation-based calibration and model adequacy, and
+          ideally fossils or independent experimental support.</p>
+      </div>
+      <div class="callout">
+        <h4>The nuance that keeps this honest</h4>
+        <p>"Small tree means OU is invalid" is <b>too strong</b>. Simulations found even relatively
+          small trees can sometimes discriminate simple OU models — while parameter estimates remain
+          poor. Discriminating a model and estimating its parameters are different achievements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">PhyloG2P</span>
+        <h2>Genome-scale scans are association screens</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:20%">Method</th><th style="width:36%">Tests</th><th>Assumes / watch</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">RERconverge</td><td>Branchwise relative evolutionary rates, normalised genome-wide, associated with binary/continuous/categorical phenotype histories</td><td>The basic workflow expects input gene trees to <b>share topology</b></td></tr>
+            <tr><td class="mono">PhyloAcc</td><td>Bayesian branch-category model for acceleration of conserved non-coding elements: null vs target-lineage vs unrestricted rate shift</td><td>Targets <b>rate-pattern evidence</b>, not a causal mechanism</td></tr>
+            <tr><td class="mono">Forward Genomics</td><td>Repeated loss / divergence associated with trait loss</td><td>The original required an all-or-none <em>perfect match</em> and had no phylogenetic or rate correction; the 2016 methods added both plus formal significance testing</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout bad">
+        <h4>Their nulls fail in predictable ways</h4>
+        <p>Rate heterogeneity, incorrect foreground histories, gene-tree discordance, and correlated
+          genomic features. Raw parametric <em>P</em>-values from phenotype-rate scans can be
+          <b>non-uniform</b> because of phylogenetic and non-genetic dependence.</p>
+        <p><b>Permulations</b> — permutations that preserve both the phenotype distribution and the
+          phylogenetic structure — calibrate the null properly. They still require multiple-testing
+          correction on top.</p>
+      </div>
+      <div class="callout warn">
+        <h4>Do not quote a tool-level false-positive rate</h4>
+        <p>There is <b>no portable false-positive rate</b> for RERconverge, PhyloAcc or Forward
+          Genomics. Published benchmarks are simulation- and design-dependent. A paper should show
+          empirical null calibration <em>for its own tree and foreground configuration</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">The standard</span>
+        <h2>What a cross-species association must report</h2></div>
+    </div>
+    <div class="stage-body">
+      <pre class="fml gate"><b>reportable record for a phyloG2P claim</b>
+
+  transition counts + uncertainty     how many INDEPENDENT origins, and how sure
+  phylogenetic effective sample size  parameter- AND model-specific — not one number
+  calibrated null / permulations      for THIS tree and THIS foreground
+  genome-wide FDR                     after the calibrated null, not instead of it
+  alternative-tree sensitivity        does the result survive a different topology?
+  functional validation               independent of the comparative signal</pre>
+      <div class="callout">
+        <h4>How many independent origins are enough?</h4>
+        <p>There is <b>no defensible universal minimum</b> — not three, not five, not ten. Treat any
+          such rule as unsupported unless tied to a pre-specified power analysis.</p>
+        <p>What can be said: <b>one origin supports a lineage-specific hypothesis, not a general
+          cross-species genotype–phenotype claim.</b> Power depends on tree geometry, effect size,
+          the background lineages, and error — so the honest move is to report the effective sample
+          size rather than the species count.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">7</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout warn">
+        <h4>Read the open textbook for this chapter</h4>
+        <p><b>Harmon, <em>Phylogenetic Comparative Methods</em></b> — 234pp, freely published, in
+          <code>resources/books/</code>. Its Chapter 2 fits statistical models before any biology, and
+          its Section 8.5 is called "the total garbage test". It is the best available treatment of
+          this material.</p>
+      </div>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="lack">·</td><td>Felsenstein, <em>Phylogenies and the comparative method</em>, Am Nat</td><td>1985</td><td><b>The founding paper</b> <span class="note">missing — acquire</span></td></tr>
+            <tr><td class="have">✓</td><td>Revell, <em>phytools</em>, MEE</td><td>2012</td><td>The R toolkit</td></tr>
+            <tr><td class="lack">·</td><td>Harmon et al., <em>GEIGER</em>, Bioinformatics</td><td>2008</td><td>Model fitting <span class="note">missing</span></td></tr>
+            <tr><td class="lack">·</td><td>Dewar, Belcher &amp; West, Nat Rev Genet</td><td>2025</td><td><b>The Rubisco reanalysis</b> — the case study <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Ho &amp; Ané, OU identifiability</td><td>2014</td><td>Why multi-regime OU is over-read <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Saputra et al., permulations, MBE</td><td>2021</td><td>Null calibration <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Dunn et al., GBE</td><td>2018</td><td>Manufactured ortholog–paralog differences <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 9 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Explain phylogenetic pseudoreplication, and why genomics makes it worse.</li>
+          <li>Say what PGLS assumes and what it does <em>not</em> fix.</li>
+          <li>State why OU support is not evidence of stabilizing selection — and why "small tree
+            means OU is invalid" is also wrong.</li>
+          <li>Explain what a permulation preserves that an ordinary permutation does not.</li>
+          <li>Say why there is no universal minimum number of independent origins, and what to report
+            instead.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A paper reports</b> that across 62 mammal species, genome size correlates with
+          hibernation (PGLS, <em>P</em>&nbsp;=&nbsp;0.003), that RERconverge finds 340 genes with
+          hibernation-associated rate acceleration at FDR&nbsp;&lt;&nbsp;0.05, and concludes a genomic
+          signature of hibernation. What do you ask?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>origins</dt><dd>How many <em>independent</em> origins of hibernation are in those 62 species, with uncertainty on the ancestral reconstruction? If hibernation is largely one or two clades, effective <em>n</em> is 1–2 regardless of the 62.</dd>
+          <dt>PGLS is not enough</dt><dd>It corrects residual covariance given the tree and a BM-like model. It does not make two clades into 62 trials, and the Rubisco case shows how much apparent signal that can be.</dd>
+          <dt>null calibration</dt><dd>Were permulations run, for <em>this</em> tree and <em>this</em> foreground? Raw RERconverge <em>P</em>-values are non-uniform, so an FDR applied to them is an FDR on a wrong null.</dd>
+          <dt>topology assumption</dt><dd>RERconverge's basic workflow expects gene trees to share topology. With 62 mammals and real ILS (Ch 8), how was discordance handled?</dd>
+          <dt>the other trait</dt><dd>Hibernation covaries with body size, latitude, diet and metabolic rate. A correlation with genome size may be a correlation with any of them.</dd>
+          <dt>validation</dt><dd>340 genes is a screen output. What independent functional evidence exists for even one?</dd>
+        </dl>
+        <p>Note the two results are not independent confirmations of each other — both are computed on
+          the same tree, from the same phenotype coding, and both inherit the same origin count.</p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../08_species_tree/08_species_tree.html">← Chapter 8 · The species tree</a>
+    <a href="../10_structure_pangenome/10_structure_pangenome.html">Chapter 10 · SV, T2T, pangenomes →</a>
+  </nav>
+  <footer>
+    <div>Part III of VI · Layer F3</div>
+    <div>Research <code>research/raw/c09_comparative_methods.md</code> — 51 sourced URLs · textbook <code>resources/books/Book2019_Harmon-phylogenetic-comparative-methods/</code></div>
+  </footer>
+
+</div>
+</body>
+</html>

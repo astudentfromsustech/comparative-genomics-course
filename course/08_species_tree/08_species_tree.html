@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The species tree</title>
+<link rel="stylesheet" href="../_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Chapter 08 · Part III, The tree layer · Layer F3</p>
+    <h1>The species tree</h1>
+    <p class="standfirst">The tree is the coordinate system every comparison is expressed in. It is
+      also a model of population splits — not a claim that any particular locus followed it.</p>
+    <dl class="mast-rail">
+      <div><dt>Question</dt><dd>How does the tree stop being a figure and become the coordinate system?</dd></div>
+      <div><dt>Prerequisite</dt><dd>Chapters 03, 05 — the coalescent, and the orthologs you will feed it</dd></div>
+      <div><dt>Corpus</dt><dd><code>F3/tree_inference</code> 3/8 · <code>F3/dating_calibration</code> 2/3</dd></div>
+      <div><dt>Understood when</dt><dd>You can explain why disagreement between methods is information</dd></div>
+    </dl>
+  </header>
+
+  <!-- 1 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">1</div>
+      <div><span class="verb">The answer, first</span>
+        <h2>What the tree is for</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">It assigns every sampled genome to a lineage, orders speciation events, roots
+        and polarises substitutions, and <b>defines the ancestral branch on which any event is
+        mapped</b> — a gene gain or loss, a rearrangement, a rate shift, a trait transition.</p>
+      <div class="callout">
+        <h4>Which is why every later chapter takes it as input</h4>
+        <p>Chapter 07's birth–death model needs it ultrametric and time-calibrated. Chapter 11's
+          branch-site tests need the branch specified. Chapter 09's contrasts need its topology and
+          lengths. Chapter 06's Cactus alignment needs it as a guide tree. A wrong tree is not one
+          wrong figure — it is a wrong coordinate system.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">2</div>
+      <div><span class="verb">The central fact</span>
+        <h2>Gene trees are expected to differ</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Under the multispecies coalescent, alleles can fail to coalesce within a short
+        ancestral interval, so gene trees vary <em>around</em> the species tree. Discordance is a
+        prediction of the null, not evidence of anything by itself.</p>
+      <figure>
+        <div class="figbox">
+          <svg class="diagram" style="max-width:800px" viewBox="0 0 800 280" role="img"
+               aria-label="A species tree with a short internal branch. Inside it, three gene lineages fail to coalesce, so two of the three possible gene tree topologies disagree with the species tree.">
+            <text class="t-hd" x="20" y="20">SPECIES TREE — short internode</text>
+            <path d="M60,240 L60,150 L200,150 L200,240" class="dg-line" fill="none" stroke-width="1"/>
+            <path d="M130,150 L130,110 L280,110 L280,240" class="dg-line" fill="none" stroke-width="1"/>
+            <rect x="46" y="150" width="28" height="90" fill="var(--card-2)" stroke="var(--rule)"/>
+            <rect x="186" y="150" width="28" height="90" fill="var(--card-2)" stroke="var(--rule)"/>
+            <rect x="266" y="110" width="28" height="130" fill="var(--card-2)" stroke="var(--rule)"/>
+            <rect x="116" y="110" width="98" height="42" fill="none" stroke="var(--signal)" stroke-width="1.4"/>
+            <text class="t-mono f-sig" x="165" y="104" text-anchor="middle">short internode</text>
+            <text class="t-mono" x="60" y="256" text-anchor="middle">A</text>
+            <text class="t-mono" x="200" y="256" text-anchor="middle">B</text>
+            <text class="t-mono" x="280" y="256" text-anchor="middle">C</text>
+            <path class="dg-acc" d="M56,236 L56,150 L120,132 M204,236 L204,150 L150,132
+                                     M120,132 L120,120 M150,132 L150,120 M276,236 L276,120"/>
+            <text class="t-sm f-acc" x="316" y="140">lineages enter the internode…</text>
+            <text class="t-sm f-sig" x="316" y="156">…and do not coalesce before it ends</text>
+
+            <path class="dg-dash" d="M420,10 L420,270"/>
+            <text class="t-hd" x="450" y="20">THE THREE GENE TREES</text>
+            <g>
+              <text class="t-mono f-acc" x="450" y="60">((A,B),C)</text>
+              <text class="t-sm f-acc" x="560" y="60">matches the species tree</text>
+              <text class="t-mono f-sig" x="450" y="86">((A,C),B)</text>
+              <text class="t-sm f-sig" x="560" y="86">discordant — and EXPECTED</text>
+              <text class="t-mono f-sig" x="450" y="112">((B,C),A)</text>
+              <text class="t-sm f-sig" x="560" y="112">discordant — and EXPECTED</text>
+            </g>
+            <path class="dg-dash" d="M450,132 L780,132"/>
+            <text class="t-lbl" x="450" y="156">ILS becomes more probable as the internode gets SHORTER</text>
+            <text class="t-lbl" x="450" y="174">and as ancestral <tspan font-style="italic">N</tspan>e gets LARGER</text>
+            <rect x="450" y="192" width="330" height="62" fill="none" stroke="var(--signal)" stroke-width="1.4"/>
+            <text class="t-hd f-sig" x="462" y="212">THE ANOMALY ZONE</text>
+            <text class="t-sm" x="462" y="230">with ≥ 4 taxa, the MOST PROBABLE gene tree</text>
+            <text class="t-sm" x="462" y="246">can differ from the species tree</text>
+          </svg>
+        </div>
+        <figcaption><b>The anomaly zone is why "take the commonest gene tree" fails.</b> In that
+          parameter region the modal gene tree is the wrong answer, and more loci make you more
+          confident in it.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">3</div>
+      <div><span class="verb">The dispute</span>
+        <h2>Concatenation versus coalescent — the honest version</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="callout bad">
+        <h4>Concatenation can be statistically inconsistent</h4>
+        <p>Under MSC gene-tree heterogeneity, including anomaly-zone parameters, concatenated ML plus
+          bootstrap can converge on a <b>strongly supported wrong tree</b>. More sequence yields more
+          confidence in the pseudo-true supermatrix tree. This is a formal inferential failure, not a
+          finite-data nuisance.</p>
+      </div>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>ASTRAL</h3><span class="tag ok">scales</span></div>
+          <p>Estimates an MSC species tree from unrooted gene trees; statistically consistent under
+            its model. Its advantage rises with moderate-to-high ILS — while <b>concatenation
+            performed better in the authors' own low-ILS simulations</b>.</p>
+          <div class="measured">Inherits gene-tree estimation error, and is <b>not</b> robust to
+            introgression, duplication/loss or linked loci merely because it is coalescent-based.</div>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Full-likelihood MSC</h3><span class="tag warn">scales poorly</span></div>
+          <p>*BEAST/StarBEAST2 and BPP jointly model sequence and gene-tree uncertainty rather than
+            taking estimated gene trees as data.</p>
+          <div class="measured">Usually computationally restricted relative to ASTRAL-scale datasets —
+            the trade is uncertainty handling against locus count.</div>
+        </div>
+      </div>
+      <div class="callout">
+        <h4>The consensus is neither slogan</h4>
+        <p>Not "concatenation is wrong", not "ASTRAL is automatically right". Current strong practice
+          is <b>plural</b>: infer a partitioned concatenation tree <em>and</em> an MSC summary tree,
+          quantify locus/site/quartet conflict, test robustness to locus definition and filtering,
+          then investigate the biological causes of conflict that survives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">4</div>
+      <div><span class="verb">Support</span>
+        <h2>Bootstrap does not mean what people report it to mean</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:18%">Measure</th><th style="width:40%">Actually measures</th><th>Read it as</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">bootstrap</td><td>Whether resampled characters recover the fitted analysis</td><td><b>Resampling stability</b> — not the fraction of genes or sites supporting the split</td></tr>
+            <tr><td class="mono">gCF</td><td>Proportion of <em>decisive gene trees</em> containing the split</td><td>Empirical gene-level concordance</td></tr>
+            <tr><td class="mono">sCF</td><td>Proportion of <em>decisive sites</em> supporting it</td><td>Empirical site-level concordance. Use likelihood-based <code>--scfl</code> (IQ-TREE ≥ 2.2.2) over the original parsimony version</td></tr>
+            <tr><td class="mono">quartet freq / local PP</td><td>ASTRAL's support for the quartet resolution</td><td>Coalescent-model support</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout bad">
+        <h4>100% bootstrap with low gCF is routine</h4>
+        <p>At genome scale and under model misspecification it is the normal outcome, not a red flag
+          you rarely meet. Reporting bootstrap alone hides exactly the conflict the data contain.</p>
+        <p><b>Report instead:</b> gCF, likelihood-based sCF, ASTRAL quartet frequencies and local
+          posterior probabilities, branch lengths <em>in coalescent units</em>, and the sensitivity
+          analyses — not one support number.</p>
+      </div>
+      <div class="callout warn">
+        <h4>Filtering has no universal rule</h4>
+        <p>Gene-tree error and missing data affect concatenation and MSC summary alike, and filtering
+          can help or hurt depending on ILS and locus signal — so <b>a single occupancy threshold is
+          not defensible</b>. Saturation-based locus exclusion improved inference across 36 empirical
+          phylogenomic datasets, which supports the approach but does not validate filtering for
+          <em>your</em> dataset. This is Chapter 02's sensitivity set again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">5</div>
+      <div><span class="verb">Dates</span>
+        <h2>Sequence gives substitutions; time comes from priors</h2></div>
+    </div>
+    <div class="stage-body">
+      <p class="lede">Sequence data primarily identify substitutions. Absolute time depends
+        materially on rate assumptions and fossil/time priors — so a divergence date is a statement
+        about the calibration as much as about the data.</p>
+      <div class="callout warn">
+        <h4>Calibrations interact with the tree prior</h4>
+        <p>The <b>effective marginal prior</b> for a calibrated node can differ when calibrations are
+          used alone versus together. A consequence people miss: calibration "cross-validation" can
+          therefore <em>select bad constraints</em> — the procedure that looks like a check is not one.</p>
+      </div>
+      <pre class="fml gate"><b>what a published date must expose</b>
+
+  calibration justification      why this fossil, this node, this bound
+  effective marginal priors      what the model believed BEFORE the data
+  prior-only vs posterior plots  did the data move it at all?
+  leave-one-out sensitivity      per clock model AND per calibration
+  uncertainty intervals          reported, not a point estimate</pre>
+
+      <h3 class="col">Two disagreements worth knowing by name</h3>
+      <div class="grid duo">
+        <div class="card">
+          <div class="tagrow"><h3>Angiosperm crown age</h3><span class="tag bad">unresolved</span></div>
+          <p>Molecular estimates span <b>early Cretaceous to Triassic</b>, against a much younger
+            unambiguous fossil record. Authors disagree over whether rate/calibration artefacts,
+            fossil incompleteness, or both explain the gap.</p>
+        </div>
+        <div class="card">
+          <div class="tagrow"><h3>Placental mammal origin</h3><span class="tag bad">unresolved</span></div>
+          <p>Molecular dates often imply a <b>pre-K–Pg</b> origin; geomolecular calibration modelling
+            yields younger estimates compatible with a radiation near <b>66 Ma</b>.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <h4>And a result that is routinely over-read</h4>
+        <p>One benchmark found RelTime node ages closely comparable to MCMCtree and BEAST — <b>under
+          matched alignment, topology, model and calibration densities</b>. That does not imply
+          agreement when priors or calibrations differ, which is the situation in every real
+          comparison.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">6</div>
+      <div><span class="verb">Reading</span>
+        <h2>Entry papers</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th style="width:5%">Disk</th><th style="width:50%">Paper</th><th style="width:8%">Year</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td class="lack">·</td><td>Degnan &amp; Rosenberg, <em>Gene tree discordance and the multispecies coalescent</em>, TREE</td><td>2009</td><td><b>Start here.</b> <span class="note">missing — acquire first</span></td></tr>
+            <tr><td class="lack">·</td><td>Kubatko &amp; Degnan, <em>Inconsistency of phylogenetic estimates from concatenated data</em></td><td>2007</td><td>The formal failure result <span class="note">not in corpus</span></td></tr>
+            <tr><td class="have">✓</td><td>Zhang et al., <em>ASTRAL-III</em>, BMC Bioinformatics</td><td>2018</td><td>The scalable summary method</td></tr>
+            <tr><td class="have">✓</td><td>Minh et al., <em>IQ-TREE 2</em>, MBE</td><td>2020</td><td>Where concordance factors live</td></tr>
+            <tr><td class="have">✓</td><td>Kozlov et al., <em>RAxML-NG</em>, Bioinformatics</td><td>2019</td><td>Concatenation done properly</td></tr>
+            <tr><td class="have">✓</td><td>Bouckaert et al., <em>BEAST 2.5</em>, PLoS Comp Biol</td><td>2019</td><td>Full-likelihood MSC and dating</td></tr>
+            <tr><td class="lack">·</td><td>Mo et al., likelihood-based sCF, Bioinformatics</td><td>2023</td><td><code>--scfl</code> <span class="note">not in corpus</span></td></tr>
+            <tr><td class="lack">·</td><td>Warnock, Parham &amp; Joyce, calibration cross-validation</td><td>2015</td><td>Why the check is not a check <span class="note">not in corpus</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- test -->
+  <section class="stage">
+    <div class="stage-head">
+      <div class="stage-num">✓</div>
+      <div><span class="verb">Acceptance test</span>
+        <h2>You have understood Chapter 8 when…</h2></div>
+    </div>
+    <div class="stage-body">
+      <div class="test">
+        <h3>Five things, without notes</h3>
+        <ol>
+          <li>Explain why gene-tree discordance is expected under no gene flow, and what makes it more
+            probable.</li>
+          <li>State what the anomaly zone is and why it defeats "take the commonest gene tree".</li>
+          <li>Say precisely what a bootstrap value measures, and why 100% with low gCF is routine.</li>
+          <li>Explain why concatenation and coalescent disagreeing is information rather than a tie.</li>
+          <li>List what a published divergence date must expose.</li>
+        </ol>
+      </div>
+      <details class="walk">
+        <summary>Self-check</summary>
+        <p><b>A phylogenomic paper</b> reports a concatenated ML tree from 1,847 single-copy
+          orthologs, all nodes at 100% bootstrap, resolving a contentious three-family relationship,
+          and dates the split at 94.3 ± 1.2 Ma with MCMCtree. What is wrong?</p>
+        <dl class="rules" style="margin-top:14px">
+          <dt>support</dt><dd>100% everywhere on 1,847 loci is the <em>expected</em> outcome of concatenation at genome scale — including when the topology is wrong. It is not evidence. Ask for gCF and sCF.</dd>
+          <dt>the contentious node</dt><dd>A "contentious" relationship is contentious because the internode is short — precisely the ILS regime where concatenation can be inconsistent. This is the one node where the method is least trustworthy.</dd>
+          <dt>one method</dt><dd>No MSC tree, so no way to know whether the conflict is real. Current practice is both.</dd>
+          <dt>single-copy filter</dt><dd>1,847 single-copy orthologs is a Chapter 5 selection filter, biased and possibly contaminated by differential loss.</dd>
+          <dt>the date</dt><dd>±1.2 Ma is a precision claim, not an accuracy one. It reports posterior width under one calibration set — with no prior-only comparison, no leave-one-out, and no clock-model sensitivity. Given the angiosperm and placental disputes, that interval is not credible as stated.</dd>
+        </dl>
+        <p>The tell that ties it together: <b>every number in the abstract is a precision, and none is
+          a robustness.</b></p>
+      </details>
+    </div>
+  </section>
+
+  <nav class="chapnav">
+    <a href="../07_gene_families_duplication/07_gene_families_duplication.html">← Chapter 7 · Gene families</a>
+    <a href="../09_comparative_methods/09_comparative_methods.html">Chapter 9 · Comparative methods →</a>
+  </nav>
+  <footer>
+    <div>Part III of VI · Layer F3</div>
+    <div>Research <code>research/raw/c08_species_tree.md</code> — 39 sourced URLs</div>
+  </footer>
+
+</div>
+</body>
+</html>
