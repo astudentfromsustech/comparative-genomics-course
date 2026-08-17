@@ -25,7 +25,7 @@ def valid_pdf(p: Path) -> bool:
         return False
 
 def main() -> None:
-    refs = json.load(open(ROOT/"research/refs.json"))
+    refs = json.load(open(ROOT/"scripts/refs.json"))
     linked = repos = missing = 0
     by_mod: dict[str, list] = {}
 

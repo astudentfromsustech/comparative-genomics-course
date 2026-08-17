@@ -39,3 +39,6 @@ research/download.out
 research/chain.out
 research/*.out
 research/refs.json.bak
+
+# audit trail kept locally, not published
+research/

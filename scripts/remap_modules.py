@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT   = Path(__file__).resolve().parent.parent
 CORPUS = Path.home()/"Desktop/projects/papers/comparative_genomics"
-REFS   = ROOT/"research/refs.json"
+REFS   = ROOT/"scripts/refs.json"
 
 # ---------------------------------------------------------------- the new tree
 # Order matters: it is the reading order, and link_into_topic.py sorts by it.
@@ -259,7 +259,7 @@ def main() -> None:
 
     print(f"\nmoved {moved} · skipped {skipped} · pruned {len(pruned)} empty old dirs")
     print(f"refs.json rewritten (backup at {REFS.with_suffix('.json.bak').name})")
-    print("next: rm -rf resources/papers && python3 research/link_into_topic.py")
+    print("next: rm -rf resources/papers && python3 scripts/link_into_topic.py")
 
 
 if __name__ == "__main__":

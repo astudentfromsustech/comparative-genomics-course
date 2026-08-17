@@ -47,7 +47,7 @@ def fetch(pmcid: str, dest: Path) -> bool:
     return True
 
 def main() -> None:
-    refs = json.load(open(ROOT/"research/refs.json"))
+    refs = json.load(open(ROOT/"scripts/refs.json"))
     got = fail = skip = 0
     for rec in refs:
         pdf = CORPUS/rec["module"]/rec["stem"]/f"{rec['stem']}.pdf"

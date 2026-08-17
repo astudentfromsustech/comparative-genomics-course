@@ -114,7 +114,7 @@ research findings because their primary literature is paywalled — flagged in-p
 ## Method
 
 **Research** — the `research` skill: Claude plans and verifies, Codex executes the web search.
-15 briefs, ~800 sourced URLs, in `research/briefs/` and `research/raw/`. Every brief asked the
+15 briefs, 826 sourced URLs (kept locally, not published). Every brief asked the
 searcher to critique the plan; that is what found the missing prerequisite layer and the
 OrthoFinder v3 gap. One citation was corrected on verification (the 12-*Drosophila* aligner study
 is *Genome Research*, not MBE).
@@ -127,7 +127,7 @@ is *Genome Research*, not MBE).
 ## Corpus
 
 Papers: real files in `~/Desktop/projects/papers/comparative_genomics/`, hard-linked into
-`resources/papers/`. Catalogue `resources/papers/INDEX.md`; routing `research/remap_modules.py`
+`resources/papers/`. Catalogue `resources/papers/INDEX.md`; routing `scripts/remap_modules.py`
 (one auditable line per paper). Books: `resources/books/INDEX.md`.
 
 ```

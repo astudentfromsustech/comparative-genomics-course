@@ -6,7 +6,7 @@ Real files land in the central corpus:
 Repos clone INSIDE each paper dir (paper+code coupling).
 
 Resumable: a paper dir that already holds a valid <stem>.pdf is skipped.
-Progress is appended to research/download_log.jsonl after every paper.
+Progress is appended to scripts/download_log.jsonl after every paper.
 """
 from __future__ import annotations
 import json, sys, os, traceback
@@ -18,7 +18,7 @@ from run import PaperRef, download_one            # noqa: E402
 
 ROOT   = Path(__file__).resolve().parent.parent
 CORPUS = Path.home()/"Desktop/projects/papers/comparative_genomics"
-LOG    = ROOT/"research/download_log.jsonl"
+LOG    = ROOT/"scripts/download_log.jsonl"
 
 # already in the corpus under another topic — hard-link, don't re-download
 ALREADY = {
@@ -51,7 +51,7 @@ def link_existing(rec: dict) -> dict:
             "supplement_status": "-", "repo_status": "-", "module": rec["module"]}
 
 def main() -> None:
-    refs = json.load(open(ROOT/"research/refs.json"))
+    refs = json.load(open(ROOT/"scripts/refs.json"))
     only = sys.argv[1] if len(sys.argv) > 1 else None
     done = set()
     if LOG.exists():
