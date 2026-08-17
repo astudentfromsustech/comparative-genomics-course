@@ -127,8 +127,8 @@ is *Genome Research*, not MBE).
 ## Corpus
 
 Papers: real files in `~/Desktop/projects/papers/comparative_genomics/`, hard-linked into
-`resources/papers/`. Catalogue `resources/papers/INDEX.md`; routing `scripts/remap_modules.py`
-(one auditable line per paper). Books: `resources/books/INDEX.md`.
+`resources/papers/`. Catalogue `resources/papers/INDEX.md` — 172 papers by framework layer, each with a DOI.
+Books: `resources/books/INDEX.md`.
 
 ```
 F0_foundations                8/8    F4_structure/sv_t2t             13

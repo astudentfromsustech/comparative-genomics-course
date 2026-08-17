@@ -42,3 +42,6 @@ research/refs.json.bak
 
 # audit trail kept locally, not published
 research/
+
+# local tooling, not published
+scripts/
